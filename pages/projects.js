@@ -2,13 +2,16 @@ import siteMetadata from '@/data/siteMetadata'
 import projectsData from '@/data/projectsData'
 import Card from '@/components/Card'
 import { PageSEO } from '@/components/SEO'
-import { Container, Grid, GridItem } from '@chakra-ui/react'
+import { Container, Grid, GridItem, Heading } from '@chakra-ui/react'
 
 const Projects = () => {
   return (
     <>
       <PageSEO title={`Projects - ${siteMetadata.author}`} description={siteMetadata.description} />
-      <Container maxW="container.xl" p={{ base: '0', sm: 'auto' }}>
+      <Container maxW="container.xl">
+        <Heading as="h2" py={[5, 6]} fontSize={['xl']}>
+          All Projects
+        </Heading>
         <Grid
           templateColumns="repeat(auto-fit, minmax(300px, 1fr));"
           justify="center"
