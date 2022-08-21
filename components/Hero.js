@@ -26,7 +26,7 @@ export default function Hero() {
     >
       <Flex direction="column" rowGap="5">
         <PortfolioIntroductionSummary />
-        <Flex direction={{ base: 'column', sm: 'row' }} gap="2">
+        <Flex direction={{ sm: 'row' }} gap="2">
           <NextLink
             href="/projects"
             aria-label="all projects"
