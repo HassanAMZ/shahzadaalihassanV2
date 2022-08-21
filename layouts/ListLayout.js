@@ -28,6 +28,9 @@ export default function ListLayout({ posts, title, tags, initialDisplayPosts = [
         <Box>
           <PopularPost posts={posts} title={pageTitle} initialDisplayPosts={'4'} tags={tags} />
           <CategoryList posts={posts} initialDisplayPosts={'4'} tags={tags} />
+          <Heading as="h2" py={[5, 6]} fontSize={['xl']}>
+            Social Profiles
+          </Heading>
           <SocialProfile />
         </Box>
       </Grid>

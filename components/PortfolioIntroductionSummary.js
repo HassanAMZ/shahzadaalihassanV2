@@ -1,21 +1,34 @@
 import { Box, Flex, Heading, Image, Text } from '@chakra-ui/react'
 import Link from 'next/link'
 import { ExternalLinkIcon, LinkIcon } from '@chakra-ui/icons'
+import siteMetadata from '@/data/siteMetadata'
 export default function PortfolioIntroductionSummary() {
   return (
     <>
-      <Flex direction={'column'} alignItems={'left'}>
-        <Box borderRadius="100" py="3" w="32" bgColor="white">
-          <Image
-            src="/static/images/avatar.png"
-            alt="Shahzada Ali Hassan"
-            width="32"
-            height="32"
-            layout="responsive"
-            objectFit="contain"
-          />
-        </Box>
-        <Text fontSize={['xs']}>Google Tag Manager Specialist</Text>
+      <Flex direction={'column'} align={{ base: 'center', md: 'flex-start' }} gap="1" pt="4">
+        <>
+          <Flex justify={{ base: 'center', md: 'flex-start' }}>
+            <Text fontSize={['xs', 'sm', 'md']}>Top Rated Freelancer at&nbsp;</Text>
+            <Link
+              href="https://www.upwork.com/freelancers/~015b35831b56606433"
+              aria-label="Upwork Profile of Shahzada Ali Hassan"
+            >
+              <a>
+                <Box textTransform={'uppercase'} fontWeight="bold">
+                  <Flex
+                    direction={'row'}
+                    justifyContent="center"
+                    alignItems={'center'}
+                    fontSize={['xs', 'sm', 'md']}
+                  >
+                    <Text pr="1">Upwork</Text>
+                    <ExternalLinkIcon />
+                  </Flex>
+                </Box>
+              </a>
+            </Link>
+          </Flex>
+        </>
         <Heading lineHeight={1.1} fontWeight={600} fontSize={{ base: '3xl', sm: '4xl', lg: '5xl' }}>
           <Text
             as={'span'}
@@ -31,33 +44,12 @@ export default function PortfolioIntroductionSummary() {
               zIndex: -1,
             }}
           >
-            Shahzada A. Hassan
+            {siteMetadata.author}
           </Text>
         </Heading>
-        <Flex>
-          <Box fontSize={['xs', 'sm', 'md']}>Top Rated Freelancer at&nbsp;</Box>
-          <Link
-            href="https://www.upwork.com/freelancers/~015b35831b56606433"
-            aria-label="Upwork Profile of Shahzada Ali Hassan"
-          >
-            <a>
-              <Box textTransform={'uppercase'} fontWeight="bold">
-                <Flex
-                  direction={'row'}
-                  justifyContent="center"
-                  alignItems={'center'}
-                  fontSize={['xs', 'sm', 'md']}
-                >
-                  <Text pr="1">Upwork</Text>
-                  <ExternalLinkIcon />
-                </Flex>
-              </Box>
-            </a>
-          </Link>
-        </Flex>
-        <Text py="3" fontSize={['xs', 'sm', 'md']} color="gray.600">
-          Properly set up your Google Analytics account and deliver meaningful and understandable
-          reporting using your platform of choice.
+
+        <Text align={{ base: 'center', md: 'left' }} fontSize={['xs', 'sm', 'md']} color="gray.600">
+          Helping Start-ups Track Better with GTM, GA4, FB and much more!
         </Text>
       </Flex>
     </>

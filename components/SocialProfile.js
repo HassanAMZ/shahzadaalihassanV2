@@ -26,9 +26,6 @@ const SocialLinks = ({ name, router, icon }) => {
 const SocialProfile = ({ posts }) => {
   return (
     <>
-      <Heading as="h2" py={[5, 6]} fontSize={['xl']}>
-        Social Profile
-      </Heading>
       <Stack gap={2}>
         <SocialLinks name={'Upwork'} router={siteMetadata.upwork} icon={<SiUpwork />} />
         <SocialLinks

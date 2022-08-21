@@ -1,7 +1,8 @@
 import { PageSEO } from '@/components/SEO'
-import PortfolioIntroductionSummary from '@/components/PortfolioIntroductionSummary'
-import { Box, Flex, Text, Heading } from '@chakra-ui/react'
+import { Box, Flex, Grid, Heading } from '@chakra-ui/react'
 import Link from 'next/link'
+import Hero from '@/components/Hero'
+import SocialProfile from '@/components/SocialProfile'
 export default function AuthorLayout({ children, frontMatter }) {
   const { name } = frontMatter
 
@@ -9,19 +10,30 @@ export default function AuthorLayout({ children, frontMatter }) {
     <>
       <PageSEO title={`About - ${name}`} description={`About me - ${name}`} />
       <Box py="4">
-        <PortfolioIntroductionSummary />
-        <Heading as="h2" py="3" fontSize={['xl']}>
+        <Hero />
+        <Heading as="h2" py="3" fontSize={['xl']} textAlign={{ base: 'center', md: 'left' }}>
           A Quick Introduction
         </Heading>
-        <Box>{children}</Box>
-        <Box py="4">
-          <Heading>For Contact</Heading>
-          <Link href={'mailto:ReactJsWebDev@gmail.com'}>
-            <a target="_blank" rel="noopener noreferrer">
-              ReactJsWebDev@gmail.com
-            </a>
-          </Link>
-        </Box>
+        <Box textAlign={{ base: 'center', md: 'left' }}>{children}</Box>
+        <Heading as="h2" py={[5, 6]} fontSize={['xl']}>
+          Contact Hassan
+        </Heading>
+        <Grid placeContent="center" py="4" templateColumns={'1fr 2fr 1fr'}>
+          <Box></Box>{' '}
+          <Box>
+            <Heading
+              display={{ base: 'block', md: 'none' }}
+              as="h2"
+              py={[5, 6]}
+              fontSize={['xl']}
+              textAlign={'center'}
+            >
+              Contact Hassan
+            </Heading>
+            <SocialProfile />
+          </Box>
+          <Box></Box>
+        </Grid>
       </Box>
     </>
   )

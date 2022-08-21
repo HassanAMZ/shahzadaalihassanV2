@@ -56,14 +56,7 @@ export default function LargeWithLogoLeft() {
             </Link>
             <div>{`© ${new Date().getFullYear()}`}</div>
           </Stack>
-          <Stack align={'flex-start'}>
-            {/* <ListHeader>Company</ListHeader>
-            <Link href={'#'}>About</Link>
-            <Link href={'#'}>Press</Link>
-            <Link href={'#'}>Careers</Link>
-            <Link href={'#'}>Contact</Link>
-          <Link href={'#'}>Partners</Link> */}
-          </Stack>
+          <Stack align={'flex-start'}></Stack>
           <Stack align={'flex-start'}>
             <ListHeader>Nav Links</ListHeader>
             {NavLinks}

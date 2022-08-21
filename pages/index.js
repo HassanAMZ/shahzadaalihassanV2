@@ -35,8 +35,8 @@ export default function Home({ posts, initialDisplayPosts, pagination, tags }) {
         <Hero />
       </Container>
 
-      <Box bgColor={'gray.50'}>
-        <Container maxW="container.xl" py="5">
+      <Box my="5" bgColor={'gray.50'}>
+        <Container py={5} maxW="container.xl">
           <Heading as="h2" py="3" fontSize={['xl']}>
             Recent Web Analytics Projects
           </Heading>

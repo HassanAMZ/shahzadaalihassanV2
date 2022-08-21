@@ -1,6 +1,7 @@
 import headerNavLinks from '@/data/headerNavLinks'
 import Link from 'next/link'
 import Image from 'next/image'
+import siteMetadata from '@/data/siteMetadata'
 import {
   Box,
   Flex,
@@ -8,7 +9,6 @@ import {
   IconButton,
   Link as ChakraLink,
   Button,
-  Text,
   Container,
   useDisclosure,
   Stack,
@@ -55,7 +55,7 @@ export default function NavBar() {
           />
           <HStack alignItems={'center'}>
             <Flex alignItems={'center'}>
-              <Link href="/projects" aria-label="all projects" passHref width={['fit-content']}>
+              <Link href="/" aria-label={siteMetadata.author} passHref width={['fit-content']}>
                 <ChakraLink textDecoration={'none !important'}>
                   <Button
                     rounded={'full'}
@@ -68,7 +68,7 @@ export default function NavBar() {
                     width="100%"
                   >
                     <Flex justify="center" align="center" gap="3">
-                      <>Shahzada Ali Hassan</>
+                      <>{siteMetadata.author}</>
                     </Flex>
                   </Button>
                 </ChakraLink>
