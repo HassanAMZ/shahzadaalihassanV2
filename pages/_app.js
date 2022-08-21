@@ -29,6 +29,11 @@ export default function App({ Component, pageProps }) {
     <>
       <Head>
         <link rel="canonical" href={canonicalUrl} />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta
+          name="google-site-verification"
+          content="LOmgcQtS3n4SzA1wUbtCUBeOyVp1Kq8d4XWHvWAf51Y"
+        />
       </Head>
       {/* Google Tag Manager - Global base code */}
       <Script
@@ -47,13 +52,6 @@ export default function App({ Component, pageProps }) {
       <MailChimpHeadCode />
       <ThemeProvider attribute="class">
         <ChakraProvider theme={theme}>
-          <Head>
-            <meta content="width=device-width, initial-scale=1" name="viewport" />
-            <meta
-              name="google-site-verification"
-              content="LOmgcQtS3n4SzA1wUbtCUBeOyVp1Kq8d4XWHvWAf51Y"
-            />
-          </Head>
           <NavBar />
           <Component {...pageProps} />
           <Footer />

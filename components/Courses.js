@@ -67,7 +67,7 @@ const Courses = ({ posts }) => {
   return (
     <Box>
       <Heading as="h2" py="3" fontSize={['xl']}>
-        Learn Universal Analytics By Google
+        Get the Courses
       </Heading>
       <Grid className="grid grid-cols-1 gap-1">{blogIDs}</Grid>
     </Box>
