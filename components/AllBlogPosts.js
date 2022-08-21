@@ -97,7 +97,7 @@ export default function ListLayout({
                     <Heading as="h1" textTransform="capitalize" fontSize={['xl']}>
                       {title}
                     </Heading>
-                    <Text fontSize={'sm'} fontWeight="light" noOfLines={[2]}>
+                    <Text color={'gray.500'} fontSize={'sm'} fontWeight="light" noOfLines={[2]}>
                       {summary}
                     </Text>
                     <Flex gap="2" py="3" align={'center'}>

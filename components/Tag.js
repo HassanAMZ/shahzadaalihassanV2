@@ -7,7 +7,11 @@ const Tag = ({ text, icon, size }) => {
     return Math.floor(Math.random() * number)
   }
   function randomColor() {
-    return 'rgba(' + random(255) + ',' + random(255) + ',' + random(255) + ',0.2)'
+    var color = '#'
+    for (var i = 0; i < 6; i++) {
+      color += Math.floor(Math.random() * 10)
+    }
+    return color
   }
   return (
     <Box pr="2" py="1">
@@ -26,12 +30,12 @@ const Tag = ({ text, icon, size }) => {
               justifyContent={'center'}
               className="hvr-icon-up"
               alignItems={'center'}
-              fontSize={'xx-small'}
+              fontSize={['xx-small', 'x-small']}
             >
-              <Text textTransform={'uppercase'} mr="2">
+              <Text color={'white'} textTransform={'uppercase'} mr="2">
                 {text.split(' ').join('-')}
               </Text>
-              <Box className="hvr-icon">{icon}</Box>
+              <Box color={'white'}>{icon}</Box>
             </Flex>
           </Button>
         </a>

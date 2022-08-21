@@ -2,13 +2,14 @@ import NextLink from 'next/link'
 import formatDate from '@/lib/utils/formatDate'
 import { Box, Link as ChakraLink, Heading, Flex, Grid } from '@chakra-ui/react'
 import Image from 'next/image'
+
 export default function PopularPost({ posts }) {
   return (
     <Flex direction="column" gap="5">
       <Heading as="h2" py="3" fontSize={['xl']}>
         Popular Posts
       </Heading>
-      {posts.slice(0, 5).map((frontMatter, index) => {
+      {posts.slice(0, 4).map((frontMatter, index) => {
         const { slug, date, title, coverImage } = frontMatter
         return (
           <Box key={index}>
@@ -45,7 +46,12 @@ export default function PopularPost({ posts }) {
                     >
                       {title}
                     </Heading>
-                    <Box as="time" dateTime={date} fontSize={{ sm: 'xs', md: 'sm', lg: 'md' }}>
+                    <Box
+                      color={'gray.500'}
+                      as="time"
+                      dateTime={date}
+                      fontSize={{ sm: 'xs', md: 'sm', lg: 'md' }}
+                    >
                       {formatDate(date)}
                     </Box>
                   </Flex>
