@@ -26,7 +26,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
         <Box>
           <PopularPost posts={posts} initialDisplayPosts={'4'} />
           <CategoryList posts={posts} initialDisplayPosts={'4'} />
-          <SocialProfile/>
+          <SocialProfile />
         </Box>
       </Grid>
     </Container>

@@ -6,9 +6,8 @@ const SocialProfile = ({ posts }) => {
   return (
     <>
       <Heading as="h2" py={[5, 6]} fontSize={['xl']}>
-      Social Profile
+        Social Profile
       </Heading>
-      
     </>
   )
 }
