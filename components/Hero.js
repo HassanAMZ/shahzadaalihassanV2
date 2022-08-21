@@ -7,8 +7,8 @@ export default function Hero() {
   return (
     <>
       <Grid
-        templateColumns={{ base: '1fr', md: '1fr 1fr' }}
-        templateAreas={{ base: "'two' 'one' ", md: "'one two'" }}
+        templateColumns={{ base: '1fr', md: '1fr 1fr 1fr' }}
+        templateAreas={{ base: "'two' 'one' ", md: "'one one two'" }}
       >
         <Flex
           align={{ base: 'center', md: 'flex-start' }}

@@ -5,6 +5,7 @@ import siteMetadata from '@/data/siteMetadata'
 import {
   Box,
   Flex,
+  Text,
   HStack,
   IconButton,
   Link as ChakraLink,
@@ -43,7 +44,7 @@ export default function NavBar() {
         border={'teal 2px solid'}
         borderRadius="25px"
       >
-        <Flex alignItems={'center'} justifyContent={'space-between'}>
+        <Flex alignItems={'center'} justifyContent={'space-between'} gap="2">
           <IconButton
             rounded="full"
             color={'teal'}
@@ -53,28 +54,26 @@ export default function NavBar() {
             display={{ md: 'none' }}
             onClick={isOpen ? onClose : onOpen}
           />
-          <HStack alignItems={'center'}>
-            <Flex alignItems={'center'}>
-              <Link href="/" aria-label={siteMetadata.author} passHref width={['fit-content']}>
-                <ChakraLink textDecoration={'none !important'}>
-                  <Button
-                    rounded={'full'}
-                    size={'md'}
-                    fontWeight={'normal'}
-                    colorScheme={'teal'}
-                    color="teal"
-                    bg={'white'}
-                    _hover={{ bg: 'teal', color: 'white' }}
-                    width="100%"
-                  >
-                    <Flex justify="center" align="center" gap="3">
-                      <>{siteMetadata.author}</>
-                    </Flex>
-                  </Button>
-                </ChakraLink>
-              </Link>
-            </Flex>
-          </HStack>
+          <Flex alignItems={'center'}>
+            <Link href="/" aria-label={siteMetadata.author} passHref width={['fit-content']}>
+              <ChakraLink textDecoration={'none !important'}>
+                <Button
+                  rounded={'full'}
+                  size={'md'}
+                  fontWeight={'normal'}
+                  colorScheme={'teal'}
+                  color="teal"
+                  bg={'white'}
+                  _hover={{ bg: 'teal', color: 'white' }}
+                  width="100%"
+                >
+                  <Flex justify="center" align="center">
+                    {siteMetadata.author}
+                  </Flex>
+                </Button>
+              </ChakraLink>
+            </Link>
+          </Flex>
           <HStack as={'nav'} display={{ base: 'none', md: 'flex' }}>
             {NavLinks}
           </HStack>
@@ -91,9 +90,9 @@ export default function NavBar() {
                   width="100%"
                   pl={0}
                   py={0}
-                  pr={3}
+                  pr={{ base: '0', sm: '3' }}
                 >
-                  <Flex justify="center" align="center" gap="3">
+                  <Flex justify="center" align="center" gap={{ base: '0', sm: '1' }}>
                     <Box
                       bgColor={'white'}
                       borderRadius="100px"
@@ -111,7 +110,7 @@ export default function NavBar() {
                         objectFit="contain"
                       />
                     </Box>
-                    <>Hire Me</>
+                    <Text display={{ base: 'none', sm: 'block' }}>Hire Me</Text>
                   </Flex>
                 </Button>
               </ChakraLink>
