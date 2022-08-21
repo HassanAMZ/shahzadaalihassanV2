@@ -12,7 +12,7 @@ const CategoryList = ({ tags }) => {
         <Flex flexWrap={'wrap'}>
           {Object.keys(tags).length === 0 && 'No tags found.'}
           {sortedTags.map((tag, index) => {
-            if (tags[tag] > 2) {
+            if (tags[tag] > 1) {
               return (
                 <Box key={tag}>
                   <Flex justifyContent={'center'} alignItems={'center'}>
