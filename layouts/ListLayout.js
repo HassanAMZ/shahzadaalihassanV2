@@ -8,7 +8,8 @@ export default function ListLayout({ posts, title, tags, initialDisplayPosts = [
   const randomGenerator = () => {
     return Math.floor(Math.random() * (2 - 0 + 1)) + 0
   }
-
+  // Capitalize first letter and convert space to dash
+  const pageTitle = title.toUpperCase().split('-').join(' ')
   return (
     <Container maxW="container.xl">
       <Grid
@@ -21,10 +22,11 @@ export default function ListLayout({ posts, title, tags, initialDisplayPosts = [
           posts={posts}
           initialDisplayPosts={initialDisplayPosts}
           pagination={pagination}
+          title={pageTitle}
           randomGenerator={randomGenerator}
         />
         <Box>
-          <PopularPost posts={posts} initialDisplayPosts={'4'} tags={tags} />
+          <PopularPost posts={posts} title={pageTitle} initialDisplayPosts={'4'} tags={tags} />
           <CategoryList posts={posts} initialDisplayPosts={'4'} tags={tags} />
           <SocialProfile />
         </Box>

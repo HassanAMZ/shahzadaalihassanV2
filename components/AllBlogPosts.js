@@ -24,6 +24,7 @@ export default function ListLayout({
   initialDisplayPosts = [],
   pagination,
   randomGenerator,
+  title,
 }) {
   const [searchValue, setSearchValue] = useState('')
 
@@ -40,7 +41,7 @@ export default function ListLayout({
     <>
       <Container maxW="container.xl" m="0" p="0">
         <Heading as="h2" py="3" fontSize={['xl']}>
-          All Posts
+          {title}
         </Heading>
         <Box py={['5', '6']}>
           <InputGroup size="md">

@@ -1,7 +1,5 @@
-import { Box, Link as ChakraLink, Heading, Flex, Button } from '@chakra-ui/react'
+import { Box, Heading, Flex } from '@chakra-ui/react'
 import Tag from '@/components/Tag'
-import { NextLink } from 'next/link'
-import { SearchIcon, ExternalLinkIcon } from '@chakra-ui/icons'
 
 const CategoryList = ({ tags }) => {
   const sortedTags = Object.keys(tags).sort((a, b) => tags[b] - tags[a])
