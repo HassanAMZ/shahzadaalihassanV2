@@ -1,23 +1,31 @@
-import { Box, Link as ChakraLink, Heading, Flex, Grid } from '@chakra-ui/react'
+import { Box, Link as ChakraLink, Heading, Flex, Button } from '@chakra-ui/react'
 import Tag from '@/components/Tag'
+import { NextLink } from 'next/link'
 import { SearchIcon, ExternalLinkIcon } from '@chakra-ui/icons'
 
-const CategoryList = ({ posts }) => {
+const CategoryList = ({ tags }) => {
+  const sortedTags = Object.keys(tags).sort((a, b) => tags[b] - tags[a])
   return (
     <>
-      <Heading as="h2" py={[5, 6]} fontSize={['xl']}>
-        Category List
-      </Heading>
-      {posts.slice(1, 2).map((frontMatter, index) => {
-        const { slug, date, title, coverImage, tags } = frontMatter
-        return (
-          <Flex key={index} flexWrap={'wrap'}>
-            {tags.map((tag) => (
-              <Tag key={tag} text={tag} icon={<ExternalLinkIcon />} />
-            ))}
-          </Flex>
-        )
-      })}
+      <Flex direction={'column'} justifyContent={'left'} my={4}>
+        <Heading as="h2" py="3" fontSize={['xl']}>
+          Top Tags
+        </Heading>
+        <Flex flexWrap={'wrap'}>
+          {Object.keys(tags).length === 0 && 'No tags found.'}
+          {sortedTags.map((tag, index) => {
+            if (tags[tag] > 2) {
+              return (
+                <Box key={tag}>
+                  <Flex justifyContent={'center'} alignItems={'center'}>
+                    <Tag text={tag} key={index} icon={` (${tags[tag]})`} />
+                  </Flex>
+                </Box>
+              )
+            }
+          })}
+        </Flex>
+      </Flex>
     </>
   )
 }

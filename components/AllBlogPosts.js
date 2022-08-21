@@ -119,7 +119,7 @@ export default function ListLayout({
 
                       <Flex direction={['column']} fontSize={['xs', 'sm']} gap="0">
                         <Text fontWeight={'bold'}>{author}</Text>
-                        <Box    color={'gray.500'} as="time" dateTime={date}>
+                        <Box color={'gray.500'} as="time" dateTime={date}>
                           {formatDate(date)}
                         </Box>
                       </Flex>

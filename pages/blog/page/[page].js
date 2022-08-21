@@ -3,6 +3,7 @@ import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import ListLayout from '@/layouts/ListLayout'
 import { POSTS_PER_PAGE } from '../../blog'
+import { getAllTags } from '@/lib/tags'
 
 export async function getStaticPaths() {
   const totalPosts = await getAllFilesFrontMatter('blog')
@@ -18,6 +19,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
+  const tags = await getAllTags('blog')
   const {
     params: { page },
   } = context
@@ -37,15 +39,17 @@ export async function getStaticProps(context) {
       posts,
       initialDisplayPosts,
       pagination,
+      tags,
     },
   }
 }
 
-export default function PostPage({ posts, initialDisplayPosts, pagination }) {
+export default function PostPage({ posts, initialDisplayPosts, pagination, tags }) {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <ListLayout
+        tags={tags}
         posts={posts}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}
