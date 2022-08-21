@@ -17,6 +17,7 @@ const siteMetadata = {
   facebook: 'https://facebook.com/ShahzadaAliHassan',
   youtube: 'https://www.youtube.com/channel/UC8tapbraiwvk5nnQW0Eqh9g',
   linkedin: 'https://www.linkedin.com/in/hassanamz',
+  upwork: 'https://www.upwork.com/freelancers/~015b35831b56606433',
   instagram: 'https://instagram.com/ShahzadaAliHassan_',
   locale: 'en-US',
   analytics: {
