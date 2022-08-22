@@ -7,8 +7,8 @@ export default function Hero() {
   return (
     <>
       <Grid
-        templateColumns={{ base: '1fr', md: '1fr 1fr 1fr' }}
-        templateAreas={{ base: "'two' 'one' ", md: "'one one two'" }}
+        templateColumns={{ base: '1fr', md: '3fr 2fr' }}
+        templateAreas={{ base: "'two' 'one' ", md: "'one two'" }}
       >
         <Flex
           align={{ base: 'center', md: 'flex-start' }}
@@ -16,6 +16,7 @@ export default function Hero() {
           direction="column"
           rowGap="5"
           gridArea="one"
+          py={{ base: '8', sm: '12', md: '4' }}
         >
           <PortfolioIntroductionSummary />
           <Flex direction={{ md: 'row' }} gap="2" justify={{ base: 'center', md: 'flex-start' }}>
@@ -55,7 +56,7 @@ export default function Hero() {
             </NextLink>
           </Flex>
         </Flex>
-        <Box borderRadius={'10px'} overflow="hidden" borderWidth={'2px'}>
+        <Box overflow="hidden">
           <Image
             src={'/static/images/hero-image.png'}
             layout="responsive"
