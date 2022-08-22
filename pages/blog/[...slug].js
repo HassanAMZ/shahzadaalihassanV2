@@ -1,9 +1,8 @@
 import fs from 'fs'
-import PageTitle from '@/components/PageTitle'
 import generateRss from '@/lib/generate-rss'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { formatSlug, getAllFilesFrontMatter, getFileBySlug, getFiles } from '@/lib/mdx'
-
+import { Heading } from '@chakra-ui/react'
 const DEFAULT_LAYOUT = 'PostLayout'
 
 export async function getStaticPaths() {
@@ -55,12 +54,12 @@ export default function Blog({ post, authorDetails, prev, next }) {
         />
       ) : (
         <div className="mt-24 text-center">
-          <PageTitle>
+          <Heading as="h2" py="3" fontSize={['lg', 'xl']} m="3">
             Under Construction
             <span role="img" aria-label="roadwork sign">
               🚧
             </span>
-          </PageTitle>
+          </Heading>
         </div>
       )}
     </>

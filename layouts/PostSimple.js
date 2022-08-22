@@ -1,12 +1,11 @@
 import Link from '@/components/Link'
-import PageTitle from '@/components/PageTitle'
 import SectionContainer from '@/components/SectionContainer'
 import { BlogSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
 import formatDate from '@/lib/utils/formatDate'
 import Comments from '@/components/comments'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
-
+import { Heading } from '@chakra-ui/react'
 export default function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
   const { date, title } = frontMatter
 
@@ -27,7 +26,9 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                 </div>
               </dl>
               <div>
-                <PageTitle>{title}</PageTitle>
+                <Heading as="h2" py="3" fontSize={['lg', 'xl']} m="3">
+                  {title}
+                </Heading>
               </div>
             </div>
           </header>
