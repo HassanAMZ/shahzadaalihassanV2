@@ -15,7 +15,6 @@ import { useRouter } from 'next/router'
 
 const SignInForm = () => {
   const router = useRouter()
-
   const [user, setUser] = useState({})
 
   onAuthStateChanged(auth, (currentUser) => {
@@ -24,14 +23,13 @@ const SignInForm = () => {
     if (currentUser === null) {
       console.log(currentUser)
     } else {
-      router.push('/')
+      console.log(currentUser)
     }
   })
 
   const onSubmit = async ({ email, password }) => {
     try {
       const user = await signInWithEmailAndPassword(auth, email, password)
-      router.push('/')
       console.log(user)
     } catch (error) {
       console.log(error.message)
@@ -74,7 +72,7 @@ const SignInForm = () => {
           <FormErrorMessage>{errors.password && errors.password.message}</FormErrorMessage>
         </FormControl>
         <Button mt={4} w={['full']} colorScheme="teal" isLoading={isSubmitting} type="submit">
-          Submit
+          Sign In
         </Button>
 
         <Heading as="h4" py="3" fontSize={['xl']}>

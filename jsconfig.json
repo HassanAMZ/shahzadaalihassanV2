@@ -8,6 +8,7 @@
       "@/lib/*": ["lib/*"],
       "@/context/*": ["context/*"],
       "@/firebase/*": ["firebase/*"],
+      "@/contexts/*": ["contexts/*"],
       "@/css/*": ["css/*"]
     }
   }
