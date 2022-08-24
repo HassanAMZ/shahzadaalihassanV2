@@ -1,4 +1,5 @@
 import NextLink from 'next/link'
+import Image from 'next/image'
 import { BlogSEO } from '@/components/SEO'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
@@ -29,14 +30,14 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
         {...frontMatter}
       />
       <ScrollTopAndComment />
-      <Box bgColor={'gray.50'} py="5">
-        <Container maxW="container.xl">
-          <Grid templateRows="repeat(auto-fill, minmax(350px, 30vh))" placeContent={'center'}>
+      <Box m={2}>
+        <Container maxW="container.xl" bgColor={'gray.100'} borderRadius="25px">
+          <Grid placeContent={'center'} py={5}>
             <Flex
               align="center"
               justify={'center'}
               direction="column"
-              gap="5"
+              gap="2"
               textTransform={'capitalize'}
               fontWeight="bold"
             >
@@ -71,7 +72,6 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                 <Flex direction="row" columnGap="2" align={'center'} justify="center">
                   <Box as="span" id="time"></Box>
                   <Text>min read</Text>
-
                   <Box as="span">{` • `}</Box>
                   <GAPageView slug={slug} />
                 </Flex>
@@ -82,13 +82,10 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
       </Box>
 
       <Container maxW="container.xl">
-        <Box as="article" id="singleBlogPost" py="2">
+        <Box as="article" id="singlePost" py="2">
           <Box>
             <Flex direction="column" py="2">
               <Box as="article">{children}</Box>
-
-              <Comments frontMatter={frontMatter} />
-
               <Box>
                 <Box py="2">
                   {(next || prev) && (
@@ -96,42 +93,74 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                       {prev && (
                         <Flex direction="column" align={{ base: 'center', sm: 'start' }} py="2">
                           <NextLink
+                            flex="auto"
                             passHref
-                            href={`/blog/${prev.slug}`}
-                            aria-label="Next Blog"
-                            width={{ base: '100%', sm: 'fit-content' }}
+                            alignSelf=" stretch"
+                            href={`/products/${prev.slug}`}
+                            aria-label="Previous Post"
                           >
                             <ChakraLink textDecoration={'none !important'}>
                               <Button
                                 colorScheme="teal"
                                 size="sm"
-                                w="fit-content"
+                                w="100%"
                                 textTransform={'uppercase'}
                                 variant="solid"
                                 rounded={'full'}
                                 fontWeight={'normal'}
                                 px={6}
                                 bg={'teal.400'}
-                                _hover={{ bg: 'teal.500' }}
+                                _hover={{ bg: 'teal.500', textDecoration: 'none' }}
                                 my="4"
                               >
-                                Previous Article
+                                Previous Post
                               </Button>
                             </ChakraLink>
                           </NextLink>
-                          <NextLink passHref href={`/blog/${prev.slug}`}>
-                            <ChakraLink>
-                              <Text py="2">{prev.title}</Text>
+                          <NextLink passHref href={`/products/${prev.slug}`}>
+                            <ChakraLink px="2" _hover={{ textDecoration: 'none' }}>
+                              <Box borderColor="teal.300" borderWidth="thin" borderRadius={'25px'}>
+                                <Grid
+                                  borderRadius={'25px'}
+                                  overflow="hidden"
+                                  templateRows={'2fr 1fr'}
+                                  templateColumns={{
+                                    base: '250px',
+                                    sm: 'repeat(auto-fill, minmax(250px, 350px))',
+                                  }}
+                                >
+                                  <Image
+                                    src={prev.coverImage}
+                                    layout="responsive"
+                                    width={1920}
+                                    height={1080}
+                                    alt={next.title}
+                                  />
+
+                                  <Flex direction={'column'} justify="center">
+                                    <Heading
+                                      m={2}
+                                      textAlign="center"
+                                      as="h3"
+                                      textTransform="capitalize"
+                                      fontSize="sm"
+                                      overflow="hidden"
+                                    >
+                                      {prev.title}
+                                    </Heading>
+                                  </Flex>
+                                </Grid>
+                              </Box>
                             </ChakraLink>
                           </NextLink>
                         </Flex>
                       )}
                       {next && (
                         <Flex direction="column" align={{ base: 'center', sm: 'end' }} py="2">
-                          <NextLink passHref href={`/blog/${next.slug}`}>
+                          <NextLink passHref href={`/products/${next.slug}`}>
                             <ChakraLink>
                               <Button
-                                w="fit-content"
+                                w="100%"
                                 colorScheme="teal"
                                 size="sm"
                                 textTransform={'uppercase'}
@@ -140,18 +169,47 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                                 fontWeight={'normal'}
                                 px={6}
                                 bg={'teal.400'}
-                                _hover={{ bg: 'teal.500' }}
+                                _hover={{ bg: 'teal.500', textDecoration: 'none' }}
                                 my="4"
                               >
-                                Next Article
+                                Next Post
                               </Button>
                             </ChakraLink>
                           </NextLink>
-                          <NextLink passHref href={`/blog/${next.slug}`}>
-                            <ChakraLink>
-                              <Text py="2" textAlign={'end'}>
-                                {next.title}
-                              </Text>
+                          <NextLink passHref href={`/products/${next.slug}`}>
+                            <ChakraLink _hover={{ textDecoration: 'none' }}>
+                              <Box borderColor="teal.300" borderWidth="thin" borderRadius={'25px'}>
+                                <Grid
+                                  borderRadius={'25px'}
+                                  overflow="hidden"
+                                  templateRows={'2fr 1fr'}
+                                  templateColumns={{
+                                    base: '250px',
+                                    sm: 'repeat(auto-fill, minmax(250px, 350px))',
+                                  }}
+                                >
+                                  <Image
+                                    src={next.coverImage}
+                                    layout="responsive"
+                                    width={1920}
+                                    height={1080}
+                                    alt={next.title}
+                                  />
+
+                                  <Flex direction={'column'} justify="center">
+                                    <Heading
+                                      m={2}
+                                      textAlign="center"
+                                      as="h3"
+                                      textTransform="capitalize"
+                                      fontSize="sm"
+                                      overflow="hidden"
+                                    >
+                                      {next.title}
+                                    </Heading>
+                                  </Flex>
+                                </Grid>
+                              </Box>
                             </ChakraLink>
                           </NextLink>
                         </Flex>
@@ -160,7 +218,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                   )}
                 </Box>
 
-                <NextLink passHref href="/blog">
+                <NextLink passHref href="/products">
                   <ChakraLink>
                     <Button
                       colorScheme="teal"
@@ -172,10 +230,10 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                       fontWeight={'normal'}
                       px={6}
                       bg={'teal.400'}
-                      _hover={{ bg: 'teal.500' }}
+                      _hover={{ bg: 'teal.500', textDecoration: 'none' }}
                       my="4"
                     >
-                      <Text py="2">&larr; Back to the blogs</Text>
+                      <Text py="2">&larr; Back to the products</Text>
                     </Button>
                   </ChakraLink>
                 </NextLink>
