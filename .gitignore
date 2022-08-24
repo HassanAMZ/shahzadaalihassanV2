@@ -36,6 +36,7 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 .env
+process.env
 
 # PWA files
 **/public/sw.js

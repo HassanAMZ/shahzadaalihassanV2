@@ -1,9 +1,12 @@
 import { initializeApp } from 'firebase/app'
+import { getAnalytics, isSupported } from 'firebase/analytics'
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
 
 import firebaseConfig from '@/firebase/firebaseConfig'
 
 const app = initializeApp(firebaseConfig)
+
+const analytics = isSupported().then((yes) => (yes ? getAnalytics(app) : null))
 
 export const auth = getAuth(app)
 const provider = new GoogleAuthProvider()

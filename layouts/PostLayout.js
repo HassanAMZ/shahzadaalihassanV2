@@ -4,6 +4,7 @@ import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 import GAPageView from '@/components/GAPageView'
+import Comments from '@/components/comments'
 import {
   Box,
   Heading,
@@ -86,7 +87,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
             <Flex direction="column" py="2">
               <Box as="article">{children}</Box>
 
-              {/* <Comments frontMatter={frontMatter} /> */}
+              <Comments frontMatter={frontMatter} />
 
               <Box>
                 <Box py="2">
