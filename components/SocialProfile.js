@@ -23,10 +23,13 @@ const SocialLinks = ({ name, router, icon }) => {
     </NextLink>
   )
 }
-const SocialProfile = ({ posts }) => {
+const SocialProfile = ({ posts, title }) => {
   return (
     <>
-      <Stack gap={2}>
+      <Flex gap={2} direction="column" justify={'space-between'}>
+        <Heading as="h2" py={[5, 6]} fontSize={['xl']}>
+          {title}
+        </Heading>
         <SocialLinks name={'Upwork'} router={siteMetadata.upwork} icon={<SiUpwork />} />
         <SocialLinks
           name={'Email'}
@@ -39,7 +42,7 @@ const SocialProfile = ({ posts }) => {
         <SocialLinks name={'Linkedin'} router={siteMetadata.linkedin} icon={<FaLinkedin />} />
         <SocialLinks name={'Instagram'} router={siteMetadata.instagram} icon={<FaInstagram />} />
         <SocialLinks name={'Github'} router={siteMetadata.github} icon={<FaGithub />} />
-      </Stack>
+      </Flex>
     </>
   )
 }

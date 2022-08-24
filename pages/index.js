@@ -7,8 +7,10 @@ import RecentPosts from '@/components/RecentPosts'
 import { getAllTags } from '@/lib/tags'
 import PreviousClient from '@/components/PreviousClient'
 import Courses from '@/components/Courses'
-import { Flex, Box, Heading, Button, Container, Link as ChakraLink } from '@chakra-ui/react'
+import { Flex, Box, Heading, Button, Container, Grid, Link as ChakraLink } from '@chakra-ui/react'
 import Hero from '@/components/Hero'
+import SocialProfile from '@/components/SocialProfile'
+import PopularPost from '@/components/PopularPost'
 export const POSTS_PER_PAGE = 5
 const MAX_DISPLAY = 5
 
@@ -35,8 +37,8 @@ export default function Home({ posts, initialDisplayPosts, pagination, tags }) {
         <Hero />
       </Container>
 
-      <Box my="5" bgColor={'gray.50'}>
-        <Container py={5} maxW="container.xl">
+      <Box m={2}>
+        <Container py={5} bgColor={'gray.100'} borderRadius="25px" maxW="container.xl">
           <Heading as="h2" py="3" fontSize={['xl']}>
             Recent Web Analytics Projects
           </Heading>
@@ -46,9 +48,14 @@ export default function Home({ posts, initialDisplayPosts, pagination, tags }) {
       <Container maxW="container.xl" py="5">
         <Courses posts={posts} />
       </Container>
-
-      <Box bgColor={'gray.50'}>
-        <Container maxW="container.xl">
+      <Container maxW="container.xl" py="5">
+        <Grid templateColumns={{ base: '1fr', md: '3fr 2fr' }} gap={5}>
+          <PopularPost posts={posts} title="Popular Posts" />
+          <SocialProfile title="Social Profiles" />
+        </Grid>
+      </Container>
+      <Box m={2}>
+        <Container bgColor={'gray.100'} borderRadius="25px" maxW="container.xl">
           <RecentPosts
             posts={posts}
             initialDisplayPosts={initialDisplayPosts}
@@ -93,7 +100,7 @@ export default function Home({ posts, initialDisplayPosts, pagination, tags }) {
             <Flex flexWrap={'wrap'}>
               {Object.keys(tags).length === 0 && 'No tags found.'}
               {sortedTags.map((tag, index) => {
-                if (tags[tag] > 2) {
+                if (tags[tag] > 1) {
                   return (
                     <Box key={tag}>
                       <Flex justifyContent={'center'} alignItems={'center'}>

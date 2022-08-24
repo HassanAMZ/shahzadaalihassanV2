@@ -9,7 +9,7 @@ export default function PopularPost({ posts, title }) {
       <Heading as="h2" py="3" fontSize={['xl']}>
         Popular Post
       </Heading>
-      {posts.slice(0, 4).map((frontMatter, index) => {
+      {posts.slice(0, 5).map((frontMatter, index) => {
         const { slug, date, title, coverImage } = frontMatter
         return (
           <Box key={index}>
