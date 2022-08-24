@@ -50,9 +50,9 @@ const siteMetadata = {
       metadata: '0',
       // theme example: light, dark, dark_dimmed, dark_high_contrast
       // transparent_dark, preferred_color_scheme, custom
-      theme: 'dark',
+      theme: 'preferred_color_scheme',
       // theme when dark mode
-      darkTheme: 'dark',
+      darkTheme: 'preferred_color_scheme',
       // If the theme option above is set to 'custom`
       // please provide a link below to your custom theme css file.
       // example: https://giscus.app/themes/custom_example.css
