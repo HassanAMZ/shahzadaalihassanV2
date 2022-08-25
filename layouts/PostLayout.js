@@ -134,7 +134,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                                     layout="responsive"
                                     width={1920}
                                     height={1080}
-                                    alt={next.title}
+                                    alt={prev.title}
                                   />
 
                                   <Flex direction={'column'} justify="center">
