@@ -7,7 +7,7 @@ const TableOfContent = ({ contents }) => (
     </Heading>
     <OrderedList>
       {contents.map((content, index) => {
-        const content_href = `#${content.toString().toLowerCase().replace(' ', '-')}`
+        const content_href = `#${content.toString().toLowerCase().replace('/ */g', '-')}`
         return (
           <a key={index} href={content_href}>
             <ListItem
