@@ -86,6 +86,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
           <Box>
             <Flex direction="column" py="2">
               <Box as="article">{children}</Box>
+              <Comments frontMatter={frontMatter} />
               <Box>
                 <Box py="2">
                   {(next || prev) && (
