@@ -1,5 +1,5 @@
 import GAPageView from '@/components/GAPageView'
-import Link from '@/components/Link'
+import Link from 'next/link'
 import Tag from '@/components/Tag'
 import formatDate from '@/lib/utils/formatDate'
 

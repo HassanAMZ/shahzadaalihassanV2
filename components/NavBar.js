@@ -37,13 +37,8 @@ export default function NavBar() {
     </Link>
   ))
   return (
-    <Container maxW="container.xl">
-      <Box
-        mx={{ base: '0' }}
-        my={{ base: '2', sm: '3' }}
-        border={'teal 2px solid'}
-        borderRadius="25px"
-      >
+    <Box m={2}>
+      <Container maxW="container.xl" border={'teal 2px solid'} borderRadius="25px" px={0}>
         <Flex alignItems={'center'} justifyContent={'space-between'} gap="2">
           <IconButton
             rounded="full"
@@ -122,7 +117,7 @@ export default function NavBar() {
             <Stack>{NavLinks}</Stack>
           </Box>
         ) : null}
-      </Box>
-    </Container>
+      </Container>
+    </Box>
   )
 }
