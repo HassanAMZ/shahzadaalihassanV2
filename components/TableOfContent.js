@@ -5,11 +5,10 @@ const TableOfContent = ({ contents }) => (
     <Heading fontWeight="bold" py="2">
       Table Of Content
     </Heading>
-
     <OrderedList>
       {contents.map((content, index) => {
         return (
-          <a key={index} href={`#${content.toLowerCase().replaceAll(' ', '-')}`}>
+          <a key={index} href={`#${content.toString().toLowerCase().replaceAll(' ', '-')}`}>
             <ListItem
               fontSize={['sm', 'md', 'md']}
               color="teal"
