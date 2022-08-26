@@ -7,15 +7,17 @@ const TableOfContent = ({ contents }) => (
     </Heading>
     <OrderedList>
       {contents.map((content, index) => {
+        const content_href = `#${content.toString().toLowerCase().replaceAll(' ', '-')}`
         return (
-          <a key={index} href={`#${content.toString().toLowerCase().replaceAll(' ', '-')}`}>
+          <a key={index} href={content_href}>
             <ListItem
               fontSize={['sm', 'md', 'md']}
               color="teal"
               fontWeight="semibold"
               textTransform="capitalize"
+              textDecoration="underline"
               textDecorationStyle="dotted"
-              _hover={{ color: 'teal.900', textDecoration: 'underline' }}
+              _hover={{ color: 'teal.900', textDecorationStyle: 'solid' }}
             >
               {content}
             </ListItem>
