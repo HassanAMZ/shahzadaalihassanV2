@@ -97,7 +97,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                             flex="auto"
                             passHref
                             alignSelf=" stretch"
-                            href={`/products/${prev.slug}`}
+                            href={`/blog/${prev.slug}`}
                             aria-label="Previous Post"
                           >
                             <ChakraLink textDecoration={'none !important'}>
@@ -118,7 +118,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                               </Button>
                             </ChakraLink>
                           </NextLink>
-                          <NextLink passHref href={`/products/${prev.slug}`}>
+                          <NextLink passHref href={`/blog/${prev.slug}`}>
                             <ChakraLink px="2" _hover={{ textDecoration: 'none' }}>
                               <Box borderColor="teal.300" borderWidth="thin" borderRadius={'25px'}>
                                 <Grid
@@ -158,7 +158,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                       )}
                       {next && (
                         <Flex direction="column" align={{ base: 'center', sm: 'end' }} py="2">
-                          <NextLink passHref href={`/products/${next.slug}`}>
+                          <NextLink passHref href={`/blog/${next.slug}`}>
                             <ChakraLink>
                               <Button
                                 w="100%"
@@ -177,7 +177,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                               </Button>
                             </ChakraLink>
                           </NextLink>
-                          <NextLink passHref href={`/products/${next.slug}`}>
+                          <NextLink passHref href={`/blog/${next.slug}`}>
                             <ChakraLink _hover={{ textDecoration: 'none' }}>
                               <Box borderColor="teal.300" borderWidth="thin" borderRadius={'25px'}>
                                 <Grid
@@ -219,7 +219,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                   )}
                 </Box>
 
-                <NextLink passHref href="/products">
+                <NextLink passHref href="/blog">
                   <ChakraLink>
                     <Button
                       colorScheme="teal"
@@ -234,7 +234,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                       _hover={{ bg: 'teal.500', textDecoration: 'none' }}
                       my="4"
                     >
-                      <Text py="2">&larr; Back to the products</Text>
+                      <Text py="2">&larr; Back to the blogs</Text>
                     </Button>
                   </ChakraLink>
                 </NextLink>
