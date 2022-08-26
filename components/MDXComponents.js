@@ -30,6 +30,7 @@ export const MDXComponents = {
   h4: (props) => <chakra.h4 fontWeight="bold" py="2" fontSize={['xl', '2xl', '2xl']} {...props} />,
   h5: (props) => <chakra.h5 fontWeight="bold" py="2" fontSize={['xl', '2xl', '2xl']} {...props} />,
   h6: (props) => <chakra.h6 fontWeight="bold" py="2" fontSize={['xl', '2xl', '2xl']} {...props} />,
+  ol: (props) => <chakra.ol {...props} />,
 
   a: (props) => (
     <chakra.a
