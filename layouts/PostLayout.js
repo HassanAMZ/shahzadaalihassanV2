@@ -31,8 +31,24 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
       />
       <ScrollTopAndComment />
       <Box m={2}>
-        <Container maxW="container.xl" bgColor={'gray.100'} borderRadius="25px">
-          <Grid placeContent={'center'} py={5}>
+        <Container
+          _before={{
+            content: '""',
+            position: 'absolute',
+            top: '0px',
+            right: '0px',
+            bottom: '0px',
+            left: '0px',
+            borderRadius: '25px',
+            backgroundColor: 'rgba(0,0,0,0.6)',
+          }}
+          backgroundImage={`url(${coverImage})`}
+          backgroundSize="cover"
+          position="relative"
+          maxW="container.xl"
+          borderRadius="25px"
+        >
+          <Grid color={'white'} placeContent={'center'} py={5} position="relative">
             <Flex
               align="center"
               justify={'center'}
@@ -80,7 +96,6 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
           </Grid>
         </Container>
       </Box>
-
       <Container maxW="container.xl">
         <Box as="article" id="singlePost" py="2">
           <Box>
