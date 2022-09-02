@@ -1,31 +1,36 @@
-import { Heading, OrderedList, ListItem } from '@chakra-ui/react'
+import { Heading, UnorderedList, ListItem, Box, Link } from '@chakra-ui/react'
 
 const TableOfContent = ({ contents }) => (
-  <>
-    <Heading fontWeight="bold" py="2">
+  <Box p={16} backgroundColor="#EDF2F7" borderRadius="25px" maxWidth="fit-content">
+    <Heading fontWeight="bold" py="2" as="h3">
       Table Of Content
     </Heading>
-    <OrderedList>
+    <UnorderedList margin="0">
       {contents.map((content, index) => {
         const content_href = `#${content.toString().toLowerCase().split(' ').join('-')}`
         return (
-          <a key={index} href={content_href}>
+          <Link key={index} href={content_href}>
             <ListItem
               fontSize={['sm', 'md', 'md']}
               color="teal"
               fontWeight="semibold"
               textTransform="capitalize"
-              textDecoration="underline"
-              textDecorationStyle="dotted"
-              _hover={{ color: 'teal.900', textDecorationStyle: 'solid' }}
+              listStyleType="none"
+              px="4"
+              py="1"
+              _hover={{
+                color: 'white',
+                backgroundColor: 'teal',
+                borderRadius: '5px',
+              }}
             >
               {content}
             </ListItem>
-          </a>
+          </Link>
         )
       })}
-    </OrderedList>
-  </>
+    </UnorderedList>
+  </Box>
 )
 
 export default TableOfContent

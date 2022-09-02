@@ -30,6 +30,8 @@ export const MDXComponents = {
   h5: (props) => <chakra.h5 fontWeight="bold" py="2" fontSize={['xl', '2xl', '2xl']} {...props} />,
   h6: (props) => <chakra.h6 fontWeight="bold" py="2" fontSize={['xl', '2xl', '2xl']} {...props} />,
   ol: (props) => <chakra.ol {...props} />,
+  ul: (props) => <chakra.ul {...props} />,
+  li: (props) => <chakra.li {...props} />,
 
   a: (props) => (
     <chakra.a
@@ -39,16 +41,14 @@ export const MDXComponents = {
       textTransform="capitalize"
       textDecoration="underline"
       textDecorationStyle="dotted"
-      _hover={{ color: 'teal.900' }}
+      _hover={{
+        color: 'white',
+        backgroundColor: 'teal',
+        textDecorationStyle: 'solid',
+        borderRadius: '5px',
+      }}
       {...props}
     />
-  ),
-
-  ul: (props) => (
-    <chakra.ul fontSize={['sm', 'md', 'md']} color="teal" fontWeight="semibold" {...props} />
-  ),
-  li: (props) => (
-    <chakra.li fontSize={['sm', 'md', 'md']} color="teal" fontWeight="semibold" {...props} />
   ),
   wrapper: ({ components, layout, ...rest }) => {
     const Layout = require(`../layouts/${layout}`).default
