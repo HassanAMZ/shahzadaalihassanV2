@@ -9,8 +9,8 @@ const Card = ({ title, description, imgSrc, href, pid, price }) => (
         <Image
           alt={title}
           src={imgSrc}
-          width="2750px"
-          height="1850px"
+          width={2750}
+          height={1850}
           layout="responsive"
           objectFit="contain"
         />
