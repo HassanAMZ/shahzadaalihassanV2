@@ -30,7 +30,7 @@ export default function Hero() {
               </svg>
             </a>
           </Link>
-          <h1 className="mb-4 text-4xl font-bold capitalize tracking-tight leading-none dark:text-gray-900 md:text-5xl lg:text-6xl text-white">
+          <h1 className="mb-4 text-5xl font-bold capitalize tracking-tight leading-none dark:text-gray-900 sm:text-6xl lg:text-7xl text-white">
             Top Rated Web Analyts on Upwork
           </h1>
           <p className="mb-8 text-lg font-normal dark:text-gray-500 lg:text-xl sm:px-16 xl:px-48 text-gray-400">

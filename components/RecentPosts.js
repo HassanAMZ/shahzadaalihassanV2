@@ -75,14 +75,6 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                   transform: 'scale(1.01)',
                 }}
               >
-                {/* <Box>
-                  <dt className="sr-only">Published on</dt>
-                  <dd className=" flex flex-row justify-between xl:flex-col text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                    <time dateTime={date}>{formatDate(date)}</time>
-                    <GAPageView slug={slug} />
-                  </dd>
-                </Box> */}
-
                 <Link href={`/blog/${slug}`}>
                   <a>
                     <Flex
@@ -100,7 +92,8 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                         <Box> {orderNumber}</Box>
                         <Heading
                           as="h2"
-                          fontSize={['sm', 'md', 'xl']}
+                          fontWeight={'medium'}
+                          fontSize={['md', 'lg']}
                           textTransform="capitalize"
                           noOfLines={'1'}
                         >
@@ -111,15 +104,6 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                     </Flex>
                   </a>
                 </Link>
-
-                {/* <div className="flex flex-wrap">
-                      {tags.map((tag) => (
-                        <Tag key={tag} text={tag} />
-                      ))}
-                    </div> */}
-                {/* <div className="prose text-sm text-gray-500 max-w-none dark:text-gray-400">
-                    {summary}
-                  </div> */}
               </ListItem>
               <Divider />
             </Box>

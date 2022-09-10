@@ -41,6 +41,7 @@ export default function PopularPost({ posts, title }) {
                   <Flex direction={'column'} justify="center">
                     <Heading
                       as="h1"
+                      fontWeight={'medium'}
                       textTransform="capitalize"
                       fontSize={{ sm: 'xm', md: 'sm', lg: 'md' }}
                     >
