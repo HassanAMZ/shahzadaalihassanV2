@@ -36,24 +36,6 @@ export default function Home({ posts, initialDisplayPosts, pagination, tags }) {
       <Container maxW="container.xl">
         <Hero />
       </Container>
-
-      <Box m={2}>
-        <Container py={5} bgColor={'gray.100'} borderRadius="25px" maxW="container.xl">
-          <Heading as="h2" py="3" fontSize={['xl']}>
-            Recent Web Analytics Projects
-          </Heading>
-          <PreviousClient />
-        </Container>
-      </Box>
-      <Container maxW="container.xl" py="5">
-        <Courses posts={posts} />
-      </Container>
-      <Container maxW="container.xl" py="5">
-        <Grid templateColumns={{ base: '1fr', md: '3fr 2fr' }} gap={5}>
-          <PopularPost posts={posts} title="Popular Posts" />
-          <SocialProfile title="Social Profiles" />
-        </Grid>
-      </Container>
       <Box m={2}>
         <Container bgColor={'gray.100'} borderRadius="25px" maxW="container.xl">
           <RecentPosts
@@ -90,6 +72,15 @@ export default function Home({ posts, initialDisplayPosts, pagination, tags }) {
           )}
         </Container>
       </Box>
+      {/* <Box m={2}>
+        <Container py={5} bgColor={'gray.100'} borderRadius="25px" maxW="container.xl">
+          <Heading as="h2" py="3" fontSize={['xl']}>
+            Recent Web Analytics Projects
+          </Heading>
+          <PreviousClient />
+        </Container>
+      </Box> */}
+
       <Container maxW="container.xl">
         <>
           <Flex direction={'column'} justifyContent={'left'} my={4}>
@@ -138,7 +129,16 @@ export default function Home({ posts, initialDisplayPosts, pagination, tags }) {
               </NextLink>
             </Flex>
           }
-        </>
+        </>{' '}
+        <Container maxW="container.xl" py="5">
+          <Grid templateColumns={{ base: '1fr', md: '3fr 2fr' }} gap={5}>
+            <PopularPost posts={posts} title="Popular Posts" />
+            <SocialProfile title="Social Profiles" />
+          </Grid>
+        </Container>
+        <Container maxW="container.xl" py="5">
+          <Courses posts={posts} />
+        </Container>
       </Container>
     </Box>
   )
