@@ -1,18 +1,18 @@
 const previousClientsData = [
-  'harmon',
   'enhanza',
   'shepherd',
+  'harmon',
   'digitalenergyrevolution',
   'ozeanriesen',
   'cmrd',
-  'startafaq',
   'bearcreekknives',
-  'stepbystep',
   'wbi',
   'equifund',
   'roastycoffee',
-  'figment',
   'waitlistr',
+  'stepbystep',
+  'figment',
+  'startafaq',
 ]
 
 export default previousClientsData
