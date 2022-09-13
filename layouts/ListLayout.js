@@ -11,7 +11,7 @@ export default function ListLayout({ posts, title, tags, initialDisplayPosts = [
   // Capitalize first letter and convert space to dash
   const pageTitle = title.toUpperCase().split('-').join(' ')
   return (
-    <Container maxW="container.xl">
+    <div className="container mx-auto my-3 px-3 rounded-[25px]">
       <Grid
         templateColumns={{ sm: '1fr', md: '3fr 2fr', lg: 'minmax(220px, 2fr) 1fr' }}
         gap={5}
@@ -32,6 +32,6 @@ export default function ListLayout({ posts, title, tags, initialDisplayPosts = [
           <SocialProfile title="Social Profiles" />
         </Box>
       </Grid>
-    </Container>
+    </div>
   )
 }

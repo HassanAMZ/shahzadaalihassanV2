@@ -1,123 +1,74 @@
 import headerNavLinks from '@/data/headerNavLinks'
-import Link from 'next/link'
 import Image from 'next/image'
 import siteMetadata from '@/data/siteMetadata'
-import {
-  Box,
-  Flex,
-  Text,
-  HStack,
-  IconButton,
-  Link as ChakraLink,
-  Button,
-  Container,
-  useDisclosure,
-  Stack,
-} from '@chakra-ui/react'
-import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
-
+import CustomLink from '@/components/CustomLink'
+import { IconButton, useDisclosure } from '@chakra-ui/react'
+import { useState } from 'react'
 export default function NavBar() {
   const { isOpen, onOpen, onClose } = useDisclosure()
   let NavLinks = headerNavLinks.map((link, index) => (
-    <Link key={index} href={link.href} passHref>
-      <ChakraLink textDecoration={'none !important'}>
-        <Box
-          px={2}
-          py={1}
-          color="teal"
-          rounded={'md'}
-          _hover={{
-            bg: 'teal',
-            color: 'white',
-          }}
-        >
-          {link.title}
-        </Box>
-      </ChakraLink>
-    </Link>
+    <CustomLink
+      key={index}
+      href={link.href}
+      className="px-2 py-1 text-teal-600 rounded-md hover:text-white hover:bg-teal-600"
+    >
+      {link.title}
+    </CustomLink>
   ))
   return (
-    <Box m={2}>
-      <Container maxW="container.xl" border={'teal 2px solid'} borderRadius="25px" px={0}>
-        <Flex alignItems={'center'} justifyContent={'space-between'} gap="2">
-          <IconButton
-            rounded="full"
-            color={'teal'}
-            size={'md'}
-            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-            aria-label={'Open Menu'}
-            display={{ md: 'none' }}
+    <header className="mx-1">
+      <div className="container border-2 rounded-[25px] my-2 mx-auto border-teal-500">
+        <div className="flex itmes-center justify-between gap-2">
+          <button
+            type="button"
+            className="h-10 w-10 sm:hidden rounded-full border-teal-600 border-2 bg-teal-600 text-white p-2"
+            aria-label="Toggle Menu"
             onClick={isOpen ? onClose : onOpen}
-          />
-          <Flex alignItems={'center'}>
-            <Link href="/" aria-label={siteMetadata.author} passHref width={['fit-content']}>
-              <ChakraLink textDecoration={'none !important'}>
-                <Button
-                  rounded={'full'}
-                  size={'md'}
-                  fontWeight={'normal'}
-                  colorScheme={'teal'}
-                  color="teal"
-                  bg={'white'}
-                  _hover={{ bg: 'teal', color: 'white' }}
-                  width="100%"
-                >
-                  <Flex justify="center" align="center">
-                    {siteMetadata.author}
-                  </Flex>
-                </Button>
-              </ChakraLink>
-            </Link>
-          </Flex>
-          <HStack as={'nav'} display={{ base: 'none', md: 'flex' }}>
-            {NavLinks}
-          </HStack>
-          <Flex alignItems={'center'}>
-            <Link href="/projects" aria-label="all projects" passHref width={['fit-content']}>
-              <ChakraLink textDecoration={'none !important'}>
-                <Button
-                  rounded={'full'}
-                  size={'md'}
-                  fontWeight={'normal'}
-                  colorScheme={'teal'}
-                  bg={'teal.400'}
-                  _hover={{ bg: 'white', color: 'teal' }}
-                  width="100%"
-                  pl={0}
-                  py={0}
-                  pr={{ base: '0', sm: '3' }}
-                >
-                  <Flex justify="center" align="center" gap={{ base: '0', sm: '1' }}>
-                    <Box
-                      bgColor={'white'}
-                      borderRadius="100px"
-                      width={'40px'}
-                      height="40px"
-                      position="relative"
-                      _hover={{
-                        bg: 'teal',
-                      }}
-                    >
-                      <Image
-                        alt="Shahzada Ali Hassan"
-                        src="/static/images/avatar.png"
-                        layout="fill"
-                        objectFit="contain"
-                      />
-                    </Box>
-                    <Text display={{ base: 'none', sm: 'block' }}>Hire Me</Text>
-                  </Flex>
-                </Button>
-              </ChakraLink>
-            </Link>
-          </Flex>
-        </Flex>
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              className="text-gray-900 dark:text-gray-100"
+            >
+              <path
+                fillRule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </button>
+          <CustomLink
+            href="/"
+            aria-label={siteMetadata.author}
+            className="rounded-full text-teal-600 bg-white hover:bg-teal-600 hover:text-white p-2"
+          >
+            {siteMetadata.author}
+          </CustomLink>
+          <nav className="sm:flex items-center justify-center hidden">{NavLinks}</nav>
+          <div className="flex justify-center items-center">
+            <CustomLink
+              href="/projects"
+              className="flex items-center justify-center gap-1 rounded-full text-white bg-teal-600 hover:bg-white hover:text-teal-600 py-0 sm:pr-3 pl-0"
+            >
+              <div className="bg-white rounded-full w-[40px] h-[40px] relative hover:bg-teal-600">
+                <Image
+                  alt="Shahzada Ali Hassan"
+                  src="/static/images/avatar.png"
+                  layout="fill"
+                  objectFit="contain"
+                />
+              </div>
+              <p className="sm:m-2">Hire Me</p>
+            </CustomLink>
+          </div>
+        </div>
         {isOpen ? (
-          <Box display={{ md: 'none' }}>
-            <Stack>{NavLinks}</Stack>
-          </Box>
+          <button className="flex flex-col md:hidden" onClick={isOpen ? onClose : onOpen}>
+            {NavLinks}
+          </button>
         ) : null}
-      </Container>
-    </Box>
+      </div>
+    </header>
   )
 }

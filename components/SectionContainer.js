@@ -1,4 +1,3 @@
-import { Container } from '@chakra-ui/react'
 export default function SectionContainer({ children }) {
-  return <Container maxW="container.xl">{children}</Container>
+  return <div className="container mx-auto my-3 px-3 rounded-[25px]">{children}</div>
 }

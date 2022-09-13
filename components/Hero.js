@@ -4,11 +4,11 @@ import CustomLink from '@/components/CustomLink'
 import siteMetadata from '@/data/siteMetadata'
 export default function Hero() {
   return (
-    <section className="dark:bg-white bg-gray-900">
+    <section className="dark:bg-white bg-gray-900 container mx-auto p-3">
       <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
         <CustomLink
           href={siteMetadata.upwork}
-          className="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm  dark:text-gray-700 dark:bg-gray-100 rounded-full bg-gray-800 text-white dark:hover:bg-gray-200 hover:bg-gray-700"
+          className="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm  dark:text-gray-600 dark:bg-gray-100 rounded-full bg-gray-800 text-white dark:hover:bg-gray-200 hover:bg-gray-600"
           role="alert"
         >
           <span className="text-xs bg-primary-600 rounded-full text-white px-4 py-1.5 mr-3">
@@ -38,7 +38,7 @@ export default function Hero() {
         <div className="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
           <CustomLink
             href={'/about'}
-            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 dark:focus:ring-primary-300 focus:ring-primary-900"
+            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-primary-600 hover:bg-primary-800 focus:ring-4 dark:focus:ring-primary-300 focus:ring-primary-900"
           >
             <>
               Learn more
@@ -58,7 +58,7 @@ export default function Hero() {
           </CustomLink>
           <CustomLink
             href={'/projects'}
-            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center  dark:text-gray-900 rounded-lg border dark:border-gray-300 dark:hover:bg-gray-100 focus:ring-4 dark:focus:ring-gray-100 text-white border-gray-700 hover:bg-gray-700 focus:ring-gray-800"
+            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center  dark:text-gray-900 rounded-lg border dark:border-gray-300 dark:hover:bg-gray-100 focus:ring-4 dark:focus:ring-gray-100 text-white border-gray-600 hover:bg-gray-600 focus:ring-gray-800"
           >
             Checkout Projects
           </CustomLink>

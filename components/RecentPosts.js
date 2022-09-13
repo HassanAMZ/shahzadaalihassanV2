@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import CustomLink from '@/components/CustomLink'
 import { Box, Heading, Divider, Flex, UnorderedList, ListItem, Button } from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { useState } from 'react'
@@ -75,35 +75,28 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                   transform: 'scale(1.01)',
                 }}
               >
-                <Link href={`/blog/${slug}`}>
-                  <a>
+                <CustomLink href={`/blog/${slug}`}>
+                  <Flex direction="row" alignItems="center" justifyContent="space-between" gap="2">
                     <Flex
                       direction="row"
                       alignItems="center"
                       justifyContent="space-between"
-                      gap="2"
+                      gap="3"
                     >
-                      <Flex
-                        direction="row"
-                        alignItems="center"
-                        justifyContent="space-between"
-                        gap="3"
+                      <Box> {orderNumber}</Box>
+                      <Heading
+                        as="h2"
+                        fontWeight={'medium'}
+                        fontSize={['md', 'lg']}
+                        textTransform="capitalize"
+                        noOfLines={'1'}
                       >
-                        <Box> {orderNumber}</Box>
-                        <Heading
-                          as="h2"
-                          fontWeight={'medium'}
-                          fontSize={['md', 'lg']}
-                          textTransform="capitalize"
-                          noOfLines={'1'}
-                        >
-                          {title}
-                        </Heading>
-                      </Flex>
-                      <ExternalLinkIcon />
+                        {title}
+                      </Heading>
                     </Flex>
-                  </a>
-                </Link>
+                    <ExternalLinkIcon />
+                  </Flex>
+                </CustomLink>
               </ListItem>
               <Divider />
             </Box>

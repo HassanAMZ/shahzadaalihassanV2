@@ -1,6 +1,6 @@
 import { Box, Button, Flex, Text } from '@chakra-ui/react'
 import kebabCase from '@/lib/utils/kebabCase'
-import Link from 'next/link'
+import CustomLink from '@/components/CustomLink'
 
 const Tag = ({ text, icon, size }) => {
   function random(number) {
@@ -15,31 +15,29 @@ const Tag = ({ text, icon, size }) => {
   }
   return (
     <Box pr="2" py="1">
-      <Link href={`/tags/${kebabCase(text)}`}>
-        <a>
-          <Button
-            size="xx-small"
-            fontWeight={'normal'}
-            px={3}
-            py={1}
-            bgColor={randomColor()}
-            _hover={{ bg: 'teal.500', color: 'white' }}
-            borderWidth="1px"
+      <CustomLink href={`/tags/${kebabCase(text)}`}>
+        <Button
+          size="xx-small"
+          fontWeight={'normal'}
+          px={3}
+          py={1}
+          bgColor={randomColor()}
+          _hover={{ bg: 'teal.500', color: 'white' }}
+          borderWidth="1px"
+        >
+          <Flex
+            justifyContent={'center'}
+            className="hvr-icon-up"
+            alignItems={'center'}
+            fontSize={['xx-small', 'x-small']}
           >
-            <Flex
-              justifyContent={'center'}
-              className="hvr-icon-up"
-              alignItems={'center'}
-              fontSize={['xx-small', 'x-small']}
-            >
-              <Text color={'white'} textTransform={'uppercase'} mr="2">
-                {text.split(' ').join('-')}
-              </Text>
-              <Box color={'white'}>{icon}</Box>
-            </Flex>
-          </Button>
-        </a>
-      </Link>
+            <Text color={'white'} textTransform={'uppercase'} mr="2">
+              {text.split(' ').join('-')}
+            </Text>
+            <Box color={'white'}>{icon}</Box>
+          </Flex>
+        </Button>
+      </CustomLink>
     </Box>
   )
 }

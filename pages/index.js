@@ -1,4 +1,5 @@
-import NextLink from 'next/link'
+import CustomLink from '@/components/CustomLink'
+
 import { PageSEO } from '@/components/SEO'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
@@ -30,58 +31,41 @@ export default function Home({ posts, initialDisplayPosts, pagination, tags }) {
   const sortedTags = Object.keys(tags).sort((a, b) => tags[b] - tags[a])
 
   return (
-    <Box>
+    <div className="divide-y">
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
-
-      <Container maxW="container.xl">
-        <Hero />
-      </Container>
-      <Box m={2}>
-        <Container bgColor={'gray.100'} borderRadius="25px" maxW="container.xl">
-          <RecentPosts
-            posts={posts}
-            initialDisplayPosts={initialDisplayPosts}
-            pagination={pagination}
-            title="Recent Posts"
-          />
-          {posts.length > MAX_DISPLAY && (
-            <Flex justifyContent={'flex-end'} py={[2, 3]} display={{ base: 'block', sm: 'flex' }}>
-              <NextLink
-                passHref
-                href="/blog"
-                aria-label="all posts"
-                width={{ base: '100%', sm: 'fit-content' }}
+      <Hero />
+      <div className=" container mx-auto px-3 rounded-[25px] ">
+        <RecentPosts
+          posts={posts}
+          initialDisplayPosts={initialDisplayPosts}
+          pagination={pagination}
+          title="Recent Posts"
+        />
+        {posts.length > MAX_DISPLAY && (
+          <Flex justifyContent={'flex-end'} py={[2, 3]} display={{ base: 'block', sm: 'flex' }}>
+            <CustomLink
+              href="/blog"
+              aria-label="all posts"
+              width={{ base: '100%', sm: 'fit-content' }}
+            >
+              <Button
+                rounded={'full'}
+                size={'lg'}
+                fontWeight={'normal'}
+                px={6}
+                colorScheme={'teal'}
+                bg={'teal.400'}
+                _hover={{ bg: 'teal.500', textDecoration: 'none' }}
+                width="100%"
+                my="4"
               >
-                <ChakraLink>
-                  <Button
-                    rounded={'full'}
-                    size={'lg'}
-                    fontWeight={'normal'}
-                    px={6}
-                    colorScheme={'teal'}
-                    bg={'teal.400'}
-                    _hover={{ bg: 'teal.500', textDecoration: 'none' }}
-                    width="100%"
-                    my="4"
-                  >
-                    All Posts &rarr;
-                  </Button>
-                </ChakraLink>
-              </NextLink>
-            </Flex>
-          )}
-        </Container>
-      </Box>
-      {/* <Box m={2}>
-        <Container py={5} bgColor={'gray.100'} borderRadius="25px" maxW="container.xl">
-          <Heading as="h2" py="3" fontSize={['xl']}>
-            Recent Web Analytics Projects
-          </Heading>
-          <PreviousClient />
-        </Container>
-      </Box> */}
-
-      <Container maxW="container.xl">
+                All Posts &rarr;
+              </Button>
+            </CustomLink>
+          </Flex>
+        )}
+      </div>
+      <div className=" container mx-auto px-3 py-10">
         <>
           <Flex direction={'column'} justifyContent={'left'} my={4}>
             <Heading as="h2" py="3" fontSize={['xl']}>
@@ -105,41 +89,38 @@ export default function Home({ posts, initialDisplayPosts, pagination, tags }) {
           </Flex>
           {
             <Flex justifyContent={'flex-end'} py={[2, 3]} display={{ base: 'block', sm: 'flex' }}>
-              <NextLink
-                passHref
+              <CustomLink
                 href="/tags"
                 aria-label="all posts"
                 width={{ base: '100%', sm: 'fit-content' }}
               >
-                <ChakraLink>
-                  <Button
-                    rounded={'full'}
-                    size={'lg'}
-                    fontWeight={'normal'}
-                    px={6}
-                    colorScheme={'teal'}
-                    bg={'teal.400'}
-                    _hover={{ bg: 'teal.500', textDecoration: 'none' }}
-                    width="100%"
-                    my="2"
-                  >
-                    All Tags &rarr;
-                  </Button>
-                </ChakraLink>
-              </NextLink>
+                <Button
+                  rounded={'full'}
+                  size={'lg'}
+                  fontWeight={'normal'}
+                  px={6}
+                  colorScheme={'teal'}
+                  bg={'teal.400'}
+                  _hover={{ bg: 'teal.500', textDecoration: 'none' }}
+                  width="100%"
+                  my="2"
+                >
+                  All Tags &rarr;
+                </Button>
+              </CustomLink>
             </Flex>
           }
         </>{' '}
-        <Container maxW="container.xl" py="5">
-          <Grid templateColumns={{ base: '1fr', md: '3fr 2fr' }} gap={5}>
-            <PopularPost posts={posts} title="Popular Posts" />
-            <SocialProfile title="Social Profiles" />
-          </Grid>
-        </Container>
-        <Container maxW="container.xl" py="5">
-          <Courses posts={posts} />
-        </Container>
-      </Container>
-    </Box>
+      </div>{' '}
+      <div className=" container mx-auto px-3 py-10">
+        <Grid templateColumns={{ base: '1fr', md: '3fr 2fr' }} gap={5}>
+          <PopularPost posts={posts} title="Popular Posts" />
+          <SocialProfile title="Social Profiles" />
+        </Grid>
+      </div>
+      <div className=" container mx-auto px-3 py-10">
+        <Courses posts={posts} />
+      </div>
+    </div>
   )
 }

@@ -1,26 +1,25 @@
 import { Stack, Flex, Heading, Link as ChakraLink } from '@chakra-ui/react'
 import siteMetadata from '@/data/siteMetadata'
-import NextLink from 'next/link'
+import CustomLink from '@/components/CustomLink'
+
 import { FaInstagram, FaTwitter, FaLinkedin, FaYoutube, FaFacebook, FaGithub } from 'react-icons/fa'
 import { SiUpwork } from 'react-icons/si'
 import { HiOutlineMail } from 'react-icons/hi'
 const SocialLinks = ({ name, router, icon }) => {
   return (
-    <NextLink href={router} aria-label={name} passHref>
-      <ChakraLink target="_blank" rel="noopener noreferrer" textDecoration={'none !important'}>
-        <Flex
-          border={'teal 2px solid'}
-          justifyContent={'center'}
-          alignItems={'center'}
-          gap={'3'}
-          borderRadius="30px"
-          py={1}
-        >
-          {icon}
-          {name}
-        </Flex>
-      </ChakraLink>
-    </NextLink>
+    <CustomLink href={router} aria-label={name}>
+      <Flex
+        border={'teal 2px solid'}
+        justifyContent={'center'}
+        alignItems={'center'}
+        gap={'3'}
+        borderRadius="30px"
+        py={1}
+      >
+        {icon}
+        {name}
+      </Flex>
+    </CustomLink>
   )
 }
 const SocialProfile = ({ posts, title }) => {

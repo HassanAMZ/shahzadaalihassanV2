@@ -1,5 +1,6 @@
 import { Box, Flex, Heading, Image, Text } from '@chakra-ui/react'
-import Link from 'next/link'
+import CustomLink from '@/components/CustomLink'
+
 import { ExternalLinkIcon, LinkIcon } from '@chakra-ui/icons'
 import siteMetadata from '@/data/siteMetadata'
 export default function PortfolioIntroductionSummary() {
@@ -8,21 +9,19 @@ export default function PortfolioIntroductionSummary() {
       <Flex direction={'column'} align={{ base: 'center', md: 'flex-start' }} gap="1">
         <Flex justify={{ base: 'center', md: 'flex-start' }}>
           <Text fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}>Top Rated Freelancer at&nbsp;</Text>
-          <Link href={siteMetadata.upwork} aria-label="Upwork Profile of Shahzada Ali Hassan">
-            <a>
-              <Box textTransform={'uppercase'} fontWeight="bold">
-                <Flex
-                  direction={'row'}
-                  justifyContent="center"
-                  alignItems={'center'}
-                  fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
-                >
-                  <Text pr="1">Upwork</Text>
-                  <ExternalLinkIcon />
-                </Flex>
-              </Box>
-            </a>
-          </Link>
+          <CustomLink href={siteMetadata.upwork} aria-label="Upwork Profile of Shahzada Ali Hassan">
+            <Box textTransform={'uppercase'} fontWeight="bold">
+              <Flex
+                direction={'row'}
+                justifyContent="center"
+                alignItems={'center'}
+                fontSize={{ base: 'xs', sm: 'sm', md: 'md' }}
+              >
+                <Text pr="1">Upwork</Text>
+                <ExternalLinkIcon />
+              </Flex>
+            </Box>
+          </CustomLink>
         </Flex>
         <Heading
           textAlign={{ base: 'center', md: 'left' }}

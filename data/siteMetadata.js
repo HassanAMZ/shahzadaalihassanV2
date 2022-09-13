@@ -1,6 +1,7 @@
 const siteMetadata = {
   title: 'Shahzada Ali Hassan - Top Web Analyst On Upwork',
   author: 'Shahzada Ali Hassan',
+  authorShortName: 'Shahzada A. Hassan',
   headerTitle: 'Shahzada Ali Hassan - Top Web Analyst On Upwork',
   description:
     'A technical web analytics blog about Google Tag Manager and Google Analytics (other related stuff) created and constantly updated by Shahzada ALi Hassan',

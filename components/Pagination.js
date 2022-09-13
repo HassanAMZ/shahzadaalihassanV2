@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import CustomLink from '@/components/CustomLink'
 import { Box, Button, Flex } from '@chakra-ui/react'
 export default function Pagination({ totalPages, currentPage }) {
   const prevPage = parseInt(currentPage) - 1 > 0
@@ -23,7 +23,7 @@ export default function Pagination({ totalPages, currentPage }) {
         </Button>
       )}
       {prevPage && (
-        <Link href={currentPage - 1 === 1 ? `/blog/` : `/blog/page/${currentPage - 1}`} passHref>
+        <CustomLink href={currentPage - 1 === 1 ? `/blog/` : `/blog/page/${currentPage - 1}`}>
           <Button
             rounded={'full'}
             size={'lg'}
@@ -37,7 +37,7 @@ export default function Pagination({ totalPages, currentPage }) {
           >
             Previous
           </Button>
-        </Link>
+        </CustomLink>
       )}
       <span>
         {currentPage} of {totalPages}
@@ -59,7 +59,7 @@ export default function Pagination({ totalPages, currentPage }) {
         </Button>
       )}
       {nextPage && (
-        <Link href={`/blog/page/${currentPage + 1}`} passHref>
+        <CustomLink href={`/blog/page/${currentPage + 1}`}>
           <Button
             rounded={'full'}
             size={'lg'}
@@ -73,7 +73,7 @@ export default function Pagination({ totalPages, currentPage }) {
           >
             Next
           </Button>
-        </Link>
+        </CustomLink>
       )}
     </Flex>
   )

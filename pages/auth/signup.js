@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import CustomLink from '@/components/CustomLink'
 import SignUpForm from '@/components/SignUpForm'
 import { Button, Flex, Text, Heading } from '@chakra-ui/react'
 import { signInWithGoogle } from '@/firebase/firebaseAuth'
@@ -22,9 +22,7 @@ const SignUpPage = () => {
           Already have an account?
         </Text>
         <Button w={['full', '75%']} colorScheme="teal" variant="outline">
-          <Link href="/auth/login">
-            <a>Sign In</a>
-          </Link>
+          <CustomLink href="/auth/login">Sign In</CustomLink>
         </Button>
       </Flex>
     </>

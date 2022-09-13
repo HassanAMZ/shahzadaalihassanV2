@@ -1,8 +1,6 @@
 import { PageSEO } from '@/components/SEO'
 import { Box, Flex, Grid, Heading } from '@chakra-ui/react'
-import Link from 'next/link'
-import Hero from '@/components/Hero'
-import SocialProfile from '@/components/SocialProfile'
+import CustomLink from '@/components/CustomLink'
 export default function AuthorLayout({ children, frontMatter }) {
   const { name } = frontMatter
 

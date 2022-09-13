@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
+import CustomLink from '@/components/CustomLink'
 import { Flex, Grid, GridItem, Box } from '@chakra-ui/react'
 const PreviousClient = () => {
   const clientImageIDs = [

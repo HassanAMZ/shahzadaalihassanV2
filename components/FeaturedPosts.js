@@ -1,5 +1,5 @@
 import GAPageView from '@/components/GAPageView'
-import Link from 'next/link'
+import CustomLink from '@/components/CustomLink'
 import Tag from '@/components/Tag'
 import formatDate from '@/lib/utils/formatDate'
 
@@ -27,9 +27,9 @@ const FeaturedPosts = ({ posts }) => {
 
             <div>
               <h2 className="text-xl font-semibold tracking-tight">
-                <Link href={`/blog/${slug}`} className="text-gray-900 dark:text-gray-100">
+                <CustomLink href={`/blog/${slug}`} className="text-gray-900 dark:text-gray-100">
                   {title}
-                </Link>
+                </CustomLink>
               </h2>
 
               <div className="flex flex-wrap sm:block hidden ">
@@ -44,13 +44,13 @@ const FeaturedPosts = ({ posts }) => {
             </div>
 
             <div className="text-base sm:block hidden font-medium leading-6">
-              <Link
+              <CustomLink
                 href={`/blog/${slug}`}
                 className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                 aria-label={`Read "${title}"`}
               >
                 Read more &rarr;
-              </Link>
+              </CustomLink>
             </div>
           </article>
         )

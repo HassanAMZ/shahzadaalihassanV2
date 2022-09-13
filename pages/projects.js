@@ -8,7 +8,7 @@ const Projects = () => {
   return (
     <>
       <PageSEO title={`Projects - ${siteMetadata.author}`} description={siteMetadata.description} />
-      <Container maxW="container.xl">
+      <div className=" container mx-auto px-3">
         <Heading as="h2" py={[5, 6]} fontSize={['xl']}>
           All Projects
         </Heading>
@@ -33,7 +33,7 @@ const Projects = () => {
             </GridItem>
           ))}
         </Grid>
-      </Container>
+      </div>
     </>
   )
 }

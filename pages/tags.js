@@ -15,7 +15,7 @@ export default function Tags({ tags }) {
   return (
     <>
       <PageSEO title={`Tags - ${siteMetadata.author}`} description="Things I blog about" />
-      <Container maxW="container.xl">
+      <div className=" container mx-auto px-3">
         <Flex direction={'column'} justifyContent={'left'} my={4}>
           <Heading as="h2" py="3" fontSize={['xl']}>
             Top Tags
@@ -34,7 +34,7 @@ export default function Tags({ tags }) {
             })}
           </Flex>
         </Flex>
-      </Container>
+      </div>
     </>
   )
 }
