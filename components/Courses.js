@@ -4,6 +4,7 @@ import Tag from '@/components/Tag'
 import formatDate from '@/lib/utils/formatDate'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { Grid, Flex, Heading, Box, VisuallyHidden, Button, Text, Image } from '@chakra-ui/react'
+import CustomButton from '@/components/CustomButton'
 
 const Courses = ({ posts }) => {
   let coursesIDs = ['00008']
@@ -38,23 +39,10 @@ const Courses = ({ posts }) => {
               </Flex>
             </Box>
             <Box noOfLines={[3]}>{summary}</Box>
-            <Box width={{ base: '100%', sm: 'fit-content' }}>
-              <CustomLink href={`/blog/${slug}`} aria-label={`Read "${title}"`}>
-                <Button
-                  rounded={'full'}
-                  size={'lg'}
-                  fontWeight={'normal'}
-                  px={6}
-                  colorScheme={'teal'}
-                  bg={'teal.400'}
-                  _hover={{ bg: 'teal.500', textDecoration: 'none' }}
-                  width="100%"
-                  my="4"
-                >
-                  Get the course &rarr;
-                </Button>
-              </CustomLink>
-            </Box>
+
+            <CustomLink href={`/blog/${slug}`} aria-label={`Read "${title}"`} className="sm:w-fit">
+              <CustomButton scheme={'solid'}>Get the course &rarr;</CustomButton>
+            </CustomLink>
           </Flex>
         )
       }

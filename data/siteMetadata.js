@@ -11,7 +11,7 @@ const siteMetadata = {
   siteRepo: 'https://github.com/HassanAMZ/ShahzadaAliHassanV2',
   siteLogo: '/static/images/avatar.png',
   image: '/static/images/avatar.png',
-  socialBanner: '/static/images/avatar.png',
+  socialBanner: '/static/images/social-sharing.png',
   email: 'Reactjswebdev@gmail.com',
   github: 'https://github.com/HassanAMZ',
   twitter: 'https://twitter.com/shahzada_A',

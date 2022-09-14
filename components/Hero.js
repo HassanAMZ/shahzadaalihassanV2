@@ -2,6 +2,7 @@ import Image from 'next/image'
 import previousClientsData from '@/data/previousClientsData'
 import CustomLink from '@/components/CustomLink'
 import siteMetadata from '@/data/siteMetadata'
+import CustomButton from '@/components/CustomButton'
 export default function Hero() {
   return (
     <section className="dark:bg-white bg-gray-900 container mx-auto p-3">
@@ -36,11 +37,8 @@ export default function Hero() {
           if you got a return on your investment if you can't measure it?
         </p>
         <div className="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
-          <CustomLink
-            href={'/about'}
-            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-primary-600 hover:bg-primary-800 focus:ring-4 dark:focus:ring-primary-300 focus:ring-primary-900"
-          >
-            <>
+          <CustomLink href={'/about'}>
+            <CustomButton scheme="solid">
               Learn more
               <svg
                 className="ml-2 -mr-1 w-5 h-5"
@@ -54,13 +52,10 @@ export default function Hero() {
                   clipRule="evenodd"
                 ></path>
               </svg>
-            </>
+            </CustomButton>
           </CustomLink>
-          <CustomLink
-            href={'/projects'}
-            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center  dark:text-gray-900 rounded-lg border dark:border-gray-300 dark:hover:bg-gray-100 focus:ring-4 dark:focus:ring-gray-100 text-white border-gray-600 hover:bg-gray-600 focus:ring-gray-800"
-          >
-            Checkout Projects
+          <CustomLink href={'/projects'}>
+            <CustomButton scheme="ghost">Checkout Projects</CustomButton>
           </CustomLink>
         </div>
         <div className="px-4 mx-auto text-center lg:px-36">
