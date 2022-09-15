@@ -1,12 +1,10 @@
 import CustomLink from '@/components/CustomLink'
-
 import { PageSEO } from '@/components/SEO'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import RecentPosts from '@/components/RecentPosts'
 import { getAllTags } from '@/lib/tags'
-import PreviousClient from '@/components/PreviousClient'
 import Courses from '@/components/Courses'
 import { Flex, Box, Heading, Button, Container, Grid, Link as ChakraLink } from '@chakra-ui/react'
 import Hero from '@/components/Hero'
@@ -34,36 +32,8 @@ export default function Home({ posts, initialDisplayPosts, pagination, tags }) {
     <div className="divide-y">
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <Hero />
-      <div className=" container mx-auto px-3 rounded-[25px] ">
-        <RecentPosts
-          posts={posts}
-          initialDisplayPosts={initialDisplayPosts}
-          pagination={pagination}
-          title="Recent Posts"
-        />
-        {posts.length > MAX_DISPLAY && (
-          <Flex justifyContent={'flex-end'} py={[2, 3]} display={{ base: 'block', sm: 'flex' }}>
-            <CustomLink
-              href="/blog"
-              aria-label="all posts"
-              width={{ base: '100%', sm: 'fit-content' }}
-            >
-              <Button
-                rounded={'full'}
-                size={'lg'}
-                fontWeight={'normal'}
-                px={6}
-                colorScheme={'teal'}
-                bg={'teal.400'}
-                _hover={{ bg: 'teal.500', textDecoration: 'none' }}
-                width="100%"
-                my="4"
-              >
-                All Posts &rarr;
-              </Button>
-            </CustomLink>
-          </Flex>
-        )}
+      <div className=" container mx-auto px-3 rounded-[25px] bg-teal-100">
+        <RecentPosts posts={posts} initialDisplayPosts={initialDisplayPosts} title="Recent Posts" />
       </div>
       <div className=" container mx-auto px-3 py-10">
         <>

@@ -19,6 +19,7 @@
     "@fontsource/open-sans": "^4.5.5",
     "@fontsource/raleway": "^4.5.3",
     "@mailchimp/mailchimp_marketing": "^3.0.58",
+    "@tailwindcss/line-clamp": "^0.4.2",
     "caniuse-lite": "^1.0.30001380",
     "esbuild": "^0.12.15",
     "firebase": "^9.6.6",
