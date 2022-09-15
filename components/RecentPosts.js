@@ -1,12 +1,12 @@
 import CustomLink from '@/components/CustomLink'
 import CustomButton from '@/components/CustomButton'
 import { FaArrowRight } from 'react-icons/fa'
-export default function ListLayout({ title, initialDisplayPosts = [] }) {
+export default function RecentPosts({ title, initialDisplayPosts = [] }) {
   return (
-    <section className="p-8  flex-col flex gap-2">
-      <h1 className="mb-4 text-3xl font-bold capitalize tracking-tight leading-none dark:text-gray-900 sm:text-4xl lg:text-5xl text-white">
+    <section className="py-8 flex-col flex gap-2">
+      <h3 className="mb-4 text-3xl font-bold capitalize tracking-tight leading-none dark:text-gray-900 sm:text-4xl lg:text-5xl text-white">
         {title}
-      </h1>
+      </h3>
       {!initialDisplayPosts.length && 'No posts found.'}
       {initialDisplayPosts.map((frontMatter, index) => {
         const { slug, date, title, summary, tags } = frontMatter
@@ -20,7 +20,7 @@ export default function ListLayout({ title, initialDisplayPosts = [] }) {
             <h2 className="line-clamp-1">{title}</h2>
           </CustomLink>
         )
-      })}{' '}
+      })}
       <CustomLink href="/blog" className="w-full sm:w-fit self-end">
         <CustomButton scheme={'solid'}>
           <span className="pr-3">All Posts</span>

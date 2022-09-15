@@ -1,28 +1,21 @@
 import { Stack, Flex, Heading, Link as ChakraLink } from '@chakra-ui/react'
 import siteMetadata from '@/data/siteMetadata'
 import CustomLink from '@/components/CustomLink'
-
 import { FaInstagram, FaTwitter, FaLinkedin, FaYoutube, FaFacebook, FaGithub } from 'react-icons/fa'
 import { SiUpwork } from 'react-icons/si'
 import { HiOutlineMail } from 'react-icons/hi'
+import CustomButton from './CustomButton'
 const SocialLinks = ({ name, router, icon }) => {
   return (
     <CustomLink href={router} aria-label={name}>
-      <Flex
-        border={'teal 2px solid'}
-        justifyContent={'center'}
-        alignItems={'center'}
-        gap={'3'}
-        borderRadius="30px"
-        py={1}
-      >
+      <CustomButton scheme="ghost-solid" customClasses="flex gap-2 items-center justify-center">
         {icon}
         {name}
-      </Flex>
+      </CustomButton>
     </CustomLink>
   )
 }
-const SocialProfile = ({ posts, title }) => {
+const SocialProfile = ({ title }) => {
   return (
     <>
       <Flex gap={2} direction="column" justify={'space-between'}>

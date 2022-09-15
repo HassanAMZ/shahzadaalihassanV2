@@ -7,12 +7,11 @@ export default function AuthorLayout({ children, frontMatter }) {
   return (
     <>
       <PageSEO title={`About - ${name}`} description={`About me - ${name}`} />
-      <Box py="4">
-        {/* <Hero /> */}
+      <Box py="4" px="3">
         <Heading as="h2" py="3" fontSize={['xl']}>
           A Quick Introduction
         </Heading>
-        <Box t>{children}</Box>
+        <Box>{children}</Box>
       </Box>
     </>
   )

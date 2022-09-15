@@ -1,44 +1,15 @@
 import { Box, Button, Flex, Text } from '@chakra-ui/react'
 import kebabCase from '@/lib/utils/kebabCase'
 import CustomLink from '@/components/CustomLink'
+import CustomButton from '@/components/CustomButton'
 
-const Tag = ({ text, icon, size }) => {
-  function random(number) {
-    return Math.floor(Math.random() * number)
-  }
-  function randomColor() {
-    var color = '#'
-    for (var i = 0; i < 6; i++) {
-      color += Math.floor(Math.random() * 10)
-    }
-    return color
-  }
+const Tag = ({ text, icon }) => {
   return (
-    <Box pr="2" py="1">
-      <CustomLink href={`/tags/${kebabCase(text)}`}>
-        <Button
-          size="xx-small"
-          fontWeight={'normal'}
-          px={3}
-          py={1}
-          bgColor={randomColor()}
-          _hover={{ bg: 'teal.500', color: 'white' }}
-          borderWidth="1px"
-        >
-          <Flex
-            justifyContent={'center'}
-            className="hvr-icon-up"
-            alignItems={'center'}
-            fontSize={['xx-small', 'x-small']}
-          >
-            <Text color={'white'} textTransform={'uppercase'} mr="2">
-              {text.split(' ').join('-')}
-            </Text>
-            <Box color={'white'}>{icon}</Box>
-          </Flex>
-        </Button>
-      </CustomLink>
-    </Box>
+    <CustomLink href={`/tags/${kebabCase(text)}`} className="hvr-grow">
+      <CustomButton scheme="ghost-xs">
+        {text.split(' ').join('-')} {icon}
+      </CustomButton>
+    </CustomLink>
   )
 }
 

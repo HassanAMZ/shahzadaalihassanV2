@@ -1,5 +1,4 @@
 import useSWR from 'swr'
-import { Box, Flex } from '@chakra-ui/react'
 
 const GAPageView = ({ slug }) => {
   const { data } = useSWR(
@@ -12,19 +11,10 @@ const GAPageView = ({ slug }) => {
   )
   const views = data?.pageViews || 0
   return (
-    <>
-      <Flex
-        direction="row"
-        justifyContent="center"
-        alignItems="center"
-        width={'fit-content'}
-        gap="1"
-        fontSize={['xs', 'sm']}
-      >
-        <Box>{views}</Box>
-        <Box>Readers</Box>
-      </Flex>
-    </>
+    <div className="flex justify-center items-center">
+      <span className="pr-2">{views}</span>
+      <p>Readers</p>
+    </div>
   )
 }
 export default GAPageView
