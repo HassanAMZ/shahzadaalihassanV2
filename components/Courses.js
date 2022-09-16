@@ -29,7 +29,7 @@ const Courses = ({ posts }) => {
 
             <div className="flex flex-wrap gap-3">
               {tags.map((tag, index) => (
-                <Tag key={index} text={tag} />
+                <Tag key={index} text={tag} customClasses="text-white" />
               ))}
             </div>
 

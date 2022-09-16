@@ -9,8 +9,8 @@ export default function AllTags({ tags }) {
     <section className="py-8 flex-col flex gap-2">
       <h3 className="mb-4 text-3xl font-bold capitalize tracking-tight leading-none dark:text-gray-900 sm:text-4xl lg:text-5xl text-white">
         Top Categories
-      </h3>{' '}
-      <div className="flex flex-wrap gap-3">
+      </h3>
+      <div className="flex flex-wrap gap-2">
         {Object.keys(tags).length === 0 && 'No tags found.'}
         {sortedTags.map((tag, index) => {
           if (tags[tag] > 2) {
@@ -18,12 +18,6 @@ export default function AllTags({ tags }) {
           }
         })}
       </div>
-      <CustomLink href="/tags" className="w-full sm:w-fit self-end">
-        <CustomButton scheme={'solid'}>
-          <span className="pr-3">All Categories</span>
-          <FaArrowRight />
-        </CustomButton>
-      </CustomLink>
     </section>
   )
 }

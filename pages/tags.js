@@ -1,3 +1,4 @@
+import CustomHeading from '@/components/CustomHeading'
 import { PageSEO } from '@/components/SEO'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
@@ -15,25 +16,17 @@ export default function Tags({ tags }) {
   return (
     <>
       <PageSEO title={`Tags - ${siteMetadata.author}`} description="Things I blog about" />
-      <div className=" container mx-auto px-3">
-        <Flex direction={'column'} justifyContent={'left'} my={4}>
-          <Heading as="h2" py="3" fontSize={['xl']}>
-            Top Tags
-          </Heading>
+      <div className=" container mx-auto px-3 py-10">
+        <div className="flex flex-col ">
+          <CustomHeading heading="h3">Top Tags</CustomHeading>
 
-          <Flex flexWrap={'wrap'}>
+          <div className="flex flex-wrap gap-2">
             {Object.keys(tags).length === 0 && 'No tags found.'}
             {sortedTags.map((tag, index) => {
-              return (
-                <Box key={tag}>
-                  <Flex justifyContent={'center'} alignItems={'center'}>
-                    <Tag text={tag} key={index} icon={` (${tags[tag]})`} />
-                  </Flex>
-                </Box>
-              )
+              return <Tag text={tag} key={index} icon={` (${tags[tag]})`} />
             })}
-          </Flex>
-        </Flex>
+          </div>
+        </div>
       </div>
     </>
   )

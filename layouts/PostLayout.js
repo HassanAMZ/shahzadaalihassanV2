@@ -45,11 +45,11 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               {title}
             </Heading>
             {tags && (
-              <Flex wrap="wrap" align="center" justify={'center'}>
+              <div className="flex flex-wrap gap-2 text-white">
                 {tags.map((tag) => (
-                  <Tag key={tag} text={tag} />
+                  <Tag key={tag} text={tag} customClasses="dark:text-white" />
                 ))}
-              </Flex>
+              </div>
             )}
             <Flex
               direction={['column', 'column', 'row', 'row']}

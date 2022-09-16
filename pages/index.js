@@ -8,6 +8,9 @@ import Courses from '@/components/Courses'
 import Hero from '@/components/Hero'
 import SocialProfile from '@/components/SocialProfile'
 import PopularPost from '@/components/PopularPost'
+import CustomLink from '@/components/CustomLink'
+import CustomButton from '@/components/CustomButton'
+import { FaArrowRight } from 'react-icons/fa'
 
 export const POSTS_PER_PAGE = 5
 export async function getStaticProps() {
@@ -32,8 +35,14 @@ export default function Home({ posts, initialDisplayPosts, pagination, tags }) {
       <div className=" container mx-auto px-3 rounded-[25px] bg-teal-100">
         <RecentPosts posts={posts} initialDisplayPosts={initialDisplayPosts} title="Recent Posts" />
       </div>
-      <div className=" container mx-auto px-3 py-10">
+      <div className="flex flex-col container mx-auto px-3 py-10">
         <AllTags tags={tags} />
+        <CustomLink href="/tags" className="w-full sm:w-fit self-end">
+          <CustomButton scheme={'solid'}>
+            <span className="pr-3">All Categories</span>
+            <FaArrowRight />
+          </CustomButton>
+        </CustomLink>
       </div>
       <div className=" container mx-auto px-3 py-10 rounded-[25px] bg-teal-100">
         <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-5">

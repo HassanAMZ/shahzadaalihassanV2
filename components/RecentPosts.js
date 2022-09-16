@@ -1,12 +1,11 @@
 import CustomLink from '@/components/CustomLink'
 import CustomButton from '@/components/CustomButton'
 import { FaArrowRight } from 'react-icons/fa'
+import CustomHeading from '@/components/CustomHeading'
 export default function RecentPosts({ title, initialDisplayPosts = [] }) {
   return (
     <section className="py-8 flex-col flex gap-2">
-      <h3 className="mb-4 text-3xl font-bold capitalize tracking-tight leading-none dark:text-gray-900 sm:text-4xl lg:text-5xl text-white">
-        {title}
-      </h3>
+      <CustomHeading heading="h3">{title}</CustomHeading>
       {!initialDisplayPosts.length && 'No posts found.'}
       {initialDisplayPosts.map((frontMatter, index) => {
         const { slug, date, title, summary, tags } = frontMatter

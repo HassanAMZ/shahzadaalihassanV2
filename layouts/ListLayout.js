@@ -1,7 +1,7 @@
 import { Box, Heading, Container, Grid, Link as ChakraLink, Button, Flex } from '@chakra-ui/react'
 import AllBlogPosts from '@/components/AllBlogPosts'
 import PopularPost from '@/components/PopularPost'
-import CategoryList from '@/components/CategoryList'
+import AllTags from '@/components/AllTags'
 import SocialProfile from '@/components/SocialProfile'
 
 export default function ListLayout({ posts, title, tags, initialDisplayPosts = [], pagination }) {
@@ -12,12 +12,7 @@ export default function ListLayout({ posts, title, tags, initialDisplayPosts = [
   const pageTitle = title.toUpperCase().split('-').join(' ')
   return (
     <div className="container mx-auto my-3 px-3 rounded-[25px]">
-      <Grid
-        templateColumns={{ sm: '1fr', md: '3fr 2fr', lg: 'minmax(220px, 2fr) 1fr' }}
-        gap={5}
-        m="0"
-        py={[5, 6]}
-      >
+      <div className="grid gap-5 gird-cols-1 md:grid-cols-[3fr_2fr] lg:grid-cols-[minmax(220px,_2fr)_1fr]">
         <AllBlogPosts
           posts={posts}
           initialDisplayPosts={initialDisplayPosts}
@@ -25,13 +20,12 @@ export default function ListLayout({ posts, title, tags, initialDisplayPosts = [
           title={pageTitle}
           randomGenerator={randomGenerator}
         />
-        <Box>
+        <div>
           <PopularPost posts={posts} title={pageTitle} initialDisplayPosts={'4'} tags={tags} />
-          <CategoryList posts={posts} initialDisplayPosts={'4'} tags={tags} />
-
+          <AllTags tags={tags} />
           <SocialProfile title="Social Profiles" />
-        </Box>
-      </Grid>
+        </div>
+      </div>
     </div>
   )
 }

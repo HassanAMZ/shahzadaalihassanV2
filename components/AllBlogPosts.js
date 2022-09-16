@@ -59,7 +59,7 @@ export default function ListLayout({ posts, initialDisplayPosts = [], pagination
           {displayPosts.map((frontMatter, index) => {
             const { slug, date, title, summary, tags, coverImage } = frontMatter
             return (
-              <Grid gap="5" className="hvr-float" key={index} justify={'space-between'}>
+              <Grid gap="5" className="hvr-grow" key={index} justify={'space-between'}>
                 <CustomLink href={`/blog/${slug}`}>
                   <Box borderRadius={'25px'} overflow="hidden">
                     <Image
@@ -71,11 +71,11 @@ export default function ListLayout({ posts, initialDisplayPosts = [], pagination
                     />
                   </Box>
                 </CustomLink>
-                <Flex direction={'row'} flexWrap="wrap">
+                <div className="flex flex-wrap gap-2">
                   {tags.slice(0, 3).map((tag) => (
-                    <Tag key={tag} text={tag} icon={<ExternalLinkIcon />} />
+                    <Tag key={tag} text={tag} />
                   ))}
-                </Flex>
+                </div>
                 <CustomLink href={`/blog/${slug}`} key={index}>
                   <Heading as="h1" textTransform="capitalize" fontSize={['xl']}>
                     {title}

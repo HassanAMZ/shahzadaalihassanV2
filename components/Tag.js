@@ -3,10 +3,10 @@ import kebabCase from '@/lib/utils/kebabCase'
 import CustomLink from '@/components/CustomLink'
 import CustomButton from '@/components/CustomButton'
 
-const Tag = ({ text, icon }) => {
+const Tag = ({ text, icon, customClasses }) => {
   return (
     <CustomLink href={`/tags/${kebabCase(text)}`} className="hvr-grow">
-      <CustomButton scheme="ghost-xs">
+      <CustomButton scheme="ghost-xs" customClasses={customClasses}>
         {text.split(' ').join('-')} {icon}
       </CustomButton>
     </CustomLink>
