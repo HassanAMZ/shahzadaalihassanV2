@@ -50,7 +50,9 @@ const CustomHeading = ({ heading, children, customClasses, ...rest }) => {
       </h4>
     )
   }
+
   let classes = `${Heading}   ${customClasses}`
+
   return (
     <h3 {...rest} className={classes}>
       {children}
