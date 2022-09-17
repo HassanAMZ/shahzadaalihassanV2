@@ -5,6 +5,7 @@ import Youtube from './youtube.svg'
 import Linkedin from './linkedin.svg'
 import Twitter from './twitter.svg'
 import Instagram from './instagram.svg'
+import CustomLink from '@/components/CustomLink'
 // Icons taken from: https://simpleicons.org/
 
 const components = {
@@ -24,15 +25,10 @@ const SocialIcon = ({ kind, href }) => {
   const SocialSvg = components[kind]
 
   return (
-    <a
-      className="text-sm text-gray-500 transition hover:text-gray-600"
-      target="_blank"
-      rel="noopener noreferrer"
-      href={href}
-    >
+    <CustomLink className="text-sm text-gray-500 transition hover:text-gray-600" href={href}>
       {/* <span className="text-white">{kind}</span> */}
       <SocialSvg width="30px" />
-    </a>
+    </CustomLink>
   )
 }
 

@@ -1,22 +1,8 @@
-import CustomLink from '@/components/CustomLink'
-import Tag from '@/components/Tag'
 import Pagination from '@/components/Pagination'
-import formatDate from '@/lib/utils/formatDate'
+import CustomHeading from '@/components/CustomHeading'
 import { useState } from 'react'
-import {
-  Box,
-  Grid,
-  Heading,
-  Input,
-  InputGroup,
-  InputRightElement,
-  Flex,
-  Container,
-  Text,
-} from '@chakra-ui/react'
-import { image as AuthorImage, author } from '@/data/siteMetadata'
-import { SearchIcon, ExternalLinkIcon } from '@chakra-ui/icons'
-import Image from 'next/image'
+import { FaSearch } from 'react-icons/fa'
+import PostCard from '@/components/PostCart'
 
 export default function ListLayout({ posts, initialDisplayPosts = [], pagination, title }) {
   const [searchValue, setSearchValue] = useState('')
@@ -33,85 +19,34 @@ export default function ListLayout({ posts, initialDisplayPosts = [], pagination
   return (
     <>
       <div className="container mx-auto px-3">
-        <Heading as="h2" py="3" fontSize={['xl']}>
+        <CustomHeading heading="h3" customClasses={'pt-4'}>
           {title}
-        </Heading>
-        <Box py={['5', '6']}>
-          <InputGroup size="md">
-            <Input
-              type="text"
+        </CustomHeading>
+        <div className="pb-4">
+          <div className="mb-2 text-sm font-medium dark:text-gray-900 sr-only text-gray-300">
+            Search
+          </div>
+          <div className="relative">
+            <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+              <FaSearch />
+            </div>
+            <input
               onChange={(e) => setSearchValue(e.target.value)}
-              aria-label="Search Blog Post"
-              placeholder="Search Blog Post"
-              borderColor={'teal'}
-              bgColor="white"
-              color="teal"
-              fontWeight={'bold'}
+              type="search"
+              id="default-search"
+              className="block pl-10 w-full text-sm dark:text-gray-900 dark:bg-gray-50 rounded-full border dark:border-gray-300 dark:focus:ring-teal-500 dark:focus:border-teal-500 bg-gray-700 border-gray-600 dark:placeholder-gray-400 text-white focus:ring-teal-500 focus:border-teal-500"
+              placeholder="Search Graphic design, Web Analytics..."
+              required
             />
-            <InputRightElement width="2rem">
-              <SearchIcon color="teal" />
-            </InputRightElement>
-          </InputGroup>
-        </Box>
+          </div>
+        </div>
 
-        <Grid templateColumns="repeat(auto-fit, minmax(300px, 1fr))" gap={6} m="0">
+        <div className="grid grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))] gap-6 justify-items-center">
           {!filteredBlogPosts.length && 'No posts found.'}
           {displayPosts.map((frontMatter, index) => {
-            const { slug, date, title, summary, tags, coverImage } = frontMatter
-            return (
-              <Grid gap="5" className="hvr-grow" key={index} justify={'space-between'}>
-                <CustomLink href={`/blog/${slug}`}>
-                  <Box borderRadius={'25px'} overflow="hidden">
-                    <Image
-                      src={coverImage}
-                      layout="responsive"
-                      width={1920}
-                      height={1080}
-                      alt={title}
-                    />
-                  </Box>
-                </CustomLink>
-                <div className="flex flex-wrap gap-2">
-                  {tags.slice(0, 3).map((tag) => (
-                    <Tag key={tag} text={tag} />
-                  ))}
-                </div>
-                <CustomLink href={`/blog/${slug}`} key={index}>
-                  <Heading as="h1" textTransform="capitalize" fontSize={['xl']}>
-                    {title}
-                  </Heading>
-                  <Text color={'gray.500'} fontSize={'sm'} fontWeight="light" noOfLines={[2]}>
-                    {summary}
-                  </Text>
-                  <Flex gap="2" py="3" align={'center'}>
-                    <Box
-                      w="40px"
-                      h="40px"
-                      borderRadius={'10px'}
-                      overflow="hidden"
-                      borderWidth={'2px'}
-                    >
-                      <Image
-                        src={AuthorImage}
-                        layout="responsive"
-                        width={1080}
-                        height={1080}
-                        alt={title}
-                      />
-                    </Box>
-
-                    <Flex direction={['column']} fontSize={['xs', 'sm']} gap="0">
-                      <Text fontWeight={'bold'}>{author}</Text>
-                      <Box color={'gray.500'} as="time" dateTime={date}>
-                        {formatDate(date)}
-                      </Box>
-                    </Flex>
-                  </Flex>
-                </CustomLink>
-              </Grid>
-            )
+            return <PostCard post={frontMatter} key={index} />
           })}
-        </Grid>
+        </div>
         {pagination && pagination.totalPages > 1 && !searchValue && (
           <Pagination currentPage={pagination.currentPage} totalPages={pagination.totalPages} />
         )}

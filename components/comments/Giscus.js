@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { useTheme } from 'next-themes'
-import { Text, Flex } from '@chakra-ui/react'
 import siteMetadata from '@/data/siteMetadata'
 
 const Giscus = ({ mapping }) => {
@@ -48,10 +47,10 @@ const Giscus = ({ mapping }) => {
   }, [LoadComments])
 
   return (
-    <Flex justify="center" align="center">
+    <div className="flex justify-center items-center">
       {enableLoadComments && <button onClick={LoadComments}>Load Comments</button>}
       <div className="giscus" id={COMMENTS_ID} />
-    </Flex>
+    </div>
   )
 }
 

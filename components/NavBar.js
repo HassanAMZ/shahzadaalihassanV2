@@ -59,7 +59,7 @@ export default function NavBar() {
                   objectFit="contain"
                 />
               </div>
-              <p className="sm:m-2">Hire Me</p>
+              <p className="sm:block hidden">Hire Me</p>
             </CustomLink>
           </div>
         </div>

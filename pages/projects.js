@@ -1,6 +1,6 @@
 import siteMetadata from '@/data/siteMetadata'
 import projectsData from '@/data/projectsData'
-import Card from '@/components/Card'
+import ProjectCard from '@/components/ProjectCard'
 import { PageSEO } from '@/components/SEO'
 import { Container, Grid, GridItem, Heading } from '@chakra-ui/react'
 
@@ -9,30 +9,16 @@ const Projects = () => {
     <>
       <PageSEO title={`Projects - ${siteMetadata.author}`} description={siteMetadata.description} />
       <div className=" container mx-auto px-3">
-        <Heading as="h2" py={[5, 6]} fontSize={['xl']}>
+        <h2 className=" mb-4 text-5xl pt-4 font-bold capitalize tracking-tight leading-none dark:text-gray-900 sm:text-6xl  text-white">
           All Projects
-        </Heading>
-        <Grid
-          templateColumns="repeat(auto-fit, minmax(300px, 1fr));"
-          justify="center"
-          align="left"
-          placeContent="center"
-          gap={6}
-        >
-          {projectsData.map(({ title, description, imgSrc, href, price, pid }) => (
-            <GridItem bg="teal.50" p={{ base: '0', sm: '1' }} key={title}>
-              <Card
-                key={pid}
-                title={title}
-                description={description}
-                imgSrc={imgSrc}
-                href={href}
-                pid={pid}
-                price={price}
-              />
-            </GridItem>
+        </h2>
+        <div className="grid grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))] gap-6">
+          {projectsData.map((project, index) => (
+            <div key={index} className="grid justify-items-center">
+              <ProjectCard project={project} />
+            </div>
           ))}
-        </Grid>
+        </div>
       </div>
     </>
   )

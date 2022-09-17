@@ -42,7 +42,7 @@ const CustomHeading = ({ heading, children, customClasses, ...rest }) => {
     )
   } else if (heading === 'h4') {
     Heading =
-      'mb-4 text-3xl font-bold capitalize tracking-tight leading-none dark:text-gray-900 sm:text-4xl lg:text-5xl text-white'
+      'mb-4 text-2xl font-bold capitalize tracking-tight leading-none dark:text-gray-900 text-white'
     let classes = `${Heading}   ${customClasses}`
     return (
       <h4 {...rest} className={classes}>

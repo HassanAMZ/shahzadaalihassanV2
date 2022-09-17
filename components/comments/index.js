@@ -1,6 +1,5 @@
 import siteMetadata from '@/data/siteMetadata'
 import dynamic from 'next/dynamic'
-import { Box } from '@chakra-ui/react'
 const UtterancesComponent = dynamic(
   () => {
     return import('@/components/comments/Utterances')
@@ -37,7 +36,7 @@ const Comments = ({ frontMatter }) => {
       break
   }
   return (
-    <Box id="comment">
+    <div id="comment">
       {siteMetadata.comment && siteMetadata.comment.provider === 'giscus' && (
         <GiscusComponent mapping={term} />
       )}
@@ -47,7 +46,7 @@ const Comments = ({ frontMatter }) => {
       {siteMetadata.comment && siteMetadata.comment.provider === 'disqus' && (
         <DisqusComponent frontMatter={frontMatter} />
       )}
-    </Box>
+    </div>
   )
 }
 

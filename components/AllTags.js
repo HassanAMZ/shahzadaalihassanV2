@@ -1,7 +1,4 @@
-import CustomLink from '@/components/CustomLink'
-import CustomButton from '@/components/CustomButton'
 import Tag from '@/components/Tag'
-import { FaArrowRight } from 'react-icons/fa'
 
 export default function AllTags({ tags }) {
   const sortedTags = Object.keys(tags).sort((a, b) => tags[b] - tags[a])
