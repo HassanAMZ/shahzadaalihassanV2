@@ -1,18 +1,14 @@
 import Image from 'next/image'
 import siteMetadata from '@/data/siteMetadata'
 import CustomLink from '@/components/CustomLink'
-import headerNavLinks from '@/data/headerNavLinks'
 import NewsletterForm from '@/components/NewsletterForm'
 
 export default function LargeWithLogoLeft() {
   return (
     <>
-      <div className="container mx-auto my-3 py-10 px-3 rounded-[25px] bg-gray-100">
-        {siteMetadata.newsletter.provider !== '' && <NewsletterForm />}
-      </div>
-
       <div className="container mx-auto my-3 py-10 px-3">
         <footer className="p-4 dark:bg-white rounded-[25px] shadow md:px-6 md:py-8 bg-gray-900">
+          {siteMetadata.newsletter.provider !== '' && <NewsletterForm />}
           <div className="sm:flex sm:items-center sm:justify-between">
             <CustomLink href="/about" className="flex items-center mb-4 sm:mb-0">
               <Image

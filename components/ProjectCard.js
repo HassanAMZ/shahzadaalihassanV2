@@ -6,7 +6,7 @@ const ProjectCard = ({ project }) => {
   return (
     <div
       id={pid}
-      className="max-w-sm dark:bg-white rounded-lg border dark:border-gray-200 shadow-md bg-gray-800 border-gray-700"
+      className="dark:bg-white rounded-lg border dark:border-gray-200 shadow-md bg-gray-800 border-gray-700"
     >
       <CustomLink href={href}>
         <div className="rounded-t-lg overflow-hidden">

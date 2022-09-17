@@ -3,7 +3,7 @@ import siteMetadata from '@/data/siteMetadata'
 import ListLayout from '@/layouts/ListLayout'
 import { PageSEO } from '@/components/SEO'
 import { getAllTags } from '@/lib/tags'
-export const POSTS_PER_PAGE = 6
+export const POSTS_PER_PAGE = 9
 
 export async function getStaticProps() {
   const tags = await getAllTags('blog')

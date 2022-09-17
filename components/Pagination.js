@@ -1,12 +1,12 @@
 import CustomLink from '@/components/CustomLink'
 import CustomButton from '@/components/CustomButton'
-import { Box, Button, Flex } from '@chakra-ui/react'
+
 export default function Pagination({ totalPages, currentPage }) {
   const prevPage = parseInt(currentPage) - 1 > 0
   const nextPage = parseInt(currentPage) + 1 <= parseInt(totalPages)
 
   return (
-    <Flex as="nav" direction="row" justify="space-between" align="center" py="6">
+    <nav className="flex justify-between items-center py-6">
       {!prevPage && (
         <div className="w-1/3">
           <CustomButton scheme="disable">Previous</CustomButton>
@@ -33,6 +33,6 @@ export default function Pagination({ totalPages, currentPage }) {
           <CustomButton scheme="solid">Next</CustomButton>
         </CustomLink>
       )}
-    </Flex>
+    </nav>
   )
 }

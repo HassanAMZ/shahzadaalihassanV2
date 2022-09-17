@@ -4,8 +4,8 @@ import { FaArrowRight } from 'react-icons/fa'
 const PostCard = ({ post }) => {
   const { slug, date, title, summary, tags, coverImage } = post
   return (
-    <div className="max-w-sm dark:bg-white rounded-lg border dark:border-gray-200 shadow-md bg-gray-800 border-gray-700">
-      <CustomLink href={`/blog/${slug}`}>
+    <div className="dark:bg-white rounded-lg border dark:border-gray-200 shadow-md bg-gray-800 border-gray-700">
+      <CustomLink href={`/blog/${slug}`} className="sm:block hidden">
         <div className="rounded-t-lg overflow-hidden">
           <Image src={coverImage} layout="responsive" width={1920} height={1080} alt={title} />
         </div>

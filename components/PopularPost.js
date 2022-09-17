@@ -6,26 +6,17 @@ import Image from 'next/image'
 
 export default function PopularPost({ posts, title }) {
   return (
-    <Flex direction="column" gap="5">
-      <Heading as="h2" py="3" fontSize={['xl']}>
-        Popular Post
-      </Heading>
+    <div className="flex flex-col gap-5">
+      <h2 className=" mb-4 text-4xl pt-4 font-bold capitalize tracking-tight leading-none dark:text-gray-900 text-white">
+        Popular Post{' '}
+      </h2>
       {posts.slice(0, 5).map((frontMatter, index) => {
         const { slug, date, title, coverImage } = frontMatter
         return (
-          <Box key={index}>
+          <div key={index}>
             <CustomLink href={`/blog/${slug}`}>
-              <Grid
-                className="hvr-grow"
-                gap="5"
-                templateColumns={{
-                  base: '150px 1fr',
-                  sm: '170px 1fr',
-                  md: '140px 1fr',
-                  lg: '120px 1fr',
-                }}
-              >
-                <Box borderRadius={'15px'} overflow="hidden">
+              <div className="hvr-grow grid gap-5 grid-cols-[130px,_1fr]" gap="5">
+                <div className="overflow-hidden rounded-[25px]">
                   <Image
                     src={coverImage}
                     layout="responsive"
@@ -33,30 +24,18 @@ export default function PopularPost({ posts, title }) {
                     height={1080}
                     alt={title}
                   />
-                </Box>
-                <Flex direction={'column'} justify="center">
-                  <Heading
-                    as="h1"
-                    fontWeight={'medium'}
-                    textTransform="capitalize"
-                    fontSize={{ sm: 'xm', md: 'sm', lg: 'md' }}
-                  >
+                </div>
+                <div className="flex flex-col justify-center">
+                  <h2 className="text-md font-semibold capitalize tracking-tight leading-1 dark:text-gray-900 text-white">
                     {title}
-                  </Heading>
-                  <Box
-                    color={'gray.500'}
-                    as="time"
-                    dateTime={date}
-                    fontSize={{ sm: 'xs', md: 'sm', lg: 'md' }}
-                  >
-                    {formatDate(date)}
-                  </Box>
-                </Flex>
-              </Grid>
+                  </h2>
+                  <span className="text-sm sm:text-lg text-gray-800">{formatDate(date)}</span>
+                </div>
+              </div>
             </CustomLink>
-          </Box>
+          </div>
         )
       })}
-    </Flex>
+    </div>
   )
 }
