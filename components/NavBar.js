@@ -12,7 +12,7 @@ export default function NavBar() {
         <CustomLink href="/" aria-label={siteMetadata.headerTitle}>
           <div className="flex items-center justify-between">
             <div className="flex justify-center items-center">
-              <div className="bg-white rounded-full w-[40px] h-[40px] relative hover:bg-teal-600">
+              <div className="bg-teal-700 rounded-full w-[40px] h-[40px] relative hover:bg-white">
                 <Image
                   alt="Shahzada Ali Hassan"
                   src="/static/images/avatar.png"
@@ -24,21 +24,21 @@ export default function NavBar() {
           </div>
         </CustomLink>
       </div>
-      <div className="flex items-center text-base leading-5">
+      <div className="flex items-center ">
         <div className="hidden sm:block">
           {headerNavLinks.map((link) => (
             <CustomLink
               key={link.title}
               href={link.href}
-              className="p-1 font-medium dark:text-gray-900 text-gray-100 sm:p-4"
+              className="p-1 hover:bg-teal-700 dark:hover:text-white font-bold dark:text-gray-900 text-gray-100 sm:p-4 rounded-[25px]"
             >
               {link.title}
             </CustomLink>
           ))}
         </div>
-        <ThemeSwitch />
         <MobileNav />
       </div>
+      <span className="hidden sm:block">{/* <ThemeSwitch /> */}</span>
     </header>
   )
 }
