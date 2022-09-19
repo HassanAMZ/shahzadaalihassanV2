@@ -1,3 +1,4 @@
+import CustomHeading from '@/components/CustomHeading'
 import { PageSEO } from '@/components/SEO'
 
 export default function AuthorLayout({ children, frontMatter }) {
@@ -7,10 +8,10 @@ export default function AuthorLayout({ children, frontMatter }) {
     <>
       <PageSEO title={`About - ${name}`} description={`About me - ${name}`} />
       <div className="py-4 px-3">
-        <h2 className=" mb-4 text-5xl pt-4 font-bold capitalize tracking-tight leading-none dark:text-gray-900 sm:text-6xl  text-white">
-          A Quick Introduction
-        </h2>
-        <div>{children}</div>
+        <CustomHeading heading="h2">A Quick Introduction</CustomHeading>
+        <article id="bauthor_content" className="text-justify">
+          {children}
+        </article>
       </div>
     </>
   )

@@ -12,7 +12,7 @@ const CustomButton = ({ scheme, customClasses, ...rest }) => {
       'inline-flex w-full justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-600 dark:hover:bg-gray-600 dark:focus:ring-gray-800'
   } else if (scheme === 'disable') {
     ButtonScheme =
-      'inline-flex w-full cursor-not-allowed justify-center items-center py-3 px-5 text-base font-medium text-center  dark:text-gray-900 rounded-lg border dark:border-gray-300 text-white border-gray-600 focus:ring-gray-800'
+      'inline-flex w-full cursor-not-allowed justify-center items-center py-3 px-5 text-base font-medium text-center  text-gray-900 rounded-lg border border-gray-300 dark:text-white dark:border-gray-600 focus:ring-gray-800'
   } else if (scheme === 'ghost-xs') {
     ButtonScheme =
       'inline-flex w-full justify-center  items-center p-2 text-sm font-medium text-center  text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-600 dark:hover:bg-gray-600 dark:focus:ring-gray-800'

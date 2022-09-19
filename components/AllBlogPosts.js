@@ -23,7 +23,7 @@ export default function ListLayout({ posts, initialDisplayPosts = [], pagination
           {title}
         </CustomHeading>
         <div className="pb-4">
-          <div className="mb-2 text-sm font-medium dark:text-gray-900 sr-only text-gray-300">
+          <div className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">
             Search
           </div>
           <div className="relative">
@@ -34,7 +34,7 @@ export default function ListLayout({ posts, initialDisplayPosts = [], pagination
               onChange={(e) => setSearchValue(e.target.value)}
               type="search"
               id="default-search"
-              className="block pl-10 w-full text-sm dark:text-gray-900 dark:bg-gray-50 rounded-full border dark:border-gray-300 dark:focus:ring-teal-500 dark:focus:border-teal-500 bg-gray-700 border-gray-600 dark:placeholder-gray-400 text-white focus:ring-teal-500 focus:border-teal-500"
+              className="block pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-full border-2 border-gray-300 focus:ring-teal-500 focus:border-teal-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-teal-500 dark:focus:border-teal-500"
               placeholder="Search Graphic design, Web Analytics..."
               required
             />

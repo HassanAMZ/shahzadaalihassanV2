@@ -10,6 +10,24 @@ import CustomButton from '@/components/CustomButton'
 
 const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
 
+export function PaginationComponent({ pagination, pagination_button }) {
+  return (
+    <div className="flex gap-2 flex-col items-center md:flex-start py-2">
+      <CustomLink className="self-stretch flex-auto py-2" href={`/blog/${pagination.slug}`}>
+        <CustomButton scheme="solid">{pagination_button} Post</CustomButton>
+      </CustomLink>
+      <CustomLink
+        href={`/blog/${pagination.slug}`}
+        className="w-full block p-6 rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 bg-white dark:border-gray-700 dark:hover:bg-gray-700 dark:bg-gray-900"
+      >
+        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+          {pagination.title}
+        </h5>
+      </CustomLink>
+    </div>
+  )
+}
+
 export default function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
   const { slug, date, title, tags, coverImage, blogID } = frontMatter
   const { name } = authorDetails[0]
@@ -22,9 +40,9 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
       />
       <ScrollTopAndComment />
 
-      <div className="container text-black mx-auto px-3 rounded-[25px]">
-        <div className="flex items-center border-2 py-10 bg-gray-50 rounded-[25px] justify-center flex-col gap-2 capitalize ">
-          <h2 className="text-center mb-4 text-5xl font-bold capitalize tracking-tight leading-none dark:text-black sm:text-5xl lg:text-6xl text-white">
+      <div className="container text-black mx-auto px-3">
+        <div className="flex items-center border-2 p-2 py-10 rounded-[25px] justify-center flex-col gap-2 capitalize ">
+          <h2 className="text-center mb-4 text-5xl font-bold capitalize tracking-tight leading-none text-black sm:text-5xl lg:text-6xl dark:text-white">
             {title}
           </h2>
           {tags && (
@@ -34,9 +52,9 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               ))}
             </div>
           )}
-          <div className="flex flex-col md:row gap-2 items-center">
+          <div className="flex flex-col md:row gap-2 items-center dark:text-white text-gray-700 text-sm pt-2">
             <div className="flex items-center gap-2">
-              <CustomLink href="/about" className="text-center">
+              <CustomLink href="/about" className="text-center ">
                 {name}
               </CustomLink>
               <span>{` • `}</span>
@@ -55,55 +73,19 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
       </div>
 
       <div className="container mx-auto my-3 px-3">
-        <article classNamepy-2 id="singlePost">
+        <article className="py-2" id="singlePost">
           <div className="flex flex-col py-2">
-            <article>{children}</article>
+            <article id="blog_post_content" className="text-justify">
+              {children}
+            </article>
             <Comments frontMatter={frontMatter} />
 
-            <div className="py-2">
-              {(next || prev) && (
-                <div className="flex justify-between flex-col md:flex-row">
-                  {prev && (
-                    <div className="flex flex-col items-center md:flex-start py-2">
-                      <CustomLink
-                        className="self-stretch flex-auto py-2"
-                        href={`/blog/${prev.slug}`}
-                        aria-label="Previous Post"
-                      >
-                        <CustomButton scheme="solid">Previous Post</CustomButton>
-                      </CustomLink>
-                      <CustomLink
-                        href={`/blog/${prev.slug}`}
-                        className="block p-6 dark:bg-white rounded-lg border dark:border-gray-200 shadow-md dark:hover:bg-gray-100 bg-gray-800 border-gray-700 hover:bg-gray-700"
-                      >
-                        <h5 className="mb-2 text-2xl font-bold tracking-tight dark:text-gray-900 text-white">
-                          {prev.title}
-                        </h5>
-                      </CustomLink>
-                    </div>
-                  )}
-                  {next && (
-                    <div className="flex flex-col items-center md:flex-start py-2">
-                      <CustomLink
-                        className="self-stretch flex-auto py-2"
-                        href={`/blog/${next.slug}`}
-                        aria-label="Previous Post"
-                      >
-                        <CustomButton scheme="solid">Next Post</CustomButton>
-                      </CustomLink>
-                      <CustomLink
-                        href={`/blog/${next.slug}`}
-                        className="block p-6 dark:bg-white rounded-lg border dark:border-gray-200 shadow-md dark:hover:bg-gray-100 bg-gray-800 border-gray-700 hover:bg-gray-700"
-                      >
-                        <h5 className="mb-2 text-2xl font-bold tracking-tight dark:text-gray-900 text-white">
-                          {next.title}
-                        </h5>
-                      </CustomLink>
-                    </div>
-                  )}
-                </div>
-              )}
-            </div>
+            {(next || prev) && (
+              <div className="flex justify-between md:gap-2 flex-col md:flex-row py-2">
+                {prev && <PaginationComponent pagination={prev} pagination_button="Previous" />}
+                {next && <PaginationComponent pagination={next} pagination_button="Next" />}
+              </div>
+            )}
 
             <CustomLink href="/blog">
               <CustomButton scheme="solid">&larr; Back to the blogs</CustomButton>
