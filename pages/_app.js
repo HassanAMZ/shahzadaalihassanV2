@@ -6,8 +6,7 @@ import Head from 'next/head'
 import MailChimpHeadCode from '@/components/MailChimpHeadCode'
 import Script from 'next/script'
 import siteMetadata from '@/data/siteMetadata'
-import { ChakraProvider } from '@chakra-ui/react'
-import theme from '@/lib/utils/theme'
+
 import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
 import { useRouter } from 'next/router'
@@ -50,12 +49,10 @@ export default function App({ Component, pageProps }) {
         }}
       />
       <MailChimpHeadCode />
-      <ThemeProvider attribute="class">
-        <ChakraProvider theme={theme}>
-          <NavBar />
-          <Component {...pageProps} />
-          <Footer />
-        </ChakraProvider>
+      <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
+        <NavBar />
+        <Component {...pageProps} />
+        <Footer />
       </ThemeProvider>
     </>
   )
