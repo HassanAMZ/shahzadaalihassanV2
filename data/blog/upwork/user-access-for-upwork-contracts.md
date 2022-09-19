@@ -2,7 +2,7 @@
 title: User Access for Upwork Contracts
 date: '2022-01-04'
 blogID: '00031'
-tags: ['Upwork', 'Contracts', 'User Access']
+tags: ['Upwork', 'Contract Details', 'User Access', Contracts]
 draft: false
 summary: To work with clients, usually i require some access to platforms that are necessary for the Web analytics and development work. Usually the employee/ developer access works with proper assets.
 coverImage: '/static/blog/00031.png'
@@ -11,20 +11,11 @@ embedId: 'null'
 
 To work with clients, usually i require some access to platforms that are necessary for the Web analytics and development work. Usually the employee/ developer access works with proper assets.
 
-Table Of Content:
-
-1. [Google Tag Manager](#google-tag-manager)
-2. [Google Analytics](#google-analytics)
-3. [Facebook Business Manager](#facebook-business-manager)
-4. [Google ads](#google-ads)
-5. [Wordpress](#wordpress)
-6. [Shopify](#shopify)
-7. [Linkedin Campaigns Manager](#linkedin-campaigns-manager)
-8. [Microsoft Ads account](#microsoft-adsaaccount)
-9. [Snapchat Business Manager](#snapchat-business-manager)
-10. [TikTok Business Center](#tiktok-business-center)
+<TOCInline toc={props.toc} exclude="Overview" toHeading={3} />
 
 You can check the official links for each platform! Kindly use the details mentioned below for access:
+
+# User Details
 
 **First Name: Shahzada Ali**
 
