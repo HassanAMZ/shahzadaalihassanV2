@@ -25,7 +25,7 @@ const TOCInline = ({
   indentDepth = 3,
   fromHeading = 1,
   toHeading = 6,
-  asDisclosure = false,
+  asDisclosure = true,
   exclude = '',
 }) => {
   const re = Array.isArray(exclude)
@@ -41,7 +41,12 @@ const TOCInline = ({
     <ul>
       {filteredToc.map((heading) => (
         <li key={heading.value} className={`${heading.depth >= indentDepth && 'ml-6'}`}>
-          <a href={heading.url}>{heading.value}</a>
+          <a
+            href={heading.url}
+            className="dark:text-teal capitalize px-4 py-1 hover:text-white hover:bg-teal-700 hover:rounded-full"
+          >
+            {heading.value}
+          </a>
         </li>
       ))}
     </ul>
@@ -50,10 +55,12 @@ const TOCInline = ({
   return (
     <>
       {asDisclosure ? (
-        <details open>
-          <summary className="pt-2 pb-2 ml-6 text-xl font-bold">Table of Contents</summary>
-          <div className="ml-6">{tocList}</div>
-        </details>
+        <>
+          <details>
+            <summary>Table Of Content</summary>
+            <div className="flex flex-col m-0">{tocList}</div>
+          </details>
+        </>
       ) : (
         tocList
       )}

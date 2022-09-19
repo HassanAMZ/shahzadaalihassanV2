@@ -1,4 +1,3 @@
-import { Box, Button, Flex, Text } from '@chakra-ui/react'
 import kebabCase from '@/lib/utils/kebabCase'
 import CustomLink from '@/components/CustomLink'
 import CustomButton from '@/components/CustomButton'

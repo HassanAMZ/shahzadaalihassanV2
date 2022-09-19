@@ -1,14 +1,12 @@
 import CustomLink from '@/components/CustomLink'
-
 import formatDate from '@/lib/utils/formatDate'
-import { Box, Link as ChakraLink, Heading, Flex, Grid } from '@chakra-ui/react'
 import Image from 'next/image'
 
 export default function PopularPost({ posts, title }) {
   return (
     <div className="flex flex-col gap-5">
       <h2 className=" mb-4 text-4xl pt-4 font-bold capitalize tracking-tight leading-none dark:text-gray-900 text-white">
-        Popular Post{' '}
+        Popular Post
       </h2>
       {posts.slice(0, 5).map((frontMatter, index) => {
         const { slug, date, title, coverImage } = frontMatter

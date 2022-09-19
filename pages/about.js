@@ -1,6 +1,5 @@
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { getFileBySlug } from '@/lib/mdx'
-import { Container } from '@chakra-ui/react'
 const DEFAULT_LAYOUT = 'AuthorLayout'
 
 export async function getStaticProps() {

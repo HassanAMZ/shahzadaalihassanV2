@@ -1,30 +1,28 @@
 import CustomLink from '@/components/CustomLink'
 import SignUpForm from '@/components/SignUpForm'
-import { Button, Flex, Text, Heading } from '@chakra-ui/react'
 import { signInWithGoogle } from '@/firebase/firebaseAuth'
 import siteMetadata from '@/data/siteMetadata'
 import { PageSEO } from '@/components/SEO'
+import CustomButton from '@/components/CustomButton'
 
 const SignUpPage = () => {
   return (
     <>
       <PageSEO title={`Sign Up - ${siteMetadata.author}`} description={siteMetadata.description} />
-      <Flex direction={'column'} justifyContent="center" alignItems="center">
-        <Heading as="h2" py="3" fontSize={['xl']}>
-          Sign Up
-        </Heading>
+      <div className="container mx-auto flex items-center flex-col">
+        <h2 className=" mb-4 text-5xl font-bold capitalize tracking-tight leading-none dark:text-gray-900 sm:text-6xl lg:text-7xl text-white">
+          Signup
+        </h2>
         <SignUpForm />
-        <Text py="4">Or</Text>
-        <Button py="4" w={['full', '75%']} colorScheme="teal" onClick={signInWithGoogle}>
+        Or
+        <CustomButton scheme={'solid'} customClasses="max-w-sm" onClick={signInWithGoogle}>
           Sign Up with google
-        </Button>
-        <Text py="4" textTransform="capitalize">
-          Already have an account?
-        </Text>
-        <Button w={['full', '75%']} colorScheme="teal" variant="outline">
+        </CustomButton>
+        <p className="capitalize py-4">Already have an account?</p>
+        <CustomButton scheme={'solid'} customClasses="max-w-sm">
           <CustomLink href="/auth/login">Sign In</CustomLink>
-        </Button>
-      </Flex>
+        </CustomButton>
+      </div>
     </>
   )
 }

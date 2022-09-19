@@ -6,16 +6,7 @@ import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 import GAPageView from '@/components/GAPageView'
 import Comments from '@/components/comments'
-import {
-  Box,
-  Heading,
-  Link as ChakraLink,
-  Grid,
-  Flex,
-  Button,
-  Container,
-  Text,
-} from '@chakra-ui/react'
+import CustomButton from '@/components/CustomButton'
 
 const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
 
@@ -31,216 +22,94 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
       />
       <ScrollTopAndComment />
 
-      <div className="container mx-auto my-3 px-3 bg-teal-700 rounded-[25px]">
-        <Grid color={'white'} placeContent={'center'} py={5} position="relative">
-          <Flex
-            align="center"
-            justify={'center'}
-            direction="column"
-            gap="2"
-            textTransform={'capitalize'}
-            fontWeight="bold"
-          >
-            <Heading as="h1" py="2" fontSize={['1.5rem', '1.75rem', '2.2rem']} align="center">
-              {title}
-            </Heading>
-            {tags && (
-              <div className="flex flex-wrap gap-2 text-white">
-                {tags.map((tag) => (
-                  <Tag key={tag} text={tag} customClasses="dark:text-white" />
-                ))}
-              </div>
-            )}
-            <Flex
-              direction={['column', 'column', 'row', 'row']}
-              justify="left"
-              fontSize="xs"
-              columnGap="2"
-              align="center"
-            >
-              <Flex justify="left" align="center" columnGap="2">
-                <CustomLink href="/about">
-                  <Text textAlign={'center'}>{name}</Text>
-                </CustomLink>
-                <Box as="span">{` • `}</Box>
-                <Text textAlign={'center'} as="time" dateTime={date}>
-                  {new Date(date).toLocaleDateString(siteMetadata.locale, postDateTemplate)}
-                </Text>
-              </Flex>
-              <Flex direction="row" columnGap="2" align={'center'} justify="center">
-                <Box as="span" id="time"></Box>
-                <Text>min read</Text>
-                <Box as="span">{` • `}</Box>
-                <GAPageView slug={slug} />
-              </Flex>
-            </Flex>
-          </Flex>
-        </Grid>
+      <div className="container text-black mx-auto px-3 rounded-[25px]">
+        <div className="flex items-center border-2 py-10 bg-gray-50 rounded-[25px] justify-center flex-col gap-2 capitalize ">
+          <h2 className="text-center mb-4 text-5xl font-bold capitalize tracking-tight leading-none dark:text-black sm:text-5xl lg:text-6xl text-white">
+            {title}
+          </h2>
+          {tags && (
+            <div className="flex flex-wrap gap-2">
+              {tags.map((tag) => (
+                <Tag key={tag} text={tag} />
+              ))}
+            </div>
+          )}
+          <div className="flex flex-col md:row gap-2 items-center">
+            <div className="flex items-center gap-2">
+              <CustomLink href="/about" className="text-center">
+                {name}
+              </CustomLink>
+              <span>{` • `}</span>
+              <time className="text-center" dateTime={date}>
+                {new Date(date).toLocaleDateString(siteMetadata.locale, postDateTemplate)}
+              </time>
+            </div>
+            <div className="flex gap-2 items-center jusitfy-center">
+              <span id="time"></span>
+              <p>min read</p>
+              <span>{` • `}</span>
+              <GAPageView slug={slug} />
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="container mx-auto my-3 px-3">
-        <Box as="article" id="singlePost" py="2">
-          <Box>
-            <Flex direction="column" py="2">
-              <Box as="article">{children}</Box>
-              <Comments frontMatter={frontMatter} />
-              <Box>
-                <Box py="2">
-                  {(next || prev) && (
-                    <Flex
-                      justify="space-between"
-                      direction={{ base: 'column', sm: 'cloumn', md: 'row' }}
-                    >
-                      {prev && (
-                        <Flex
-                          direction="column"
-                          align={{ base: 'center', sm: 'center', md: 'start' }}
-                          py="2"
-                        >
-                          <CustomLink
-                            className="self-stretch flex-auto"
-                            href={`/blog/${prev.slug}`}
-                            aria-label="Previous Post"
-                          >
-                            <Button
-                              colorScheme="teal"
-                              size="sm"
-                              w="100%"
-                              textTransform={'uppercase'}
-                              variant="solid"
-                              rounded={'full'}
-                              fontWeight={'normal'}
-                              px={6}
-                              bg={'teal.400'}
-                              _hover={{ bg: 'teal.500', textDecoration: 'none' }}
-                              my="4"
-                            >
-                              Previous Post
-                            </Button>
-                          </CustomLink>
-                          <CustomLink href={`/blog/${prev.slug}`}>
-                            <Box borderColor="teal.300" borderWidth="thin" borderRadius={'25px'}>
-                              <Grid
-                                borderRadius={'25px'}
-                                overflow="hidden"
-                                templateRows={'2fr 1fr'}
-                                templateColumns={{
-                                  base: '250px',
-                                  sm: 'repeat(auto-fill, minmax(250px, 350px))',
-                                }}
-                              >
-                                <Image
-                                  src={prev.coverImage}
-                                  layout="responsive"
-                                  width={1920}
-                                  height={1080}
-                                  alt={prev.title}
-                                />
+        <article classNamepy-2 id="singlePost">
+          <div className="flex flex-col py-2">
+            <article>{children}</article>
+            <Comments frontMatter={frontMatter} />
 
-                                <Flex direction={'column'} justify="center">
-                                  <Heading
-                                    m={2}
-                                    textAlign="center"
-                                    as="h3"
-                                    textTransform="capitalize"
-                                    fontSize="sm"
-                                    overflow="hidden"
-                                  >
-                                    {prev.title}
-                                  </Heading>
-                                </Flex>
-                              </Grid>
-                            </Box>
-                          </CustomLink>
-                        </Flex>
-                      )}
-                      {next && (
-                        <Flex
-                          direction="column"
-                          align={{ base: 'center', sm: 'center', md: 'start' }}
-                          py="2"
-                        >
-                          <CustomLink
-                            href={`/blog/${next.slug}`}
-                            className="self-stretch flex-auto"
-                          >
-                            <Button
-                              w="100%"
-                              colorScheme="teal"
-                              size="sm"
-                              textTransform={'uppercase'}
-                              variant="solid"
-                              rounded={'full'}
-                              fontWeight={'normal'}
-                              px={6}
-                              bg={'teal.400'}
-                              _hover={{ bg: 'teal.500', textDecoration: 'none' }}
-                              my="4"
-                            >
-                              Next Post
-                            </Button>
-                          </CustomLink>
-                          <CustomLink href={`/blog/${next.slug}`}>
-                            <Box borderColor="teal.300" borderWidth="thin" borderRadius={'25px'}>
-                              <Grid
-                                borderRadius={'25px'}
-                                overflow="hidden"
-                                templateRows={'2fr 1fr'}
-                                templateColumns={{
-                                  base: '250px',
-                                  sm: 'repeat(auto-fill, minmax(250px, 350px))',
-                                }}
-                              >
-                                <Image
-                                  src={next.coverImage}
-                                  layout="responsive"
-                                  width={1920}
-                                  height={1080}
-                                  alt={next.title}
-                                />
-
-                                <Flex direction={'column'} justify="center">
-                                  <Heading
-                                    m={2}
-                                    textAlign="center"
-                                    as="h3"
-                                    textTransform="capitalize"
-                                    fontSize="sm"
-                                    overflow="hidden"
-                                  >
-                                    {next.title}
-                                  </Heading>
-                                </Flex>
-                              </Grid>
-                            </Box>
-                          </CustomLink>
-                        </Flex>
-                      )}
-                    </Flex>
+            <div className="py-2">
+              {(next || prev) && (
+                <div className="flex justify-between flex-col md:flex-row">
+                  {prev && (
+                    <div className="flex flex-col items-center md:flex-start py-2">
+                      <CustomLink
+                        className="self-stretch flex-auto py-2"
+                        href={`/blog/${prev.slug}`}
+                        aria-label="Previous Post"
+                      >
+                        <CustomButton scheme="solid">Previous Post</CustomButton>
+                      </CustomLink>
+                      <CustomLink
+                        href={`/blog/${prev.slug}`}
+                        className="block p-6 dark:bg-white rounded-lg border dark:border-gray-200 shadow-md dark:hover:bg-gray-100 bg-gray-800 border-gray-700 hover:bg-gray-700"
+                      >
+                        <h5 className="mb-2 text-2xl font-bold tracking-tight dark:text-gray-900 text-white">
+                          {prev.title}
+                        </h5>
+                      </CustomLink>
+                    </div>
                   )}
-                </Box>
+                  {next && (
+                    <div className="flex flex-col items-center md:flex-start py-2">
+                      <CustomLink
+                        className="self-stretch flex-auto py-2"
+                        href={`/blog/${next.slug}`}
+                        aria-label="Previous Post"
+                      >
+                        <CustomButton scheme="solid">Next Post</CustomButton>
+                      </CustomLink>
+                      <CustomLink
+                        href={`/blog/${next.slug}`}
+                        className="block p-6 dark:bg-white rounded-lg border dark:border-gray-200 shadow-md dark:hover:bg-gray-100 bg-gray-800 border-gray-700 hover:bg-gray-700"
+                      >
+                        <h5 className="mb-2 text-2xl font-bold tracking-tight dark:text-gray-900 text-white">
+                          {next.title}
+                        </h5>
+                      </CustomLink>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
 
-                <CustomLink href="/blog">
-                  <Button
-                    colorScheme="teal"
-                    size="sm"
-                    w="100%"
-                    textTransform={'uppercase'}
-                    variant="solid"
-                    rounded={'full'}
-                    fontWeight={'normal'}
-                    px={6}
-                    bg={'teal.400'}
-                    _hover={{ bg: 'teal.500', textDecoration: 'none' }}
-                    my="4"
-                  >
-                    <Text py="2">&larr; Back to the blogs</Text>
-                  </Button>
-                </CustomLink>
-              </Box>
-            </Flex>
-          </Box>
-        </Box>
+            <CustomLink href="/blog">
+              <CustomButton scheme="solid">&larr; Back to the blogs</CustomButton>
+            </CustomLink>
+          </div>
+        </article>
       </div>
     </>
   )

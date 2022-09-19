@@ -2,7 +2,7 @@ import fs from 'fs'
 import generateRss from '@/lib/generate-rss'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { formatSlug, getAllFilesFrontMatter, getFileBySlug, getFiles } from '@/lib/mdx'
-import { Heading } from '@chakra-ui/react'
+
 const DEFAULT_LAYOUT = 'PostLayout'
 
 export async function getStaticPaths() {
@@ -54,12 +54,12 @@ export default function Blog({ post, authorDetails, prev, next }) {
         />
       ) : (
         <div className="mt-24 text-center">
-          <Heading as="h2" py="3" fontSize={['lg', 'xl']} m="3">
+          <h2 className=" mb-4 text-5xl font-bold capitalize tracking-tight leading-none dark:text-gray-900 sm:text-6xl lg:text-7xl text-white">
             Under Construction
             <span role="img" aria-label="roadwork sign">
               🚧
             </span>
-          </Heading>
+          </h2>
         </div>
       )}
     </>

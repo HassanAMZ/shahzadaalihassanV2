@@ -1,10 +1,9 @@
-import { Stack, Flex, Heading, Link as ChakraLink } from '@chakra-ui/react'
 import siteMetadata from '@/data/siteMetadata'
 import CustomLink from '@/components/CustomLink'
 import { FaInstagram, FaTwitter, FaLinkedin, FaYoutube, FaFacebook, FaGithub } from 'react-icons/fa'
 import { SiUpwork } from 'react-icons/si'
 import { HiOutlineMail } from 'react-icons/hi'
-import CustomButton from './CustomButton'
+import CustomButton from '@/components/CustomButton'
 const SocialLinks = ({ name, router, icon }) => {
   return (
     <CustomLink href={router} aria-label={name}>
@@ -18,10 +17,10 @@ const SocialLinks = ({ name, router, icon }) => {
 const SocialProfile = ({ title }) => {
   return (
     <>
-      <Flex gap={2} direction="column" justify={'space-between'}>
-        <Heading as="h2" py={[5, 6]} fontSize={['xl']}>
+      <div className="flex gap-2 flex-col justify-between">
+        <h3 className="mb-4 text-3xl font-bold capitalize tracking-tight leading-none dark:text-gray-900 sm:text-4xl lg:text-5xl text-white">
           {title}
-        </Heading>
+        </h3>
         <SocialLinks name={'Upwork'} router={siteMetadata.upwork} icon={<SiUpwork />} />
         <SocialLinks
           name={'Email'}
@@ -34,7 +33,7 @@ const SocialProfile = ({ title }) => {
         <SocialLinks name={'Linkedin'} router={siteMetadata.linkedin} icon={<FaLinkedin />} />
         <SocialLinks name={'Instagram'} router={siteMetadata.instagram} icon={<FaInstagram />} />
         <SocialLinks name={'Github'} router={siteMetadata.github} icon={<FaGithub />} />
-      </Flex>
+      </div>
     </>
   )
 }

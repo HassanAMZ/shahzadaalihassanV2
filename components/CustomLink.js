@@ -7,7 +7,7 @@ const CustomLink = ({ href, ...rest }) => {
   const isExternal = `${href}?utm_source=ShahzadaAliHassan&utm_medium=affiliate&utm_campaign=HassanUpwork&utm_term=website&utm_content=${href}`
   if (isInternalLink) {
     return (
-      <Link href={href}>
+      <Link href={href} className="text-teal-900 underline">
         <a {...rest} />
       </Link>
     )

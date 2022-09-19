@@ -3,7 +3,6 @@ import { PageSEO } from '@/components/SEO'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllTags } from '@/lib/tags'
-import { Flex, Box, Heading, Button, Container } from '@chakra-ui/react'
 
 export async function getStaticProps() {
   const tags = await getAllTags('blog')

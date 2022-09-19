@@ -2,54 +2,48 @@
 import { useMemo } from 'react'
 import { getMDXComponent } from 'mdx-bundler/client'
 import Image from './Image'
+import CustomLink from './CustomLink'
 import TOCInline from './TOCInline'
 import Pre from './Pre'
 import { BlogNewsletterForm } from './NewsletterForm'
-import { chakra } from '@chakra-ui/react'
+
 export const MDXComponents = {
   Image,
   TOCInline,
+  a: CustomLink,
   pre: Pre,
   BlogNewsletterForm: BlogNewsletterForm,
-  code: (props) => (
-    <chakra.code
-      fontSize={['xs', 'sm', 'md', 'md']}
-      lineHeight="1.3"
-      whiteSpace="pre-wrap"
-      py="2"
-      wordBreak="break-word"
-      {...props}
-    />
-  ),
-
-  p: (props) => <chakra.p fontSize={['sm', 'md', 'md']} py="2" fontWeight="medium" {...props} />,
-  h1: (props) => <chakra.h1 fontWeight="bold" py="2" fontSize="3xl" {...props} />,
-  h2: (props) => <chakra.h2 fontWeight="bold" py="2" fontSize={['xl', '2xl', '2xl']} {...props} />,
-  h3: (props) => <chakra.h3 fontWeight="bold" py="2" fontSize={['xl', '2xl', '2xl']} {...props} />,
-  h4: (props) => <chakra.h4 fontWeight="bold" py="2" fontSize={['xl', '2xl', '2xl']} {...props} />,
-  h5: (props) => <chakra.h5 fontWeight="bold" py="2" fontSize={['xl', '2xl', '2xl']} {...props} />,
-  h6: (props) => <chakra.h6 fontWeight="bold" py="2" fontSize={['xl', '2xl', '2xl']} {...props} />,
-  ol: (props) => <chakra.ol {...props} />,
-  ul: (props) => <chakra.ul {...props} />,
-  li: (props) => <chakra.li {...props} />,
-
-  a: (props) => (
-    <chakra.a
-      fontSize={['sm', 'md', 'md']}
-      color="teal"
-      fontWeight="semibold"
-      textTransform="capitalize"
-      textDecoration="underline"
-      textDecorationStyle="dotted"
-      _hover={{
-        color: 'white',
-        backgroundColor: 'teal',
-        textDecorationStyle: 'solid',
-        borderRadius: '5px',
-      }}
-      {...props}
-    />
-  ),
+  code: (props) => {
+    return <code className="whitespace-pre-wrap py-2 break-words">{props.children}</code>
+  },
+  h1: (props) => {
+    return (
+      <h1 className=" mb-4 text-5xl font-bold capitalize tracking-tight leading-none dark:text-gray-900 sm:text-6xl lg:text-7xl text-white">
+        {props.children}
+      </h1>
+    )
+  },
+  h2: (props) => {
+    return (
+      <h2 className="mb-4 text-4xl font-bold capitalize tracking-tight leading-none dark:text-gray-900 sm:text-5xl text-white">
+        {props.children}
+      </h2>
+    )
+  },
+  h3: (props) => {
+    return (
+      <h3 className="mb-4 text-3xl font-bold capitalize tracking-tight leading-none dark:text-gray-900 sm:text-4xl text-white">
+        {props.children}
+      </h3>
+    )
+  },
+  h4: (props) => {
+    return (
+      <h3 className="mb-4 text-2xl font-bold capitalize tracking-tight leading-none dark:text-gray-900 sm:text-3xl text-white">
+        {props.children}
+      </h3>
+    )
+  },
   wrapper: ({ components, layout, ...rest }) => {
     const Layout = require(`../layouts/${layout}`).default
     return <Layout {...rest} />

@@ -9,20 +9,10 @@ coverImage: '/static/blog/00034.png'
 embedId: 'null'
 ---
 
-import TableOfContent from '@/components/TableOfContent'
+<TOCInline toc={props.toc} exclude="Overview" toHeading={3} />
 
-This artcile is the guidelines for the ghost or content writers who wishes to write content for shahzadaalihassan.com and earn a steady income monthly.
-
-<TableOfContent
-  contents={[
-    'Important Notes',
-    'Instructions',
-    'Section 01 Research and Outline',
-    'Section 02 Blog Meta Data',
-    'Section 03 Blog Content',
-    'Section 04 Proof Reading and Revision',
-  ]}
-/>
+This artcile is the guidelines for the ghost or content writers who wishes to write content for shahzadaalihassan.com
+and earn a steady income monthly.
 
 ## Important Notes:
 
@@ -104,19 +94,7 @@ Once you have written the blog, organize the blog. Each blog has Table of Conten
 **Example of Table of content Section:**
 
 ```
-<TableOfContent
-  contents={[
-    'Example Cover Letter',
-    'Client Name',
-    'Attaching a Video',
-    'Pointing out the unique thing',
-    'Provide three solutions to the clients project',
-    'Provide client with the details about your requirements',
-    'Tell the client about yourself',
-    'Call to action',
-    'Reference to a similar Job',
-  ]}
-/>
+<TOCInline toc={props.toc} exclude="Overview" toHeading={3} />
 ```
 
 ### Section 04: Proof Reading and Revision

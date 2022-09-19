@@ -1,18 +1,17 @@
 import { PageSEO } from '@/components/SEO'
-import { Box, Flex, Grid, Heading } from '@chakra-ui/react'
-import CustomLink from '@/components/CustomLink'
+
 export default function AuthorLayout({ children, frontMatter }) {
   const { name } = frontMatter
 
   return (
     <>
       <PageSEO title={`About - ${name}`} description={`About me - ${name}`} />
-      <Box py="4" px="3">
-        <Heading as="h2" py="3" fontSize={['xl']}>
+      <div className="py-4 px-3">
+        <h2 className=" mb-4 text-5xl pt-4 font-bold capitalize tracking-tight leading-none dark:text-gray-900 sm:text-6xl  text-white">
           A Quick Introduction
-        </Heading>
-        <Box>{children}</Box>
-      </Box>
+        </h2>
+        <div>{children}</div>
+      </div>
     </>
   )
 }
