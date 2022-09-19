@@ -7,11 +7,11 @@ import { FaArrowRight } from 'react-icons/fa'
 import CustomHeading from '@/components/CustomHeading'
 export default function Hero() {
   return (
-    <section className="dark:bg-white bg-gray-900 container mx-auto p-3">
+    <section className="bg-white dark:bg-gray-900 container mx-auto p-3">
       <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
         <CustomLink
           href={siteMetadata.upwork}
-          className="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm  dark:text-gray-600 dark:bg-gray-100 rounded-full bg-gray-800 text-white dark:hover:bg-gray-200 hover:bg-gray-600"
+          className="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-gray-600 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600"
           role="alert"
         >
           <span className="text-xs bg-primary-600 rounded-full text-white px-4 py-1.5 mr-3">
@@ -32,7 +32,7 @@ export default function Hero() {
           </svg>
         </CustomLink>
         <CustomHeading heading="title">Top Rated Web Analyts on Upwork</CustomHeading>
-        <p className="mb-8 text-lg font-normal dark:text-gray-500 lg:text-xl sm:px-16 xl:px-48 text-gray-400">
+        <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
           Measurement and web analytics are at the heart of all we do. After all, how can you tell
           if you got a return on your investment if you can't measure it?
         </p>
@@ -48,11 +48,16 @@ export default function Hero() {
           </CustomLink>
         </div>
         <div className="px-4 mx-auto text-center lg:px-36">
-          <span className="font-semibold text-gray-400 uppercase">FEATURED IN</span>
+          <span className="font-semibold text-gray-400 dark:text-gray-600 uppercase">
+            FEATURED IN
+          </span>
           <div className="flex gap-3 sm:gap-5 flex-wrap justify-center items-center mt-8 text-gray-500">
-            {previousClientsData.slice(0, 5).map((previousClient, index) => {
+            {previousClientsData.slice(0, 3).map((previousClient, index) => {
               return (
-                <div key={index} className="relative w-[80px] sm:w-[150px] h-8 grayscale">
+                <div
+                  key={index}
+                  className="relative w-[100px] sm:w-[180px] h-8 grayscale dark:invert"
+                >
                   <Image
                     alt={previousClient}
                     src={`/static/previousClients/${previousClient}.png`}

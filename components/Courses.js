@@ -4,7 +4,7 @@ import Tag from '@/components/Tag'
 import formatDate from '@/lib/utils/formatDate'
 import CustomButton from '@/components/CustomButton'
 import { FaArrowRight } from 'react-icons/fa'
-
+import CustomHeading from './CustomHeading'
 const Courses = ({ posts }) => {
   let coursesIDs = ['00008']
   let blogIDs = []
@@ -22,7 +22,7 @@ const Courses = ({ posts }) => {
             </div>
 
             <CustomLink href={`/blog/${slug}`}>
-              <h2 className="text-2xl font-bold capitalize tracking-tight leading-none dark:text-gray-900 sm:text-3xl lg:text-4xl text-white">
+              <h2 className="text-2xl font-bold capitalize tracking-tight leading-none text-gray-900 sm:text-3xl lg:text-4xl dark:text-white">
                 {title}
               </h2>
             </CustomLink>
@@ -47,10 +47,8 @@ const Courses = ({ posts }) => {
     })
   })
   return (
-    <section className="py-8 flex-col flex gap-2">
-      <h3 className="mb-4 text-3xl font-bold capitalize tracking-tight leading-none dark:text-gray-900 sm:text-4xl lg:text-5xl text-white">
-        Get the Courses
-      </h3>
+    <section className="py-8 flex-col flex gap-2 container mx-auto rounded-[25px] bg-white dark:border-gray-100 border-2 dark:bg-gray-900 py-8 px-3">
+      <CustomHeading heading="h3">Get the Courses</CustomHeading>
       <div className="grid grid-cols-1 gap-1">{blogIDs}</div>
     </section>
   )

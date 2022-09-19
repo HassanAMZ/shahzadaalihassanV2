@@ -1,13 +1,12 @@
 import CustomLink from '@/components/CustomLink'
 import formatDate from '@/lib/utils/formatDate'
 import Image from 'next/image'
+import CustomHeading from './CustomHeading'
 
 export default function PopularPost({ posts, title }) {
   return (
     <div className="flex flex-col gap-5">
-      <h2 className=" mb-4 text-4xl pt-4 font-bold capitalize tracking-tight leading-none dark:text-gray-900 text-white">
-        Popular Post
-      </h2>
+      <CustomHeading heading="h3">Popular Post</CustomHeading>
       {posts.slice(0, 5).map((frontMatter, index) => {
         const { slug, date, title, coverImage } = frontMatter
         return (
@@ -24,10 +23,12 @@ export default function PopularPost({ posts, title }) {
                   />
                 </div>
                 <div className="flex flex-col justify-center">
-                  <h2 className="text-md font-semibold capitalize tracking-tight leading-1 dark:text-gray-900 text-white">
+                  <h2 className="text-md font-semibold capitalize tracking-tight leading-1 text-gray-900 dark:text-white">
                     {title}
                   </h2>
-                  <span className="text-sm sm:text-lg text-gray-800">{formatDate(date)}</span>
+                  <span className="text-sm sm:text-lg dark:text-gray-200 text-gray-800">
+                    {formatDate(date)}
+                  </span>
                 </div>
               </div>
             </CustomLink>

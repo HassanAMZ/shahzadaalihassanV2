@@ -4,6 +4,7 @@ import { FaInstagram, FaTwitter, FaLinkedin, FaYoutube, FaFacebook, FaGithub } f
 import { SiUpwork } from 'react-icons/si'
 import { HiOutlineMail } from 'react-icons/hi'
 import CustomButton from '@/components/CustomButton'
+import CustomHeading from './CustomHeading'
 const SocialLinks = ({ name, router, icon }) => {
   return (
     <CustomLink href={router} aria-label={name}>
@@ -18,9 +19,7 @@ const SocialProfile = ({ title }) => {
   return (
     <>
       <div className="flex gap-2 flex-col justify-between">
-        <h3 className="mb-4 text-3xl font-bold capitalize tracking-tight leading-none dark:text-gray-900 sm:text-4xl lg:text-5xl text-white">
-          {title}
-        </h3>
+        <CustomHeading heading="h3">{title}</CustomHeading>
         <SocialLinks name={'Upwork'} router={siteMetadata.upwork} icon={<SiUpwork />} />
         <SocialLinks
           name={'Email'}

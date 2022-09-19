@@ -7,12 +7,12 @@ import Image from 'next/image'
 
 export default function NavBar() {
   return (
-    <header className="flex items-center justify-between py-6 px-3 container mx-auto">
+    <header className="sticky border-white dark:border-gray-900 bg-white dark:bg-gray-900 top-0 z-50 flex items-center justify-between pt-6 pb-4 px-3 container mx-auto border-b-2">
       <div>
         <CustomLink href="/" aria-label={siteMetadata.headerTitle}>
           <div className="flex items-center justify-between">
             <div className="flex justify-center items-center">
-              <div className="bg-teal-700 rounded-full w-[40px] h-[40px] relative hover:bg-white">
+              <div className="bg-teal-700 dark:bg-white dark:hover:bg-gray-800 rounded-full w-[40px] h-[40px] relative hover:bg-white">
                 <Image
                   alt="Shahzada Ali Hassan"
                   src="/static/images/avatar.png"
@@ -30,15 +30,15 @@ export default function NavBar() {
             <CustomLink
               key={link.title}
               href={link.href}
-              className="p-1 hover:bg-teal-700 dark:hover:text-white font-bold dark:text-gray-900 text-gray-100 sm:p-4 rounded-[25px]"
+              className="p-1 hover:bg-teal-700 dark:hover:bg-white hover:text-white dark:hover:text-black font-bold text-gray-900 dark:text-gray-100 sm:p-4 rounded-[25px]"
             >
               {link.title}
             </CustomLink>
           ))}
         </div>
+        <ThemeSwitch />
         <MobileNav />
       </div>
-      <span className="hidden sm:block">{/* <ThemeSwitch /> */}</span>
     </header>
   )
 }

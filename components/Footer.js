@@ -7,7 +7,7 @@ export default function LargeWithLogoLeft() {
   return (
     <>
       <div className="container mx-auto my-3 py-10 px-3">
-        <footer className="p-4 dark:bg-white rounded-[25px] shadow md:px-6 md:py-8 bg-gray-900">
+        <footer className="p-4 bg-white rounded-[25px] shadow md:px-6 md:py-8 dark:bg-gray-900">
           {siteMetadata.newsletter.provider !== '' && <NewsletterForm />}
           <div className="sm:flex sm:items-center sm:justify-between">
             <CustomLink href="/about" className="flex items-center mb-4 sm:mb-0">
@@ -18,11 +18,11 @@ export default function LargeWithLogoLeft() {
                 height="40px"
                 className="bg-white rounded-full"
               />
-              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-black text-white">
+              <span className="self-center text-2xl font-semibold whitespace-nowrap text-black dark:text-white">
                 {siteMetadata.author}
               </span>
             </CustomLink>
-            <div className="flex flex-wrap items-center mb-6 text-sm dark:text-gray-500 sm:mb-0 text-gray-400">
+            <div className="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
               <CustomLink href="/about" className="mr-4 hover:underline md:mr-6 ">
                 About
               </CustomLink>
@@ -36,8 +36,8 @@ export default function LargeWithLogoLeft() {
               </CustomLink>
             </div>
           </div>
-          <hr className="my-6 dark:border-gray-200 sm:mx-auto border-gray-700 lg:my-8" />
-          <span className="block text-sm dark:text-gray-500 sm:text-center text-gray-400">
+          <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+          <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
             © 2022{' '}
             <CustomLink href="/" className="hover:underline">
               {siteMetadata.author}™

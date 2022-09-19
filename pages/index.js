@@ -29,10 +29,10 @@ export default function Home({ posts, initialDisplayPosts, pagination, tags }) {
   const sortedTags = Object.keys(tags).sort((a, b) => tags[b] - tags[a])
 
   return (
-    <div className="divide-y">
+    <div>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <Hero />
-      <div className=" container mx-auto px-3 rounded-[25px] bg-teal-100">
+      <div className="p-3">
         <RecentPosts posts={posts} initialDisplayPosts={initialDisplayPosts} title="Recent Posts" />
       </div>
       <div className="flex flex-col container mx-auto px-3 py-10">
@@ -44,13 +44,13 @@ export default function Home({ posts, initialDisplayPosts, pagination, tags }) {
           </CustomButton>
         </CustomLink>
       </div>
-      <div className=" container mx-auto px-3 py-10 rounded-[25px] bg-teal-100">
-        <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-5">
+      <div className="p-3">
+        <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-5 container mx-auto rounded-[25px] bg-white dark:border-gray-100 border-2 dark:bg-gray-900 py-8 px-3">
           <PopularPost posts={posts} title="Popular Posts" />
           <SocialProfile title="Social Profiles" />
         </div>
       </div>
-      <div className=" container mx-auto px-3 py-10">
+      <div className="m-2">
         <Courses posts={posts} />
       </div>
     </div>
