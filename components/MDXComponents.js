@@ -13,33 +13,40 @@ export const MDXComponents = {
   a: CustomLink,
   pre: Pre,
   BlogNewsletterForm: BlogNewsletterForm,
+  ol: (props) => {
+    return (
+      <ol type="1" className="list-decimal list-outside my-1 pl-[40px] mx-0">
+        {props.children}
+      </ol>
+    )
+  },
   code: (props) => {
     return <code className="whitespace-pre-wrap py-2 break-words">{props.children}</code>
   },
   h1: (props) => {
     return (
-      <h1 className=" mb-4 text-5xl font-bold capitalize tracking-tight leading-none dark:text-gray-900 sm:text-6xl lg:text-7xl text-white">
+      <h1 className=" py-2 text-5xl font-bold capitalize tracking-tight leading-none text-gray-900 sm:text-6xl lg:text-7xl dark:text-white">
         {props.children}
       </h1>
     )
   },
   h2: (props) => {
     return (
-      <h2 className="mb-4 text-4xl font-bold capitalize tracking-tight leading-none dark:text-gray-900 sm:text-5xl text-white">
+      <h2 className="py-2 text-4xl font-bold capitalize tracking-tight leading-none text-gray-900 sm:text-5xl dark:text-white">
         {props.children}
       </h2>
     )
   },
   h3: (props) => {
     return (
-      <h3 className="mb-4 text-3xl font-bold capitalize tracking-tight leading-none dark:text-gray-900 sm:text-4xl text-white">
+      <h3 className="py-2 text-3xl font-bold capitalize tracking-tight leading-none text-gray-900 sm:text-4xl dark:text-white">
         {props.children}
       </h3>
     )
   },
   h4: (props) => {
     return (
-      <h3 className="mb-4 text-2xl font-bold capitalize tracking-tight leading-none dark:text-gray-900 sm:text-3xl text-white">
+      <h3 className="py-2 text-2xl font-bold capitalize tracking-tight leading-none text-gray-900 sm:text-3xl dark:text-white">
         {props.children}
       </h3>
     )
