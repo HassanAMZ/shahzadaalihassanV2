@@ -12,7 +12,7 @@ export default function PopularPost({ posts, title }) {
         return (
           <div key={index}>
             <CustomLink href={`/blog/${slug}`}>
-              <div className="hvr-grow grid gap-5 grid-cols-[130px,_1fr]" gap="5">
+              <div className="hvr-grow grid gap-5 grid-cols-[130px,_1fr]">
                 <div className="overflow-hidden rounded-[25px]">
                   <Image
                     src={coverImage}

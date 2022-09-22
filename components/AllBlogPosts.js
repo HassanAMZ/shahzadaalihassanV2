@@ -2,7 +2,7 @@ import Pagination from '@/components/Pagination'
 import CustomHeading from '@/components/CustomHeading'
 import { useState } from 'react'
 import { FaSearch } from 'react-icons/fa'
-import PostCard from '@/components/PostCart'
+import PostCard from '@/components/PostCard'
 
 export default function ListLayout({ posts, initialDisplayPosts = [], pagination, title }) {
   const [searchValue, setSearchValue] = useState('')
