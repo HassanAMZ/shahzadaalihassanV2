@@ -33,19 +33,26 @@ export default function Home({ posts, initialDisplayPosts, pagination, tags }) {
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <Hero />
       <div className="p-3">
-        <RecentPosts posts={posts} initialDisplayPosts={initialDisplayPosts} title="Recent Posts" />
+        <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-5 container mx-auto ">
+          <RecentPosts
+            posts={posts}
+            initialDisplayPosts={initialDisplayPosts}
+            title="Recent Posts"
+          />
+          <div className="rounded-[25px] bg-white dark:border-gray-100 border-2 dark:bg-gray-900 py-8 px-3 flex-col flex gap-2">
+            <AllTags tags={tags} />
+            <CustomLink href="/tags" className="w-full sm:w-fit self-end">
+              <CustomButton scheme={'solid'}>
+                <span className="pr-3">All Categories</span>
+                <FaArrowRight />
+              </CustomButton>
+            </CustomLink>
+          </div>
+        </div>
       </div>
-      <div className="flex flex-col container mx-auto px-3 py-10">
-        <AllTags tags={tags} />
-        <CustomLink href="/tags" className="w-full sm:w-fit self-end">
-          <CustomButton scheme={'solid'}>
-            <span className="pr-3">All Categories</span>
-            <FaArrowRight />
-          </CustomButton>
-        </CustomLink>
-      </div>
+
       <div className="p-3">
-        <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-5 container mx-auto rounded-[25px] bg-white dark:border-gray-100 border-2 dark:bg-gray-900 py-8 px-3">
+        <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-5 container mx-auto ">
           <PopularPost posts={posts} title="Popular Posts" />
           <SocialProfile title="Social Profiles" />
         </div>

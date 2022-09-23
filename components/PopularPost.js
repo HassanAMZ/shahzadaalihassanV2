@@ -5,7 +5,7 @@ import CustomHeading from './CustomHeading'
 
 export default function PopularPost({ posts, title }) {
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col gap-5 rounded-[25px] bg-white dark:border-gray-100 border-2 dark:bg-gray-900 px-3 py-8">
       <CustomHeading heading="h3">Popular Post</CustomHeading>
       {posts.slice(0, 5).map((frontMatter, index) => {
         const { slug, date, title, coverImage } = frontMatter

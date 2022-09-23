@@ -7,8 +7,8 @@ import { FaArrowRight } from 'react-icons/fa'
 import CustomHeading from '@/components/CustomHeading'
 export default function Hero() {
   return (
-    <section className="bg-white dark:bg-gray-900 container mx-auto p-3">
-      <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
+    <section className="bg-white dark:bg-gray-900 container mx-auto px-3">
+      <div className="px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
         <CustomLink
           href={siteMetadata.upwork}
           className="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-gray-600 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600"
@@ -47,16 +47,16 @@ export default function Hero() {
             <CustomButton scheme="ghost">Checkout Projects</CustomButton>
           </CustomLink>
         </div>
-        <div className="px-4 mx-auto text-center lg:px-36">
+        <div className="px-4 mx-auto text-center lg:px-36 pb-6">
           <span className="font-semibold text-gray-400 dark:text-gray-600 uppercase">
             FEATURED IN
           </span>
           <div className="flex gap-3 sm:gap-5 flex-wrap justify-center items-center mt-8 text-gray-500">
-            {previousClientsData.slice(0, 3).map((previousClient, index) => {
+            {previousClientsData.slice(0, 8).map((previousClient, index) => {
               return (
                 <div
                   key={index}
-                  className="relative w-[100px] sm:w-[180px] h-8 grayscale dark:invert"
+                  className="relative w-[100px] sm:w-[180px] h-8  dark:grayscale dark:invert"
                 >
                   <Image
                     alt={previousClient}

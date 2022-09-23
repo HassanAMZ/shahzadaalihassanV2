@@ -18,7 +18,7 @@ const SocialLinks = ({ name, router, icon }) => {
 const SocialProfile = ({ title }) => {
   return (
     <>
-      <div className="flex gap-2 flex-col justify-between">
+      <div className="flex gap-2 flex-col justify-between  rounded-[25px] bg-white dark:border-gray-100 border-2 dark:bg-gray-900 px-3 py-8">
         <CustomHeading heading="h3">{title}</CustomHeading>
         <SocialLinks name={'Upwork'} router={siteMetadata.upwork} icon={<SiUpwork />} />
         <SocialLinks

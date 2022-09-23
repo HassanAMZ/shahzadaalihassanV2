@@ -3,16 +3,16 @@ const previousClientsData = [
   'ozeanriesen',
   'harmon',
   'cmrd',
-  'digitalenergyrevolution',
-  'bearcreekknives',
+  'equifund',
   'wbi',
   'shepherd',
-  'equifund',
-  'roastycoffee',
   'waitlistr',
   'stepbystep',
   'figment',
   'startafaq',
+  'bearcreekknives',
+  'roastycoffee',
+  'digitalenergyrevolution',
 ]
 
 export default previousClientsData
