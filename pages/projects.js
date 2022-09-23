@@ -7,7 +7,7 @@ const Projects = () => {
   return (
     <>
       <PageSEO title={`Projects - ${siteMetadata.author}`} description={siteMetadata.description} />
-      <div className=" container mx-auto px-3">
+      <div className="  mx-auto px-3">
         <h2 className=" mb-4 text-5xl pt-4 font-bold capitalize tracking-tight leading-none dark:text-gray-900 sm:text-6xl  text-white">
           All Projects
         </h2>

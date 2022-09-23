@@ -13,7 +13,7 @@ export default function PopularPost({ posts, title }) {
           <div key={index}>
             <CustomLink href={`/blog/${slug}`}>
               <div className="hvr-grow grid gap-5 grid-cols-[130px,_1fr]">
-                <div className="overflow-hidden rounded-[25px]">
+                <div className="overflow-hidden rounded-sm">
                   <Image
                     src={coverImage}
                     layout="responsive"

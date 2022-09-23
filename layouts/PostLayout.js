@@ -18,7 +18,7 @@ export function PaginationComponent({ pagination, pagination_button }) {
       </CustomLink>
       <CustomLink
         href={`/blog/${pagination.slug}`}
-        className="w-full block p-6 rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 bg-white dark:border-gray-700 dark:hover:bg-gray-700 dark:bg-gray-900"
+        className="w-full block p-6 rounded-sm border border-gray-200 shadow-md hover:bg-gray-100 bg-white dark:border-gray-700 dark:hover:bg-gray-700 dark:bg-gray-900"
       >
         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
           {pagination.title}
@@ -40,8 +40,8 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
       />
       <ScrollTopAndComment />
 
-      <div className="container text-black mx-auto px-3">
-        <div className="flex items-center border-2 p-2 py-10 rounded-[25px] justify-center flex-col gap-2 capitalize ">
+      <div className=" text-black mx-auto px-3">
+        <div className="flex items-center border-2 p-2 py-10 rounded-sm justify-center flex-col gap-2 capitalize ">
           <h2 className="text-center mb-4 text-5xl font-bold capitalize tracking-tight leading-none text-black sm:text-5xl lg:text-6xl dark:text-white">
             {title}
           </h2>
@@ -72,7 +72,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
         </div>
       </div>
 
-      <div className="container mx-auto my-3 px-3">
+      <div className=" mx-auto my-3 px-3">
         <article className="py-2" id="singlePost">
           <div className="flex flex-col py-2">
             <article id="blog_post_content" className="text-justify">

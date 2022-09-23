@@ -10,7 +10,7 @@ export default function ListLayout({ posts, title, tags, initialDisplayPosts = [
   // Capitalize first letter and convert space to dash
   const pageTitle = title.toUpperCase().split('-').join(' ')
   return (
-    <div className="container mx-auto my-3 px-3 rounded-[25px]">
+    <div className=" mx-auto my-3 px-3 rounded-sm">
       <div className="grid gap-5 gird-cols-1 md:grid-cols-[3fr_2fr] lg:grid-cols-[minmax(220px,_2fr)_1fr]">
         <AllBlogPosts
           posts={posts}

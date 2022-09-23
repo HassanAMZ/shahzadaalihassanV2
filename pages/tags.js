@@ -15,7 +15,7 @@ export default function Tags({ tags }) {
   return (
     <>
       <PageSEO title={`Tags - ${siteMetadata.author}`} description="Things I blog about" />
-      <div className=" container mx-auto px-3 py-10">
+      <div className="  mx-auto px-3 py-10">
         <div className="flex flex-col ">
           <CustomHeading heading="h3">Top Tags</CustomHeading>
 

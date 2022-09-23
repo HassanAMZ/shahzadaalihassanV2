@@ -2,11 +2,20 @@
 
 const CustomHeading = ({ heading, children, customClasses, ...rest }) => {
   let Heading =
-    'mb-4 text-3xl font-bold capitalize tracking-tight leading-none text-gray-900 sm:text-4xl lg:text-5xl dark:text-white'
+    'mb-4 text-3xl font-semibold capitalize tracking-tight leading-none text-gray-900 sm:text-4xl lg:text-5xl dark:text-white'
 
   if (heading === 'title') {
     Heading =
-      ' mb-4 text-5xl font-bold capitalize tracking-tight leading-none text-gray-900 sm:text-6xl lg:text-7xl dark:text-white'
+      'text-6xl font-inter  tracking-tight leading-none text-gray-900 sm:text-7xl dark:text-white'
+    let classes = `${Heading}   ${customClasses}`
+    return (
+      <h1 {...rest} className={classes}>
+        {children}
+      </h1>
+    )
+  } else if (heading === 'sub-title') {
+    Heading =
+      'font-playfair_display italic mb-4 text-5xl font-normal tracking-tight leading-none text-gray-900 sm:text-6xl lg:text-7xl dark:text-white'
     let classes = `${Heading}   ${customClasses}`
     return (
       <h1 {...rest} className={classes}>

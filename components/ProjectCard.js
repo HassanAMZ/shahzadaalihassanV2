@@ -6,7 +6,7 @@ const ProjectCard = ({ project }) => {
   return (
     <div
       id={pid}
-      className="bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+      className="bg-white rounded-sm border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
     >
       <CustomLink href={href}>
         <div className="rounded-t-lg overflow-hidden">
@@ -24,7 +24,7 @@ const ProjectCard = ({ project }) => {
         </p>
         <CustomLink
           href={href}
-          className="inline-flex gap-2 items-center underline text-sm font-medium text-center text-teal-700 dark:text-teal-300 rounded-lg "
+          className="inline-flex gap-2 items-center underline text-sm font-medium text-center text-teal-700 dark:text-teal-300 rounded-sm "
         >
           Read more
           <FaArrowRight />

@@ -39,7 +39,10 @@ module.exports = {
         14: '3.5rem',
       },
       fontFamily: {
-        sans: ['InterVariable', ...defaultTheme.fontFamily.sans],
+        sans: ['Inter', ...defaultTheme.fontFamily.sans],
+        inter: ['Inter', ...defaultTheme.fontFamily.sans],
+        playfair_display: ['Playfair Display', 'Inter', ...defaultTheme.fontFamily.serif],
+        ubuntu: ['Ubuntu', 'Inter', ...defaultTheme.fontFamily.serif],
       },
       colors: {
         primary: colors.teal,

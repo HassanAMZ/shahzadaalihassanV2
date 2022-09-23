@@ -29,13 +29,13 @@ export default function Home({ posts, initialDisplayPosts, pagination, tags }) {
   const sortedTags = Object.keys(tags).sort((a, b) => tags[b] - tags[a])
 
   return (
-    <div>
+    <div className="bg-white dark:bg-gray-900">
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <Hero />
       <div className="p-3">
         <RecentPosts posts={posts} initialDisplayPosts={initialDisplayPosts} title="Recent Posts" />
       </div>
-      <div className="flex flex-col container mx-auto px-3 py-10">
+      <div className="flex flex-col  mx-auto px-3 py-10">
         <AllTags tags={tags} />
         <CustomLink href="/tags" className="w-full sm:w-fit self-end">
           <CustomButton scheme={'solid'}>
@@ -45,7 +45,7 @@ export default function Home({ posts, initialDisplayPosts, pagination, tags }) {
         </CustomLink>
       </div>
       <div className="p-3">
-        <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-5 container mx-auto rounded-[25px] bg-white dark:border-gray-100 border-2 dark:bg-gray-900 py-8 px-3">
+        <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-5  mx-auto rounded-sm bg-white dark:border-gray-100 border-2 dark:bg-gray-900 py-8 px-3">
           <PopularPost posts={posts} title="Popular Posts" />
           <SocialProfile title="Social Profiles" />
         </div>

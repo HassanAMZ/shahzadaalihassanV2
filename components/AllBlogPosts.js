@@ -18,7 +18,7 @@ export default function ListLayout({ posts, initialDisplayPosts = [], pagination
 
   return (
     <>
-      <div className="container mx-auto px-3">
+      <div className=" mx-auto px-3">
         <CustomHeading heading="h3" customClasses={'pt-4'}>
           {title}
         </CustomHeading>
