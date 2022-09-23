@@ -2,7 +2,7 @@ import headerNavLinks from '@/data/headerNavLinks'
 import ThemeSwitch from '@/components/ThemeSwitch'
 import siteMetadata from '@/data/siteMetadata'
 import CustomLink from '@/components/CustomLink'
-import MobileNav from '@/components/MobileNav '
+import MobileNav from '@/components/MobileNav'
 import Image from 'next/image'
 
 export default function NavBar() {

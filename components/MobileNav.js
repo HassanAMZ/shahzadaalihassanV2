@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import CustomLink from '@/components/CustomLink'
 import headerNavLinks from '@/data/headerNavLinks'
-
 const MobileNav = () => {
   const [navShow, setNavShow] = useState(false)
 
