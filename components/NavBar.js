@@ -24,7 +24,7 @@ export default function NavBar() {
           </div>
         </CustomLink>
       </div>
-      <div className="flex items-center ">
+      <div className="flex items-center justify-center gap-2 ">
         <div className="hidden sm:block">
           {headerNavLinks.map((link) => (
             <CustomLink

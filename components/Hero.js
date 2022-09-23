@@ -52,11 +52,11 @@ export default function Hero() {
             FEATURED IN
           </span>
           <div className="flex gap-3 sm:gap-5 flex-wrap justify-center items-center mt-8 text-gray-500">
-            {previousClientsData.slice(0, 8).map((previousClient, index) => {
+            {previousClientsData.slice(0, 6).map((previousClient, index) => {
               return (
                 <div
                   key={index}
-                  className="relative w-[100px] sm:w-[180px] h-8  dark:grayscale dark:invert"
+                  className="relative w-[100px] sm:w-[120px] h-8  dark:grayscale dark:invert"
                 >
                   <Image
                     alt={previousClient}
