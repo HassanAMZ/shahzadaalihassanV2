@@ -14,7 +14,7 @@ const ThemeSwitch = () => {
       aria-label="Toggle Dark Mode"
       type="button"
       className="h-fit w-fit text-gray-900 dark:text-gray-100"
-      onClick={() => setTheme(theme === 'dark' || resolvedTheme === 'dark' ? 'light' : 'dark')}
+      onClick={() => setTheme(theme === 'light' || resolvedTheme === 'light' ? 'dark' : 'light')}
     >
       {mounted && (theme === 'dark' || resolvedTheme === 'dark') ? (
         <FaSun size={22} />
