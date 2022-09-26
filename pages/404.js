@@ -2,8 +2,8 @@ import CustomLink from '@/components/CustomLink'
 
 export default function FourZeroFour() {
   return (
-    <div className="container mx-auto bg-white rounded-[25px] border-teal-700 p-3 h-[80vh] flex items-center justify-center">
-      <div className="rounded-[25px] py-4 text-center">
+    <div className="container mx-auto bg-white rounded-lg border-teal-700 p-3 h-[80vh] flex items-center justify-center">
+      <div className="rounded-lg py-4 text-center">
         <h1 className="text-9xl font-bold text-teal-400">404</h1>
         <h1 className="text-6xl font-medium py-2">Page not found</h1>
         <p className="text-2xl py-2 sm:px-16 sm:py-4 font-medium">

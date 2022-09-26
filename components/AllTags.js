@@ -4,7 +4,7 @@ import CustomHeading from './CustomHeading'
 export default function AllTags({ tags }) {
   const sortedTags = Object.keys(tags).sort((a, b) => tags[b] - tags[a])
   return (
-    <section className="py-8 flex-col flex gap-2">
+    <section className="flex-col flex gap-2">
       <CustomHeading heading="h3">Top Categories</CustomHeading>
       <div className="flex flex-wrap gap-2">
         {Object.keys(tags).length === 0 && 'No tags found.'}

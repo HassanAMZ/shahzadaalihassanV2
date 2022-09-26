@@ -10,7 +10,7 @@ export default function ListLayout({ posts, title, tags, initialDisplayPosts = [
   // Capitalize first letter and convert space to dash
   const pageTitle = title.toUpperCase().split('-').join(' ')
   return (
-    <div className="container mx-auto my-3 px-3 rounded-[25px]">
+    <div className="container mx-auto my-3 px-3 rounded-lg">
       <div className="grid gap-5 gird-cols-1 md:grid-cols-[3fr_2fr] lg:grid-cols-[minmax(220px,_2fr)_1fr]">
         <AllBlogPosts
           posts={posts}
@@ -19,9 +19,11 @@ export default function ListLayout({ posts, title, tags, initialDisplayPosts = [
           title={pageTitle}
           randomGenerator={randomGenerator}
         />
-        <div>
+        <div className="flex flex-col gap-5">
           <PopularPost posts={posts} title={pageTitle} initialDisplayPosts={'4'} tags={tags} />
-          <AllTags tags={tags} />
+          <div className="rounded-lg bg-white dark:border-gray-100 border-2 dark:bg-gray-900 px-3 py-8">
+            <AllTags tags={tags} />
+          </div>
           <SocialProfile title="Social Profiles" />
         </div>
       </div>

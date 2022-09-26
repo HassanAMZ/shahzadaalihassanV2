@@ -48,15 +48,15 @@ export default function Hero() {
           </CustomLink>
         </div>
         <div className="px-4 mx-auto text-center lg:px-36 pb-6">
-          <span className="font-semibold text-gray-400 dark:text-gray-600 uppercase">
+          {/* <span className="font-semibold text-gray-400 dark:text-gray-600 uppercase">
             FEATURED IN
-          </span>
+          </span> */}
           <div className="flex gap-3 sm:gap-5 flex-wrap justify-center items-center mt-8 text-gray-500">
             {previousClientsData.slice(0, 6).map((previousClient, index) => {
               return (
                 <div
                   key={index}
-                  className="relative w-[100px] sm:w-[120px] h-8  dark:grayscale dark:invert"
+                  className="relative w-[80px] sm:w-[100px] md:w-[130px] h-8 sm:h-10 md:h-12 dark:grayscale dark:invert"
                 >
                   <Image
                     alt={previousClient}

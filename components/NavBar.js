@@ -30,7 +30,7 @@ export default function NavBar() {
             <CustomLink
               key={link.title}
               href={link.href}
-              className="p-1 hover:bg-teal-700 dark:hover:bg-white hover:text-white dark:hover:text-black font-bold text-gray-900 dark:text-gray-100 sm:p-4 rounded-[25px]"
+              className="p-1 hover:bg-teal-700 dark:hover:bg-white hover:text-white dark:hover:text-black font-bold text-gray-900 dark:text-gray-100 sm:p-4 rounded-lg"
             >
               {link.title}
             </CustomLink>
