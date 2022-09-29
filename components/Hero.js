@@ -31,7 +31,7 @@ export default function Hero() {
             ></path>
           </svg>
         </CustomLink>
-        <CustomHeading heading="title">Top Rated Web Analyts on Upwork</CustomHeading>
+        <CustomHeading heading="title">Top Rated Web Analyst on Upwork</CustomHeading>
         <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
           Measurement and web analytics are at the heart of all we do. After all, how can you tell
           if you got a return on your investment if you can't measure it?

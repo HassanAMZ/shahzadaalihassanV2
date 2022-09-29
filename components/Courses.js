@@ -15,7 +15,7 @@ const Courses = ({ posts }) => {
     coursesIDs.map((coursesID, indexA) => {
       if (blogID == coursesID) {
         blogIDs[indexA] = (
-          <>
+          <div key={indexA}>
             <div className="flex flex-col gap-4">
               <CustomLink href={`/blog/${slug}`}>
                 <h2 className="text-2xl font-bold capitalize tracking-tight leading-none text-gray-900 sm:text-3xl lg:text-4xl dark:text-white">
@@ -42,7 +42,7 @@ const Courses = ({ posts }) => {
                 <FaArrowRight />
               </CustomButton>
             </CustomLink>
-          </>
+          </div>
         )
       }
     })
