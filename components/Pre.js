@@ -21,7 +21,12 @@ const Pre = (props) => {
   }
 
   return (
-    <div ref={textInput} onMouseEnter={onEnter} onMouseLeave={onExit} className="relative py-5">
+    <div
+      ref={textInput}
+      onMouseEnter={onEnter}
+      onMouseLeave={onExit}
+      className="relative my-5 dark:bg-gray-800 bg-gray-100 rounded-lg border-gray-200 shadow-md"
+    >
       {hovered && (
         <button
           aria-label="Copy code"
