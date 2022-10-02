@@ -32,12 +32,12 @@ export default function Home({ posts, initialDisplayPosts, pagination, tags }) {
     <div>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <Hero />
-      <div className="p-3">
-        <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-5 container mx-auto ">
-          <PopularPost posts={posts} title="Popular Posts" />
-          <Courses posts={posts} />
-        </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-5 container mx-auto ">
+        <PopularPost posts={posts} title="Popular Posts" />
+        <Courses posts={posts} />
       </div>
+
       <div className="grid grid-cols-1 md:grid-cols-[2fr_3fr] gap-5  py-3 container mx-auto ">
         <RecentPosts posts={posts} initialDisplayPosts={initialDisplayPosts} title="Recent Posts" />
         <div className="flex flex-col gap-5 justify-between items-stretch">

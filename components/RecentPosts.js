@@ -6,7 +6,7 @@ export default function RecentPosts({ title, initialDisplayPosts = [] }) {
   return (
     <section className="rounded-lg bg-white dark:border-gray-100 border-2 dark:bg-gray-900 flex-col flex gap-2 py-8 px-3 items-stretch justify-between">
       <CustomHeading heading="h3">{title}</CustomHeading>
-      <div>
+      <>
         {!initialDisplayPosts.length && 'No posts found.'}
         {initialDisplayPosts.map((frontMatter, index) => {
           const { slug, date, title, summary, tags } = frontMatter
@@ -31,7 +31,7 @@ export default function RecentPosts({ title, initialDisplayPosts = [] }) {
             </CustomLink>
           )
         })}
-      </div>
+      </>
       <CustomLink href="/blog" className="w-full sm:w-fit self-end">
         <CustomButton scheme={'solid'}>
           <span className="pr-3">All Posts</span>
