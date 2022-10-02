@@ -12,11 +12,13 @@ const PostCard = ({ post }) => {
       </CustomLink>
       <div className="p-5">
         <CustomLink href={`/blog/${slug}`}>
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white line-clamp-2 sm:line-clmap-3">
             {title}
           </h5>
         </CustomLink>
-        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400 line-clamp-3">{summary}</p>
+        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400 line-clamp-2 sm:line-clmap-3">
+          {summary}
+        </p>
         <CustomLink
           href={`/blog/${slug}`}
           className="inline-flex gap-2 items-center underline text-sm font-medium text-center text-teal-700 dark:text-teal-400 rounded-lg "

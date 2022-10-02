@@ -24,7 +24,7 @@ export default function PopularPost({ posts, title }) {
                   />
                 </div>
                 <div className="flex flex-col justify-center">
-                  <h2 className="text-md font-semibold capitalize tracking-tight leading-1 text-gray-900 dark:text-white">
+                  <h2 className="line-clamp-2 text-md font-semibold capitalize tracking-tight leading-1 text-gray-900 dark:text-white">
                     {title}
                   </h2>
                   <span className="text-sm sm:text-lg dark:text-gray-200 text-gray-800">

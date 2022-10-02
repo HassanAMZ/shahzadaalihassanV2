@@ -17,7 +17,15 @@ const CustomLink = ({ href, ...rest }) => {
     return <a href={href} {...rest} />
   }
 
-  return <a target="_blank" rel="noopener noreferrer" href={isExternal} {...rest} />
+  return (
+    <a
+      target="_blank"
+      rel="noopener noreferrer"
+      className="underline decoration-dashed"
+      href={isExternal}
+      {...rest}
+    />
+  )
 }
 
 export default CustomLink
