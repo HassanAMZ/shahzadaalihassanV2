@@ -7,7 +7,7 @@ import Image from 'next/image'
 
 export default function NavBar() {
   return (
-    <header className="sticky border-white dark:border-gray-900 bg-white dark:bg-gray-900 top-0 z-50 flex items-center justify-between pt-6 pb-4 px-3 container mx-auto border-b-2">
+    <header className="border-white dark:border-gray-900 bg-white dark:bg-gray-900 top-0 z-50 flex items-center justify-between pt-6 pb-4 px-3 container mx-auto border-b-2">
       <div>
         <CustomLink href="/" aria-label={siteMetadata.headerTitle}>
           <div className="flex items-center justify-between">
