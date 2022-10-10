@@ -190,3 +190,8 @@ button:focus {
   -webkit-animation-timing-function: ease-out;
   animation-timing-function: ease-out;
 }
+
+code {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
