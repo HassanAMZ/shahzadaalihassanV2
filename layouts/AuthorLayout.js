@@ -1,4 +1,5 @@
 import AllProjects from '@/components/AllProjects'
+import Timeline from '@/components/Timeline'
 import CustomHeading from '@/components/CustomHeading'
 import { PageSEO } from '@/components/SEO'
 export default function AuthorLayout({ children, frontMatter }) {
@@ -12,8 +13,9 @@ export default function AuthorLayout({ children, frontMatter }) {
         <article id="author_content" className="text-justify py-8">
           {children}
         </article>
-        <AllProjects />
       </div>
+      <Timeline />
+      {/* <AllProjects /> */}
     </>
   )
 }

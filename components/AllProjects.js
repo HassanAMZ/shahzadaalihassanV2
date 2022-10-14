@@ -6,7 +6,7 @@ import CustomHeading from '@/components/CustomHeading'
 
 const AllProjects = () => {
   return (
-    <div className=" container mx-auto px-3">
+    <div className="container mx-auto px-3">
       <CustomHeading heading="h2"> All Projects</CustomHeading>
       <div className="grid grid-cols-[repeat(auto-fill,_minmax(300px,_1fr))] gap-6">
         {projectsData.map((project, index) => (

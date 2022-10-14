@@ -52,6 +52,7 @@ export default function App({ Component, pageProps }) {
       <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
         <NavBar />
         <Component {...pageProps} />
+
         <Footer />
       </ThemeProvider>
     </>
