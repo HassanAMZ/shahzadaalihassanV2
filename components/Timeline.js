@@ -8,7 +8,7 @@ import CustomHeading from './CustomHeading'
 import timelineData from '@/data/timelineData'
 const Timeline = () => {
   return (
-    <div className="container mx-auto sm:px-3 pr-3">
+    <div className="container mx-auto px-3">
       <CustomHeading customClasses="px-3" heading="h2">
         Timeline
       </CustomHeading>
