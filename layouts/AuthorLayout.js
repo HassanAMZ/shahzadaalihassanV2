@@ -2,6 +2,7 @@ import AllProjects from '@/components/AllProjects'
 import Timeline from '@/components/Timeline'
 import CustomHeading from '@/components/CustomHeading'
 import { PageSEO } from '@/components/SEO'
+import SocialProfile from '@/components/SocialProfile'
 export default function AuthorLayout({ children, frontMatter }) {
   const { name } = frontMatter
 
@@ -10,9 +11,12 @@ export default function AuthorLayout({ children, frontMatter }) {
       <PageSEO title={`About - ${name}`} description={`About me - ${name}`} />
       <div className="py-4 px-3">
         <CustomHeading heading="h2">A Quick Introduction</CustomHeading>
-        <article id="author_content" className="text-justify py-8">
+        <article id="author_content" className="text-justify py-4">
           {children}
         </article>
+      </div>
+      <div className="pb-8 px-3">
+        <SocialProfile title="Get In Touch" />
       </div>
       <Timeline />
       {/* <AllProjects /> */}
