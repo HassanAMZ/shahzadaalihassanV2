@@ -6,8 +6,8 @@ import NewsletterForm from '@/components/NewsletterForm'
 export default function LargeWithLogoLeft() {
   return (
     <>
-      <div className="container mx-auto my-3 py-10 px-3">
-        <footer className="p-4 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-900">
+      <div className="container mx-auto my-3 py-10 ">
+        <footer className="p-4 bg-white rounded-lg border-2 shadow md:px-6 md:py-8 dark:bg-gray-900">
           {siteMetadata.newsletter.provider !== '' && <NewsletterForm />}
           <div className="sm:flex sm:items-center sm:justify-between">
             <CustomLink href="/about" className="flex items-center mb-4 sm:mb-0">
@@ -18,7 +18,7 @@ export default function LargeWithLogoLeft() {
                 height="40px"
                 className="bg-white rounded-full"
               />
-              <span className="self-center text-2xl font-semibold whitespace-nowrap text-black dark:text-white">
+              <span className="self-center px-2 text-2xl font-semibold whitespace-nowrap text-black dark:text-white">
                 {siteMetadata.author}
               </span>
             </CustomLink>
