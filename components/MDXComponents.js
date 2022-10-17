@@ -16,9 +16,6 @@ export const MDXComponents = {
   ol: ({ ...rest }) => {
     return <ol type="1" className="list-decimal list-outside my-1 pl-[40px] mx-0" {...rest} />
   },
-  code: ({ ...rest }) => {
-    return <code className="whitespace-pre-wrap py-2 break-words" {...rest} />
-  },
   h1: (props) => {
     return (
       <h1
