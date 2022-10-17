@@ -192,6 +192,6 @@ button:focus {
 }
 
 code {
-  white-space: pre-wrap;
+  white-space: pre-wrap !important;
   word-wrap: break-word;
 }
