@@ -34,8 +34,8 @@ export default function Jobs() {
             <li>Experience with word-processing software and spreadsheets (e.g. MS Office)</li>
             <li>Internet, Smart phone and Laptop/Computer</li>
           </ol>
-          <CustomHeading heading="h2">Salary</CustomHeading>
-          <div>10,000 PKR </div>
+          <CustomHeading heading="h2">Salary & Deadline</CustomHeading>
+          <div>10,000 PKR & hiring by 1st November 2022</div>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <CustomLink
               className="w-full"
