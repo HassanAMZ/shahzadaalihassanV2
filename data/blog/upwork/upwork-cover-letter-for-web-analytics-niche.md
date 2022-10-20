@@ -27,8 +27,6 @@ Table Of Content:
 ```
 Hi, [Name of the client]
 
-Interesting job post, too often I just see “need help” in these posts, so the details you provided were great.
-
 I have made a short video for you: [Link of Loom Video]
 
 Google tag manager requires a data layer object, which is built either directly on the root of the website, or built using a script, depending on the content management system you are using for your websites such as WordPress, Shopify, or custom websites. Data is passed based on events to Google Analytics or Facebook Brower pixel from Google tag manager. If you are only interested in the browser pixel for Facebook then we do not need to set up the conversion API and google tag manager server containers.
@@ -39,9 +37,7 @@ Setting up enhanced eCommerce events, web tracking, and testing the setup takes 
 
 I’m a top-rated web analyst and have set up and configured 100+ websites with google tag manager, google analytics, and Facebook pixel in the span of the last 6 months. I have experience setting up conversion tracking, enhanced eCommerce events, outbound affiliate links tracking, Facebook, Google, Pinterest remarketing tags for ads.
 
-Do you need a [Title of the Job Post] expert?
-
-Let’s schedule a quick discovery call. Please provide 2 times this week that work for you.
+Do you need a [Title of the Job Post] expert? Let’s schedule a quick discovery call. Please provide 2 times this week that work for you.
 
 -Hassan
 
