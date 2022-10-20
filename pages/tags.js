@@ -3,7 +3,7 @@ import { PageSEO } from '@/components/SEO'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllTags } from '@/lib/tags'
-
+import WebsiteLayout from '@/layouts/WebsiteLayout'
 export async function getStaticProps() {
   const tags = await getAllTags('blog')
 
@@ -13,7 +13,7 @@ export async function getStaticProps() {
 export default function Tags({ tags }) {
   const sortedTags = Object.keys(tags).sort((a, b) => tags[b] - tags[a])
   return (
-    <>
+    <WebsiteLayout>
       <PageSEO title={`Tags - ${siteMetadata.author}`} description="Things I blog about" />
       <div className=" container mx-auto px-3 py-10">
         <div className="flex flex-col ">
@@ -27,6 +27,6 @@ export default function Tags({ tags }) {
           </div>
         </div>
       </div>
-    </>
+    </WebsiteLayout>
   )
 }

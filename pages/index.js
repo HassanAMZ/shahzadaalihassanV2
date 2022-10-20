@@ -11,7 +11,7 @@ import PopularPost from '@/components/PopularPost'
 import CustomLink from '@/components/CustomLink'
 import CustomButton from '@/components/CustomButton'
 import { FaArrowRight } from 'react-icons/fa'
-
+import WebsiteLayout from '@/layouts/WebsiteLayout'
 export const POSTS_PER_PAGE = 5
 export async function getStaticProps() {
   const tags = await getAllTags('blog')
@@ -29,7 +29,7 @@ export default function Home({ posts, initialDisplayPosts, pagination, tags }) {
   const sortedTags = Object.keys(tags).sort((a, b) => tags[b] - tags[a])
 
   return (
-    <div>
+    <WebsiteLayout>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <Hero />
 
@@ -53,6 +53,6 @@ export default function Home({ posts, initialDisplayPosts, pagination, tags }) {
           </div>
         </div>
       </div>
-    </div>
+    </WebsiteLayout>
   )
 }

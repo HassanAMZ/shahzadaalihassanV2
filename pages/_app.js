@@ -6,9 +6,6 @@ import Head from 'next/head'
 import MailChimpHeadCode from '@/components/MailChimpHeadCode'
 import Script from 'next/script'
 import siteMetadata from '@/data/siteMetadata'
-
-import NavBar from '@/components/NavBar'
-import Footer from '@/components/Footer'
 import { useRouter } from 'next/router'
 
 let GTM_Tracking_ID = siteMetadata.analytics.googleTagManagerID || ''
@@ -50,10 +47,7 @@ export default function App({ Component, pageProps }) {
       />
       <MailChimpHeadCode />
       <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
-        <NavBar />
         <Component {...pageProps} />
-
-        <Footer />
       </ThemeProvider>
     </>
   )

@@ -3,6 +3,7 @@ import siteMetadata from '@/data/siteMetadata'
 import ListLayout from '@/layouts/ListLayout'
 import { PageSEO } from '@/components/SEO'
 import { getAllTags } from '@/lib/tags'
+import WebsiteLayout from '@/layouts/WebsiteLayout'
 export const POSTS_PER_PAGE = 9
 
 export async function getStaticProps() {
@@ -19,7 +20,7 @@ export async function getStaticProps() {
 
 export default function Blog({ posts, initialDisplayPosts, pagination, tags }) {
   return (
-    <>
+    <WebsiteLayout>
       <PageSEO title={`Blog - ${siteMetadata.author}`} description={siteMetadata.description} />
       <ListLayout
         posts={posts}
@@ -28,6 +29,6 @@ export default function Blog({ posts, initialDisplayPosts, pagination, tags }) {
         tags={tags}
         title="All Posts"
       />
-    </>
+    </WebsiteLayout>
   )
 }
