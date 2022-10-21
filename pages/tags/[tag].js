@@ -7,6 +7,7 @@ import { getAllTags } from '@/lib/tags'
 import kebabCase from '@/lib/utils/kebabCase'
 import fs from 'fs'
 import path from 'path'
+import WebsiteLayout from '@/layouts/WebsiteLayout'
 
 const root = process.cwd()
 
@@ -43,12 +44,12 @@ export default function Tag({ posts, tag, tags }) {
   // Capitalize first letter and convert space to dash
   const title = tag[0].toUpperCase() + tag.split(' ').join(' ').slice(1)
   return (
-    <>
+    <WebsiteLayout>
       <TagSEO
         title={`${tag} - ${siteMetadata.author}`}
         description={`${tag} tags - ${siteMetadata.author}`}
       />
       <ListLayout posts={posts} title={title} tags={tags} />
-    </>
+    </WebsiteLayout>
   )
 }

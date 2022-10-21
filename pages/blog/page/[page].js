@@ -4,7 +4,7 @@ import { getAllFilesFrontMatter } from '@/lib/mdx'
 import ListLayout from '@/layouts/ListLayout'
 import { POSTS_PER_PAGE } from '../../blog'
 import { getAllTags } from '@/lib/tags'
-
+import WebsiteLayout from '@/layouts/WebsiteLayout'
 export async function getStaticPaths() {
   const totalPosts = await getAllFilesFrontMatter('blog')
   const totalPages = Math.ceil(totalPosts.length / POSTS_PER_PAGE)
@@ -47,14 +47,16 @@ export async function getStaticProps(context) {
 export default function PostPage({ posts, initialDisplayPosts, pagination, tags }) {
   return (
     <>
-      <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
-      <ListLayout
-        tags={tags}
-        posts={posts}
-        initialDisplayPosts={initialDisplayPosts}
-        pagination={pagination}
-        title="All Posts"
-      />
+      <WebsiteLayout>
+        <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
+        <ListLayout
+          tags={tags}
+          posts={posts}
+          initialDisplayPosts={initialDisplayPosts}
+          pagination={pagination}
+          title="All Posts"
+        />
+      </WebsiteLayout>
     </>
   )
 }
