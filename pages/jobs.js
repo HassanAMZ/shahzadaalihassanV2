@@ -37,10 +37,7 @@ export default function Jobs() {
           <CustomHeading heading="h2">Salary & Deadline</CustomHeading>
           <div>10,000 PKR & hiring by 1st November 2022</div>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <CustomLink
-              className="w-full"
-              href="https://docs.google.com/forms/d/1zh45u1fpN1sGncXzJX4NTKo8rYfgG2Pd1ds9ds3CuZs/edit"
-            >
+            <CustomLink className="w-full" href="https://forms.gle/BMThGz2d3WoyibzU7">
               <CustomButton scheme={'solid'}>Apply for Job</CustomButton>
             </CustomLink>
           </div>
