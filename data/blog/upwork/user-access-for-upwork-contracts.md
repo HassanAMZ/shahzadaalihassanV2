@@ -23,7 +23,7 @@ You can check the official links for each platform! Kindly use the details menti
 
 **Agency: [ShahzadaAliHassan Inc.](https://www.upwork.com/ag/shahzadaalihassan/)**
 
-**Email: reactjswebdev@gmail.com**
+## **Email: analytics@shahzadaalihassan.com**
 
 Country: Pakistan
 
