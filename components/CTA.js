@@ -3,7 +3,7 @@ import CustomLink from './CustomLink'
 
 export default function CTA({ header, headIcon, headline, caption, cta, ctaLink, ctaIcon }) {
   return (
-    <div className="border-gray-900 dark:border-gray-100 border-2 md:border-2 w-full bg-gray-100 dark:bg-gray-900 flex flex-col justify-between">
+    <div className="border-gray-900 dark:border-gray-100 border-2 md:border-2  w-full bg-gray-100 dark:bg-gray-900 flex flex-col justify-between">
       <div className="font-bold px-4 py-2 text-sm border-b-2 border-gray-900 dark:border-gray-100 flex justify-between">
         <div>{header}</div>
         <div>{headIcon}</div>

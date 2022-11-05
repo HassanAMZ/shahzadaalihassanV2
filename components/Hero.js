@@ -30,12 +30,9 @@ export default function Hero() {
 
   return (
     <>
-      <section className="flex md:min-h-[50vh] h-full justify-center flex-col bg-no-repeat bg-cover bg-blue-200 dark:bg-gray-900">
-        <div className="container mx-auto p-4 items-stretch xl:items-center  grid grid-cols-1 sm:grid-cols-2 ">
+      <section className="flex justify-center flex-col bg-no-repeat bg-cover bg-blue-200 dark:bg-gray-900">
+        <div className="container mx-auto p-4 items-stretch xl:items-center flex justify-center">
           <CTA {...data} />
-          <div className="sm:block hidden">
-            <HeroImage />
-          </div>
         </div>
       </section>
     </>
