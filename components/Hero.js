@@ -5,7 +5,7 @@ export default function Hero() {
   const data = {
     header: 'Web Analytics',
     headIcon: 'o o o',
-    headline: "Award-winning Lahore's web analytics & measurement agency",
+    headline: "Top-Rated Pakistan's web analytics & measurement agency on Upwork",
     caption:
       'Get the data that is easy to understand, accurate, drives conversions, and boosts your ads algorithems.',
     cta: 'Show me the Portfolio',
