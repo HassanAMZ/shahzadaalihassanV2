@@ -4,7 +4,7 @@ export default function WebsiteLayout({ children }) {
   return (
     <>
       <NavBar />
-      {children}
+      <main>{children}</main>
       <Footer />
     </>
   )

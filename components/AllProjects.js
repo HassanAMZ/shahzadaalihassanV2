@@ -6,9 +6,8 @@ import CustomHeading from '@/components/CustomHeading'
 
 const AllProjects = () => {
   return (
-    <div className="container mx-auto px-3">
-      <CustomHeading heading="h2"> All Projects</CustomHeading>
-      <div className="grid grid-cols-[repeat(auto-fill,_minmax(300px,_1fr))] gap-6">
+    <div className="container mx-auto p-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {projectsData.map((project, index) => (
           <div key={index} className="grid justify-items-center">
             <ProjectCard project={project} />

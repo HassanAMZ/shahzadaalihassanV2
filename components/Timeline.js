@@ -8,11 +8,11 @@ import CustomHeading from './CustomHeading'
 import timelineData from '@/data/timelineData'
 const Timeline = () => {
   return (
-    <div className="container mx-auto px-3">
+    <div className="container mx-auto p-4 border-2 rounded-lg dark:border-gray-100">
       <CustomHeading customClasses="px-3" heading="h2">
         Timeline
       </CustomHeading>
-      <ol className="border-l-2 border-teal-600 dark:text-white pt-8">
+      <ol className="border-l-2 border-teal-600 dark:text-white pt-8 ">
         {timelineData.map(({ tid, title, date, image_source, description, href }, index) => (
           <li key={index}>
             <div className="flex flex-start items-center">

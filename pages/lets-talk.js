@@ -8,7 +8,7 @@ export async function getStaticProps() {
   return { props: { authorDetails } }
 }
 
-export default function About({ authorDetails }) {
+export default function LetsTalk({ authorDetails }) {
   const { mdxSource, frontMatter } = authorDetails
 
   return (

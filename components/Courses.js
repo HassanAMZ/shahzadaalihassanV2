@@ -45,7 +45,7 @@ const Courses = ({ posts }) => {
     })
   })
   return (
-    <section className="py-8 flex-col justify-between flex gap-2 container mx-auto rounded-lg bg-white dark:border-gray-100 border-2 dark:bg-gray-900 px-3 ">
+    <section className="py-8 flex-col justify-between flex gap-2 container mx-auto p-4 rounded-lg bg-white dark:border-gray-100 border-2 dark:bg-gray-900">
       <CustomHeading heading="h3">Get the Course</CustomHeading>
       {blogIDs}
     </section>

@@ -19,6 +19,9 @@ const CustomButton = ({ scheme, customClasses, ...rest }) => {
   } else if (scheme === 'ghost-solid') {
     ButtonScheme =
       'dark:text-white w-full dark:hover:text-white border dark:border-teal-700 dark:hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 border-teal-500 text-black hover:text-white hover:bg-teal-600 dark:focus:ring-teal-800'
+  } else if (scheme === 'solid-sm') {
+    ButtonScheme =
+      'inline-flex w-full justify-center items-center p-2 text-sm font-medium text-center text-white rounded-lg bg-primary-600 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900'
   }
   let classes = `${ButtonScheme}   ${customClasses}`
 

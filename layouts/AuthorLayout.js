@@ -9,16 +9,15 @@ export default function AuthorLayout({ children, frontMatter }) {
   return (
     <>
       <PageSEO title={`About - ${name}`} description={`About me - ${name}`} />
-      <div className="py-4 px-3">
+      <div className="space-y-4">
         <CustomHeading heading="h2">A Quick Introduction</CustomHeading>
         <article id="author_content" className="text-justify py-4">
           {children}
         </article>
-      </div>
-      <div className="pb-8 px-3">
         <SocialProfile title="Get In Touch" />
+        <Timeline />
       </div>
-      <Timeline />
+
       {/* <AllProjects /> */}
     </>
   )

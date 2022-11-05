@@ -1,44 +1,31 @@
+import Link from 'next/link'
+import CustomLink from './CustomLink'
+import MobileNav from './MobileNav'
 import headerNavLinks from '@/data/headerNavLinks'
-import ThemeSwitch from '@/components/ThemeSwitch'
-import siteMetadata from '@/data/siteMetadata'
-import CustomLink from '@/components/CustomLink'
-import MobileNav from '@/components/MobileNav'
-import Image from 'next/image'
 
 export default function NavBar() {
   return (
-    <header className="border-white dark:border-gray-900 bg-white dark:bg-gray-900 top-0 z-50 flex items-center justify-between pt-6 pb-4 px-3 container mx-auto border-b-2">
-      <div>
-        <CustomLink href="/" aria-label={siteMetadata.headerTitle}>
-          <div className="flex items-center justify-between">
-            <div className="flex justify-center items-center">
-              <div className="bg-teal-700 dark:bg-white dark:hover:bg-gray-800 rounded-full w-[40px] h-[40px] relative hover:bg-white">
-                <Image
-                  alt="Shahzada Ali Hassan"
-                  src="/static/images/avatar.png"
-                  layout="fill"
-                  objectFit="contain"
-                />
-              </div>
-            </div>
-          </div>
+    <header className="sticky top-0 z-50 border-b-2 border-gray-900 bg-gray-100 text-gray-900">
+      <nav className="flex items-center container mx-auto justify-between font-semibold antialiased">
+        <MobileNav />
+        <CustomLink href="/" className="">
+          Shahzada Ali Hassan
         </CustomLink>
-      </div>
-      <div className="flex items-center justify-center gap-2 ">
-        <div className="hidden sm:block">
+        <div className="sm:flex space-x-4 hidden">
           {headerNavLinks.map((link) => (
-            <CustomLink
-              key={link.title}
-              href={link.href}
-              className="p-1 hover:bg-teal-700 dark:hover:bg-white hover:text-white dark:hover:text-black font-bold text-gray-900 dark:text-gray-100 sm:p-4 rounded-lg"
-            >
+            <CustomLink key={link.title} href={link.href}>
               {link.title}
             </CustomLink>
           ))}
         </div>
-        <ThemeSwitch />
-        <MobileNav />
-      </div>
+
+        <CustomLink
+          href="/lets-talk"
+          className="p-4 animate-charcter border-l-2 border-gray-900 hover:bg-gray-100 hover:text-gray-900 bg-teal-100 text-gray-900"
+        >
+          Let's Talk
+        </CustomLink>
+      </nav>
     </header>
   )
 }

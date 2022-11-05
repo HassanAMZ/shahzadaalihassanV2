@@ -6,6 +6,8 @@ import RecentPosts from '@/components/RecentPosts'
 import { getAllTags } from '@/lib/tags'
 import Courses from '@/components/Courses'
 import Hero from '@/components/Hero'
+import PreviousClients from '@/components/PreviousClients'
+import { useEffect } from 'react'
 import SocialProfile from '@/components/SocialProfile'
 import PopularPost from '@/components/PopularPost'
 import CustomLink from '@/components/CustomLink'
@@ -27,18 +29,31 @@ export async function getStaticProps() {
 
 export default function Home({ posts, initialDisplayPosts, pagination, tags }) {
   const sortedTags = Object.keys(tags).sort((a, b) => tags[b] - tags[a])
+  useEffect(() => {
+    document.addEventListener('DOMContentLoaded', function () {
+      window.setTimeout(document.querySelector('svg').classList.add('animated'), 1000)
+    })
+  }, [])
 
   return (
     <WebsiteLayout>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <Hero />
 
-      <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-5 container mx-auto ">
+      <div className="container mx-auto p-4">
+        <div className="rounded-lg flex-1 bg-white dark:border-gray-100 border-2 dark:bg-gray-900 py-8 px-3 flex flex-col items-center justify-between gap-2">
+          <h4 className="leading-10 font-semibold text-xl sm:text-2xl tracking-tighter text-center">
+            Recent Tracking Projects
+          </h4>
+          <PreviousClients />
+        </div>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-5 container mx-auto p-4">
         <PopularPost posts={posts} title="Popular Posts" />
         <Courses posts={posts} />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-[2fr_3fr] gap-5  py-3 container mx-auto ">
+      <div className="grid grid-cols-1 md:grid-cols-[2fr_3fr] gap-5 container mx-auto p-4">
         <RecentPosts posts={posts} initialDisplayPosts={initialDisplayPosts} title="Recent Posts" />
         <div className="flex flex-col gap-5 justify-between items-stretch">
           <SocialProfile title="Social Profiles" />

@@ -21,7 +21,7 @@ const siteMetadata = {
   upwork: 'https://www.upwork.com/freelancers/~015b35831b56606433',
   instagram: 'https://instagram.com/ShahzadaAliHassan_',
   locale: 'en-US',
-  theme: 'dark',
+  theme: 'light',
   analytics: {
     // supports plausible, simpleAnalytics or GoogleTagManager
     plausibleDataDomain: 'ShahzadaAliHassan.com', // e.g. tailwind-nextjs-starter-blog.vercel.app
@@ -67,7 +67,7 @@ const siteMetadata = {
       issueTerm: '', // supported options: pathname, url, title
       label: '', // label (optional): Comment 💬
       // theme example: github-light, github-dark, preferred-color-scheme
-      // github-dark-orange, icy-dark, dark-blue, photon-dark, boxy-light
+      // github-dark-teal, icy-dark, dark-blue, photon-dark, boxy-light
       theme: '',
       // theme when dark mode
       darkTheme: '',
