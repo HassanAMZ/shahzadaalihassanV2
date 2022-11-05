@@ -40,7 +40,7 @@ export default function ListLayout({ posts, initialDisplayPosts = [], pagination
         </div>
       </div>
 
-      <div className="grid sm:grid-cols-[repeat(auto-fill,_minmax(300px,_1fr))] grid-cols-[repeat(auto-fill,_minmax(150px,_1fr))] gap-2 sm:gap-6 justify-items-center">
+      <div className="grid sm:grid-cols-[repeat(auto-fill,_minmax(200px,_1fr))] grid-cols-[repeat(auto-fill,_minmax(150px,_1fr))] gap-2 sm:gap-6 justify-items-center">
         {!filteredBlogPosts.length && 'No posts found.'}
         {displayPosts.map((frontMatter, index) => {
           return <PostCard post={frontMatter} key={index} />

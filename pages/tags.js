@@ -15,7 +15,7 @@ export default function Tags({ tags }) {
   return (
     <WebsiteLayout>
       <PageSEO title={`Tags - ${siteMetadata.author}`} description="Things I blog about" />
-      <div className=" container mx-auto p-4">
+      <div className=" container mx-auto p-4 max-w-screen-xl">
         <div className="flex flex-col ">
           <CustomHeading heading="h3">Top Tags</CustomHeading>
 

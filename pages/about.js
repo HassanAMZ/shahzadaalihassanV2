@@ -13,7 +13,7 @@ export default function About({ authorDetails }) {
 
   return (
     <WebsiteLayout>
-      <div className="container mx-auto p-4">
+      <div className="container mx-auto p-4 max-w-screen-xl">
         <MDXLayoutRenderer
           layout={frontMatter.layout || DEFAULT_LAYOUT}
           mdxSource={mdxSource}

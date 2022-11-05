@@ -3,7 +3,7 @@ import WebsiteLayout from '@/layouts/WebsiteLayout'
 export default function FourZeroFour() {
   return (
     <WebsiteLayout>
-      <div className="container mx-auto p-4 bg-white dark:bg-gray-900 rounded-lg border-teal-700  h-[80vh] flex items-center justify-center">
+      <div className="container mx-auto p-4 max-w-screen-xl bg-white dark:bg-gray-900 rounded-lg border-teal-700  h-[80vh] flex items-center justify-center">
         <div className="rounded-lg py-4 text-center">
           <h1 className="text-9xl font-bold text-teal-400">404</h1>
           <h1 className="text-6xl font-medium py-2">Page not found</h1>

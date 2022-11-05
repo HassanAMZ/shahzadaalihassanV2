@@ -6,7 +6,7 @@ import CustomHeading from '@/components/CustomHeading'
 
 const AllProjects = () => {
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 max-w-screen-xl">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {projectsData.map((project, index) => (
           <div key={index} className="grid justify-items-center">

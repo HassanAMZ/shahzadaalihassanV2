@@ -6,7 +6,7 @@ import NewsletterForm from '@/components/NewsletterForm'
 export default function LargeWithLogoLeft() {
   return (
     <>
-      <div className="container mx-auto p-4 ">
+      <div className="container mx-auto p-4 max-w-screen-xl ">
         <footer className="p-4 bg-white rounded-lg border-2 shadow md:px-6 md:py-8 dark:bg-gray-900">
           {siteMetadata.newsletter.provider !== '' && <NewsletterForm />}
           <div className="sm:flex sm:items-center sm:justify-between">

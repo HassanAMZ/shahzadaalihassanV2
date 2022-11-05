@@ -31,7 +31,7 @@ export default function Hero() {
   return (
     <>
       <section className="flex justify-center flex-col bg-no-repeat bg-cover bg-blue-200 dark:bg-gray-900">
-        <div className="container mx-auto p-4 items-stretch xl:items-center flex justify-center">
+        <div className="container mx-auto p-4 max-w-screen-xl items-stretch xl:items-center flex justify-center">
           <CTA {...data} />
         </div>
       </section>

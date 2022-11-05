@@ -31,7 +31,7 @@ const MobileNav = () => {
       </div>
       <div className="sm:hidden ">
         <div
-          className={`fixed top-[52px] border-t-2 border-gray-900 right-0 z-10 h-full w-full transform bg-gray-100 duration-300 ease-in-out dark:bg-gray-900 ${
+          className={`fixed top-[52px] border-t-2 border-gray-900 dark:border-gray-100 right-0 z-10 h-full w-full transform bg-gray-100 duration-300 ease-in-out dark:bg-gray-900 ${
             navShow ? 'translate-y-0' : 'translate-y-full'
           }`}
         >

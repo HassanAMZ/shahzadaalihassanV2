@@ -40,7 +40,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
       />
       <ScrollTopAndComment />
 
-      <div className="container mx-auto p-4  text-black ">
+      <div className="container mx-auto p-4 max-w-screen-xl  text-black ">
         <div className="flex items-center border-2 p-2 py-10 rounded-lg justify-center flex-col gap-2 capitalize ">
           <h2 className="text-center mb-4 text-5xl font-bold capitalize tracking-tight leading-none text-black sm:text-5xl lg:text-6xl dark:text-white">
             {title}

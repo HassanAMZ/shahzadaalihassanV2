@@ -74,7 +74,7 @@ const NewsletterForm = ({ title = 'Subscribe to the newsletter' }) => {
 export default NewsletterForm
 
 export const BlogNewsletterForm = ({ title }) => (
-  <div className="flex items-center justify-center container mx-auto p-4">
+  <div className="flex items-center justify-center container mx-auto p-4 max-w-screen-xl">
     <div className="bg-gray-100 p-6 dark:bg-gray-800 sm:px-14 sm:py-8">
       <NewsletterForm title={title} />
     </div>
