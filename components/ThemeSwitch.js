@@ -13,13 +13,13 @@ const ThemeSwitch = () => {
     <button
       aria-label="Toggle Dark Mode"
       type="button"
-      className="h-fit w-fit rounded-full text-gray-900 dark:text-gray-100"
-      onClick={() => setTheme(theme === 'light' || resolvedTheme === 'light' ? 'light' : 'light')}
+      className="h-fit w-fit text-gray-900 dark:text-gray-100"
+      onClick={() => setTheme(theme === 'light' || resolvedTheme === 'light' ? 'dark' : 'light')}
     >
-      {mounted && (theme === 'light' || resolvedTheme === 'light') ? (
-        <FaSun size={20} />
+      {mounted && (theme === 'dark' || resolvedTheme === 'dark') ? (
+        <FaSun size={22} />
       ) : (
-        <FaMoon size={20} />
+        <FaMoon size={22} />
       )}
     </button>
   )
