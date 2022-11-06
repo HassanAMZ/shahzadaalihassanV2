@@ -1,6 +1,6 @@
 ---
 title: Predictor Corrector Method for Lorenz Equation
-date: '2021-11-30'
+date: '2021-03-02'
 blogID: '00011'
 tags: ['Numerical Analysis', 'Predictor Corrector Method', 'Python']
 draft: false

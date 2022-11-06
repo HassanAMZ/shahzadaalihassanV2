@@ -1,6 +1,6 @@
 ---
 title: Eular Method for Lorenz Equation
-date: '2021-11-29'
+date: '2021-03-01'
 blogID: '00010'
 tags: ['Numerical Analysis', 'Eular Method ', 'Python']
 draft: false

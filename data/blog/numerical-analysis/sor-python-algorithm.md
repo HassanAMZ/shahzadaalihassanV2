@@ -1,6 +1,6 @@
 ---
 title: SOR Python Algorithm
-date: '2021-11-19'
+date: '2021-03-03'
 blogID: '00007'
 tags: ['Numerical Analysis', 'SOR algorithm ', 'Python']
 draft: false
