@@ -1,7 +1,7 @@
 import CustomLink from '@/components/CustomLink'
 import Image from 'next/image'
 import { BlogSEO } from '@/components/SEO'
-import Tag from '@/components/Tag'
+import kebabCase from '@/lib/utils/kebabCase'
 import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 import GAPageView from '@/components/GAPageView'
@@ -31,6 +31,32 @@ export function PaginationComponent({ pagination, pagination_button }) {
 export default function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
   const { slug, date, title, tags, coverImage, blogID } = frontMatter
   const { name } = authorDetails[0]
+
+  const data = {
+    header: 'Web Analytics, & development',
+    headIcon: 'o o o',
+    headline: 'Courses, Coaching, and Community for Developers',
+    caption:
+      'Our mission is to help 1000 freelancers make a living doing what they love, without a crippling debt or depression.',
+    cta: 'Shop Courses',
+    ctaLink: '/portfolio',
+    ctaIcon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+        className="w-6 h-6"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+        />
+      </svg>
+    ),
+  }
   return (
     <>
       <BlogSEO
@@ -40,34 +66,42 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
       />
       <ScrollTopAndComment />
 
-      <div className="container mx-auto p-4 max-w-screen-xl  text-black ">
-        <div className="flex items-center border-2 p-2 py-10 rounded-lg justify-center flex-col gap-2 capitalize ">
-          <h2 className="text-center mb-4 text-5xl font-bold capitalize tracking-tight leading-none text-black sm:text-5xl lg:text-6xl dark:text-white">
-            {title}
-          </h2>
-          {tags && (
-            <div className="flex flex-wrap gap-2 items-center justify-center">
-              {tags.map((tag) => (
-                <Tag key={tag} text={tag} />
-              ))}
-            </div>
-          )}
-          <div className="flex flex-col md:row gap-2 items-center dark:text-white text-gray-700 text-sm pt-2">
-            <div className="flex items-center gap-2">
-              <CustomLink href="/about" className="text-center ">
-                {name}
-              </CustomLink>
-              <span>{` • `}</span>
+      <div className="container mx-auto sm:p-4 max-w-screen-lg">
+        <div className="border-gray-900 dark:border-gray-100 border-b-2 sm:border-2 w-full bg-gray-100 dark:bg-gray-900 flex flex-col justify-between">
+          <div className="font-bold px-4 py-2 border-b-2 border-gray-900 dark:border-gray-100 flex justify-between">
+            <div>
               <time className="text-center" dateTime={date}>
                 {new Date(date).toLocaleDateString(siteMetadata.locale, postDateTemplate)}
               </time>
             </div>
-            <div className="flex gap-2 items-center jusitfy-center">
-              <span id="time"></span>
-              <p>min read</p>
-              <span>{` • `}</span>
-              <GAPageView slug={slug} />
-            </div>
+            <div>{'o o o'}</div>
+          </div>
+          <div className="p-2 flex flex-col jusitfy-center">
+            <h2 className="font-bold text-center tracking-tighter text-heading leading-tight">
+              {title}
+            </h2>
+          </div>
+
+          <div className="font-semibold flex justify-around content border-t-2 border-gray-900 ">
+            {tags && (
+              <>
+                {tags.map((tag, index) => (
+                  <CustomLink
+                    key={index}
+                    href={`/tags/${kebabCase(tag)}`}
+                    className="text-sm line-clamp-1"
+                  >
+                    {tag}
+                  </CustomLink>
+                ))}
+              </>
+            )}
+          </div>
+          <div className="font-semibold flex justify-between content p-2 border-t-2 border-gray-900 hover:bg-gray-100 hover:text-gray-900 bg-teal-100 text-gray-900 dark:border-gray-100 hover:dark:bg-gray-900 hover:dark:text-gray-100 dark:bg-teal-900 dark:text-gray-100">
+            <CustomLink href="/about" className="text-center ">
+              Author: {name}
+            </CustomLink>
+            <GAPageView slug={slug} />
           </div>
         </div>
       </div>
