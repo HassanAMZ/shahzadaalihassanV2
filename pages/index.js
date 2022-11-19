@@ -41,13 +41,8 @@ export default function Home({ posts, initialDisplayPosts, pagination, tags }) {
       <div className="container mx-auto sm:p-4 max-w-screen-xl">
         <Hero />
       </div>
-      <div className="container mx-auto p-4 max-w-screen-xl">
-        <div className="rounded-lg flex-1 bg-white dark:border-gray-100 border-2 dark:bg-gray-900 py-8 px-3 flex flex-col items-center justify-between gap-2">
-          <h4 className="leading-10 font-semibold sm:text-2xl tracking-tighter text-center">
-            Recent Tracking Projects
-          </h4>
-          <PreviousClients />
-        </div>
+      <div className="container mx-auto sm:p-4 max-w-screen-xl">
+        <PreviousClients />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-5 container mx-auto p-4 max-w-screen-xl">
         <PopularPost posts={posts} title="Popular Posts" />

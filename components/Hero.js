@@ -1,14 +1,15 @@
 import Link from 'next/link'
 import CTA from './CTA'
 import HeroImage from '../public/static/images/heroImage.svg'
+import Image from 'next/image'
 export default function Hero() {
   const data = {
-    header: 'Web Analytics',
+    header: 'Web Analytics, & development',
     headIcon: 'o o o',
-    headline: "Top-Rated Pakistan's web analytics & measurement agency on Upwork",
+    headline: 'Courses, Coaching, and Community for Developers',
     caption:
-      'Get the data that is easy to understand, accurate, drives conversions, and boosts your ads algorithems.',
-    cta: 'Show me the Portfolio',
+      'Our mission is to help 1000 freelancers make a living doing what they love, without a crippling debt or depression.',
+    cta: 'Shop Courses',
     ctaLink: '/portfolio',
     ctaIcon: (
       <svg
@@ -28,5 +29,18 @@ export default function Hero() {
     ),
   }
 
-  return <CTA {...data} />
+  return (
+    <section className="">
+      <CTA {...data} />
+      {/* <div className="overflow-hidden rounded-lg w-32">
+        <Image
+          src={'/static/images/logo.png'}
+          layout="responsive"
+          width={1920}
+          height={1080}
+          alt={'logo'}
+        />
+      </div> */}
+    </section>
+  )
 }
