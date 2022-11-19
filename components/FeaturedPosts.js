@@ -17,7 +17,7 @@ const FeaturedPosts = ({ posts }) => {
           >
             <div className="">
               <div className="sr-only">Published on</div>
-              <div className="flex sm:flex-row  justify-between  text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+              <div className="flex sm:flex-row  justify-between   font-medium leading-6 text-gray-500 dark:text-gray-400">
                 <time className="pb-3 sm:block hidden" dateTime={date}>
                   {formatDate(date)}
                 </time>
@@ -26,7 +26,7 @@ const FeaturedPosts = ({ posts }) => {
             </div>
 
             <div>
-              <h2 className="text-xl font-semibold tracking-tight">
+              <h2 className=" font-semibold tracking-tight">
                 <CustomLink href={`/blog/${slug}`} className="text-gray-900 dark:text-gray-100">
                   {title}
                 </CustomLink>
@@ -43,7 +43,7 @@ const FeaturedPosts = ({ posts }) => {
               {summary}
             </div>
 
-            <div className="text-base sm:block hidden font-medium leading-6">
+            <div className=" sm:block hidden font-medium leading-6">
               <CustomLink
                 href={`/blog/${slug}`}
                 className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"

@@ -20,7 +20,7 @@ const MobileNav = () => {
 
   return (
     <>
-      <div className="sm:hidden p-3 flex items-center justify-center">
+      <div className="sm:hidden flex items-center justify-center">
         <button
           type="button"
           className="dark:text-gray-100 border-gray-900 text-gray-900"

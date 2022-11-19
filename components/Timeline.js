@@ -17,7 +17,7 @@ const Timeline = () => {
           <li key={index}>
             <div className="flex flex-start items-center">
               <div className="bg-teal-600 w-4 h-4 flex items-center justify-center rounded-full -ml-2 mr-3 -mt-2"></div>
-              <h4 className="text-gray-800 font-semibold text-xl -mt-2 dark:text-white">{title}</h4>
+              <h4 className="text-gray-800 font-semibold mt-2 dark:text-white">{title}</h4>
             </div>
             <div className="ml-6 mb-6 pb-6">
               <span className="text-teal-600 hover:text-teal-700 focus:text-teal-800 duration-300 transition ease-in-out text-sm">

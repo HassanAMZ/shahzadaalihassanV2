@@ -16,7 +16,7 @@ const PostCard = ({ post }) => {
             {title}
           </h5>
         </CustomLink>
-        <p className="mb-3 text-sm sm:text-base font-normal text-gray-700 dark:text-gray-400 line-clamp-3 ">
+        <p className="mb-3 text-sm font-normal text-gray-700 dark:text-gray-400 line-clamp-3 ">
           {summary}
         </p>
         <CustomLink

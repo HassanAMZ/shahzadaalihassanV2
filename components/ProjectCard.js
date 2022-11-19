@@ -16,11 +16,11 @@ const ProjectCard = ({ project }) => {
       </CustomLink>
       <div className="p-5">
         <CustomLink href={href}>
-          <h5 className="mb-2 md:text-2xl sm:text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+          <h5 className="mb-2 md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             {title}
           </h5>
         </CustomLink>
-        <p className="mb-3 md:text-base sm:text-sm text-xs font-normal text-gray-700 dark:text-gray-400 line-clamp-3">
+        <p className="mb-3 sm:text-sm text-xs font-normal text-gray-700 dark:text-gray-400 line-clamp-3">
           {description}
         </p>
         <CustomLink

@@ -28,13 +28,5 @@ export default function Hero() {
     ),
   }
 
-  return (
-    <>
-      <section className="flex justify-center flex-col">
-        <div className="container mx-auto sm:p-4 max-w-screen-md items-stretch xl:items-center flex justify-center">
-          <CTA {...data} />
-        </div>
-      </section>
-    </>
-  )
+  return <CTA {...data} />
 }
