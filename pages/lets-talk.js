@@ -1,24 +1,22 @@
-import { MDXLayoutRenderer } from '@/components/MDXComponents'
-import { getFileBySlug } from '@/lib/mdx'
 import WebsiteLayout from '@/layouts/WebsiteLayout'
-const DEFAULT_LAYOUT = 'AuthorLayout'
+import SocialProfile from '@/components/SocialProfile'
+import CustomHeading from '@/components/CustomHeading'
+import { InlineWidget } from 'react-calendly'
+import { PageSEO } from '@/components/SEO'
 
-export async function getStaticProps() {
-  const authorDetails = await getFileBySlug('authors', ['default'])
-  return { props: { authorDetails } }
-}
-
-export default function LetsTalk({ authorDetails }) {
-  const { mdxSource, frontMatter } = authorDetails
-
+export default function LetsTalk() {
   return (
     <WebsiteLayout>
+      <PageSEO
+        title={`Let's talk - Shahzadaalihassan`}
+        description={`Get In Touch with Shahzadaalihassan`}
+      />
+
       <div className="container mx-auto p-4 max-w-screen-xl">
-        <MDXLayoutRenderer
-          layout={frontMatter.layout || DEFAULT_LAYOUT}
-          mdxSource={mdxSource}
-          frontMatter={frontMatter}
-        />
+        <CustomHeading heading={'h3'}>Schedule A Meeting</CustomHeading>
+        <InlineWidget url="https://calendly.com/shahzadaalihassan" />
+
+        <SocialProfile title="Get In Touch" />
       </div>
     </WebsiteLayout>
   )

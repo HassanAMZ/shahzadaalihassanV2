@@ -77,7 +77,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
             <div>{'o o o'}</div>
           </div>
           <div className="p-2 flex flex-col jusitfy-center">
-            <h2 className="font-bold text-center tracking-tighter text-heading leading-tight">
+            <h2 className="font-bold text-center tracking-tighter text-6xl leading-tight">
               {title}
             </h2>
           </div>

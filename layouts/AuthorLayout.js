@@ -3,6 +3,7 @@ import Timeline from '@/components/Timeline'
 import CustomHeading from '@/components/CustomHeading'
 import { PageSEO } from '@/components/SEO'
 import SocialProfile from '@/components/SocialProfile'
+
 export default function AuthorLayout({ children, frontMatter }) {
   const { name } = frontMatter
 

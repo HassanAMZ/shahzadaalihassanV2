@@ -9,8 +9,8 @@ export default function CTA({ header, headIcon, headline, caption, cta, ctaLink,
         <div>{headIcon}</div>
       </div>
       <div className="px-4 py-6 space-y-4 flex flex-col jusitfy-center">
-        <h2 className="font-bold tracking-tighter text-heading leading-tight">{headline}</h2>
-        <p className="text-paragraph text-gray-700 dark:text-gray-300">{caption}</p>
+        <h2 className="font-bold tracking-tighter text-6xl leading-tight">{headline}</h2>
+        <p className="text-xl text-gray-700 dark:text-gray-300">{caption}</p>
       </div>
       <CustomLink href={ctaLink}>
         <div className="font-semibold flex justify-between content p-4 border-t-2 border-gray-900 hover:bg-gray-100 hover:text-gray-900 bg-teal-100 text-gray-900 dark:border-gray-100 hover:dark:bg-gray-900 hover:dark:text-gray-100 dark:bg-teal-900 dark:text-gray-100">
