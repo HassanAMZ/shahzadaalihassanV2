@@ -2,6 +2,7 @@ import Image from 'next/image'
 import siteMetadata from '@/data/siteMetadata'
 import CustomLink from '@/components/CustomLink'
 import NewsletterForm from '@/components/NewsletterForm'
+import headerNavLinks from '@/data/headerNavLinks'
 
 export default function LargeWithLogoLeft() {
   return (
@@ -23,17 +24,15 @@ export default function LargeWithLogoLeft() {
               </span>
             </CustomLink>
             <div className="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
-              <CustomLink href="/about-us" customClasses="mr-4 hover:underline md:mr-6 ">
-                About
-              </CustomLink>
-
-              <CustomLink href="/projects" customClasses="mr-4 hover:underline md:mr-6">
-                Projects
-              </CustomLink>
-
-              <CustomLink href="/blogs" customClasses="mr-4 hover:underline md:mr-6 ">
-                Blogs
-              </CustomLink>
+              {headerNavLinks.map((link) => (
+                <CustomLink
+                  key={link.title}
+                  href={link.href}
+                  customClasses="mr-4 hover:underline md:mr-6"
+                >
+                  {link.title}
+                </CustomLink>
+              ))}
             </div>
           </div>
           <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
