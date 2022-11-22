@@ -98,7 +98,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
             )}
           </div>
           <div className="font-semibold flex justify-between content p-2 border-t-2 border-gray-900 hover:bg-gray-100 hover:text-gray-900 bg-teal-100 text-gray-900 dark:border-gray-100 hover:dark:bg-gray-900 hover:dark:text-gray-100 dark:bg-teal-900 dark:text-gray-100">
-            <CustomLink href="/about" className="text-center ">
+            <CustomLink href="/about-us" className="text-center ">
               Author: {name}
             </CustomLink>
             <GAPageView slug={slug} />
