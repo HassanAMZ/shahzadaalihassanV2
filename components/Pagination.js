@@ -14,7 +14,7 @@ export default function Pagination({ totalPages, currentPage }) {
       )}
       {prevPage && (
         <CustomLink
-          className="w-1/3"
+          customClasses="w-1/3"
           href={currentPage - 1 === 1 ? `/blog/` : `/blog/page/${currentPage - 1}`}
         >
           <CustomButton scheme="solid">Previous</CustomButton>
@@ -29,7 +29,7 @@ export default function Pagination({ totalPages, currentPage }) {
         </div>
       )}
       {nextPage && (
-        <CustomLink href={`/blog/page/${currentPage + 1}`} className="w-1/3">
+        <CustomLink href={`/blog/page/${currentPage + 1}`} customClasses="w-1/3">
           <CustomButton scheme="solid">Next</CustomButton>
         </CustomLink>
       )}

@@ -24,7 +24,7 @@ export default function RecentPosts({ title, initialDisplayPosts = [] }) {
             <CustomLink
               key={index}
               href={`/blog/${slug}`}
-              className="grid grid-cols-[40px_1fr] items-center justify-center gap-2 hvr-grow hover:text-teal-700 hover:font-semibold"
+              customClasses="grid grid-cols-[40px_1fr] items-center justify-center gap-2 hvr-grow hover:text-teal-700 hover:font-semibold"
             >
               <CustomButton scheme={schemeColor}>{serialNumber}</CustomButton>
               <h2 className="line-clamp-1">{title}</h2>
@@ -32,7 +32,7 @@ export default function RecentPosts({ title, initialDisplayPosts = [] }) {
           )
         })}
       </>
-      <CustomLink href="/blog" className="w-full sm:w-fit self-end">
+      <CustomLink href="/blog" customClasses="w-full sm:w-fit self-end">
         <CustomButton scheme={'solid'}>
           <span className="pr-3">All Posts</span>
           <FaArrowRight />

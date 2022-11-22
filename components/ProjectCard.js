@@ -25,7 +25,7 @@ const ProjectCard = ({ project }) => {
         </p>
         <CustomLink
           href={href}
-          className="inline-flex gap-2 items-center hover:underline text-sm w-full font-medium text-center text-teal-700 dark:text-teal-300 rounded-lg "
+          customClasses="inline-flex gap-2 items-center hover:underline text-sm w-full font-medium text-center text-teal-700 dark:text-teal-300 rounded-lg "
         >
           <CustomButton scheme={'solid-sm'} customClasses="space-x-2">
             <p> Learn More</p>

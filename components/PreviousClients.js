@@ -17,7 +17,7 @@ export default function PreviousClients() {
                 key={index}
                 target="_blank"
                 href={client.clientSiteLink}
-                className="font-semibold border-2 border-gray-900 hover:bg-gray-100 hover:text-gray-900 bg-teal-100 text-gray-900 dark:border-gray-100 hover:dark:bg-gray-900 hover:dark:text-gray-100 dark:bg-teal-900 dark:text-gray-100 h-[100px] flex text-center"
+                customClasses="font-semibold border-2 border-gray-900 hover:bg-gray-100 hover:text-gray-900 bg-teal-100 text-gray-900 dark:border-gray-100 hover:dark:bg-gray-900 hover:dark:text-gray-100 dark:bg-teal-900 dark:text-gray-100 h-[100px] flex text-center"
               >
                 <p className="m-auto">{client.clientName}</p>
               </CustomLink>

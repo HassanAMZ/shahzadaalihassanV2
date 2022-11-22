@@ -27,7 +27,7 @@ const FeaturedPosts = ({ posts }) => {
 
             <div>
               <h2 className=" font-semibold tracking-tight">
-                <CustomLink href={`/blog/${slug}`} className="text-gray-900 dark:text-gray-100">
+                <CustomLink href={`/blog/${slug}`} customClasses="text-gray-900 dark:text-gray-100">
                   {title}
                 </CustomLink>
               </h2>
@@ -46,7 +46,7 @@ const FeaturedPosts = ({ posts }) => {
             <div className=" sm:block hidden font-medium leading-6">
               <CustomLink
                 href={`/blog/${slug}`}
-                className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                customClasses="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                 aria-label={`Read "${title}"`}
               >
                 Read more &rarr;

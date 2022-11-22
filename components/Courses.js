@@ -33,7 +33,7 @@ const Courses = ({ posts }) => {
               </div>
               <p className="line-clamp-3 sm:line-clamp-none">{summary}</p>
             </div>
-            <CustomLink href={`/blog/${slug}`} className="w-full sm:w-fit self-end">
+            <CustomLink href={`/blog/${slug}`} customClasses="w-full sm:w-fit self-end">
               <CustomButton scheme={'solid'}>
                 <span className="pr-3">Get the course</span>
                 <FaArrowRight />

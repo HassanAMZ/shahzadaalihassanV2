@@ -13,12 +13,12 @@ const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day:
 export function PaginationComponent({ pagination, pagination_button }) {
   return (
     <div className="flex gap-2 flex-col items-center md:flex-start py-2">
-      <CustomLink className="self-stretch flex-auto py-2" href={`/blog/${pagination.slug}`}>
+      <CustomLink customClasses="self-stretch flex-auto py-2" href={`/blog/${pagination.slug}`}>
         <CustomButton scheme="solid">{pagination_button} Post</CustomButton>
       </CustomLink>
       <CustomLink
         href={`/blog/${pagination.slug}`}
-        className="w-full block p-6 rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 bg-white dark:border-gray-700 dark:hover:bg-gray-700 dark:bg-gray-900"
+        customClasses="w-full block p-6 rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 bg-white dark:border-gray-700 dark:hover:bg-gray-700 dark:bg-gray-900"
       >
         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
           {pagination.title}
@@ -89,7 +89,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                   <CustomLink
                     key={index}
                     href={`/tags/${kebabCase(tag)}`}
-                    className="text-sm line-clamp-1"
+                    customClasses="text-sm line-clamp-1"
                   >
                     {tag}
                   </CustomLink>
@@ -98,7 +98,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
             )}
           </div>
           <div className="font-semibold flex justify-between content p-2 border-t-2 border-gray-900 hover:bg-gray-100 hover:text-gray-900 bg-teal-100 text-gray-900 dark:border-gray-100 hover:dark:bg-gray-900 hover:dark:text-gray-100 dark:bg-teal-900 dark:text-gray-100">
-            <CustomLink href="/about-us" className="text-center ">
+            <CustomLink href="/about-us" customClasses="text-center ">
               Author: {name}
             </CustomLink>
             <GAPageView slug={slug} />

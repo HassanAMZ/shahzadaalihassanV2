@@ -7,7 +7,7 @@ import CustomButton from '@/components/CustomButton'
 import CustomHeading from './CustomHeading'
 const SocialLinks = ({ name, router, icon }) => {
   return (
-    <CustomLink href={router} aria-label={name} className="flex-1">
+    <CustomLink href={router} aria-label={name} customClasses="flex-1">
       <CustomButton scheme="ghost-solid" customClasses="flex gap-2 items-center justify-center">
         {icon}
         {name}

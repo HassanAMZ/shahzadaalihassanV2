@@ -45,7 +45,7 @@ const TOCInline = ({
         <li key={heading.value} className={`${heading.depth >= indentDepth && 'ml-6'} flex`}>
           <CustomLink
             href={heading.url}
-            className="dark:text-teal capitalize flex-1 px-4 py-1 hover:text-white hover:bg-teal-700 hover:rounded-lg"
+            customClasses="dark:text-teal capitalize flex-1 px-4 py-1 hover:text-white hover:bg-teal-700 hover:rounded-lg"
           >
             {heading.value}
           </CustomLink>

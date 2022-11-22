@@ -28,7 +28,7 @@ const Timeline = () => {
               </p>
               <CustomLink
                 href={href}
-                className="inline-flex gap-2 items-center underline text-sm font-medium text-center text-teal-700 dark:text-teal-400 rounded-lg "
+                customClasses="inline-flex gap-2 items-center underline text-sm font-medium text-center text-teal-700 dark:text-teal-400 rounded-lg "
               >
                 Read more
               </CustomLink>

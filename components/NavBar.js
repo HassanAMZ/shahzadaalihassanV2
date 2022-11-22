@@ -22,7 +22,7 @@ export default function NavBar() {
 
         <CustomLink
           href="/lets-talk"
-          className="p-4 bg-clip-border bg-[length:200%__auto] bg-gradient-to-r dark:from-gray-100 from-gray-900 to-teal-500 animate-charcter border-l-2 border-gray-900 hover:bg-gray-100 hover:text-gray-900 bg-teal-100 text-gray-900 dark:border-gray-100 hover:dark:bg-gray-900 hover:dark:text-gray-100 dark:bg-teal-900 dark:text-gray-100"
+          customClasses="p-4 bg-clip-border bg-[length:200%__auto] bg-gradient-to-r dark:from-gray-100 from-gray-900 to-teal-500 animate-charcter border-l-2 border-gray-900 hover:bg-gray-100 hover:text-gray-900 bg-teal-100 text-gray-900 dark:border-gray-100 hover:dark:bg-gray-900 hover:dark:text-gray-100 dark:bg-teal-900 dark:text-gray-100"
         >
           Let's Talk
         </CustomLink>

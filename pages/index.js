@@ -54,7 +54,7 @@ export default function Home({ posts, initialDisplayPosts, pagination, tags }) {
           <SocialProfile title="Social Profiles" />
           <div className="rounded-lg flex-1 bg-white dark:border-gray-100 border-2 dark:bg-gray-900 py-8 px-3 flex flex-col items-center justify-between gap-2">
             <AllTags tags={tags} />
-            <CustomLink href="/tags" className="w-full sm:w-fit self-end">
+            <CustomLink href="/tags" customClasses="w-full sm:w-fit self-end">
               <CustomButton scheme={'solid'}>
                 <span className="pr-3">All Categories</span>
                 <FaArrowRight />
