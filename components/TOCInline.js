@@ -58,7 +58,7 @@ const TOCInline = ({
     <>
       {asDisclosure ? (
         <>
-          <details className="dark:bg-gray-800 bg-gray-100 p-2 rounded-lg border-gray-200 shadow-md">
+          <details className="dark:bg-gray-800 bg-gray-100 p-2 mb-4 rounded-lg border-gray-200 shadow-md">
             <summary className="dark:text-teal capitalize flex-1 px-4 py-1 hover:text-white hover:bg-teal-700 hover:rounded-lg">
               Table Of Content
             </summary>

@@ -106,27 +106,25 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
         </div>
       </div>
 
-      <div className="container mx-auto p-4 max-w-screen-lg">
-        <article className="py-2" id="singlePost">
-          <div className="flex flex-col py-2">
-            <article id="blog_post_content" className="text-justify">
-              {children}
-            </article>
-            <Comments frontMatter={frontMatter} />
+      <article className="container mx-auto pt-0 p-4 max-w-screen-lg" id="singlePost">
+        <div className="flex flex-col">
+          <article id="blog_post_content" className="text-justify">
+            {children}
+          </article>
+          <Comments frontMatter={frontMatter} />
 
-            {(next || prev) && (
-              <div className="flex justify-between md:gap-2 flex-col md:flex-row py-2">
-                {prev && <PaginationComponent pagination={prev} pagination_button="Previous" />}
-                {next && <PaginationComponent pagination={next} pagination_button="Next" />}
-              </div>
-            )}
+          {(next || prev) && (
+            <div className="flex justify-between md:gap-2 flex-col md:flex-row py-2">
+              {prev && <PaginationComponent pagination={prev} pagination_button="Previous" />}
+              {next && <PaginationComponent pagination={next} pagination_button="Next" />}
+            </div>
+          )}
 
-            <CustomLink href="/blog">
-              <CustomButton scheme="solid">&larr; Back to the blogs</CustomButton>
-            </CustomLink>
-          </div>
-        </article>
-      </div>
+          <CustomLink href="/blog">
+            <CustomButton scheme="solid">&larr; Back to the blogs</CustomButton>
+          </CustomLink>
+        </div>
+      </article>
     </>
   )
 }
