@@ -85,7 +85,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
           <div className="font-semibold flex justify-around content border-t-2 border-gray-900 ">
             {tags && (
               <>
-                {tags.map((tag, index) => (
+                {tags.slice(0, 3).map((tag, index) => (
                   <CustomLink
                     key={index}
                     href={`/tags/${kebabCase(tag)}`}
