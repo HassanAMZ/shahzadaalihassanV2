@@ -66,7 +66,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
       />
       <ScrollTopAndComment />
 
-      <div className="container mx-auto sm:p-4 max-w-screen-lg">
+      <div className="container mx-auto sm:p-4 sm:pb-0 max-w-screen-lg">
         <div className="border-gray-900 dark:border-gray-100 border-b-2 sm:border-2 w-full bg-gray-100 dark:bg-gray-900 flex flex-col justify-between">
           <div className="font-bold px-4 py-2 border-b-2 border-gray-900 dark:border-gray-100 flex justify-between">
             <div>
@@ -77,7 +77,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
             <div>{'o o o'}</div>
           </div>
           <div className="p-2 flex flex-col jusitfy-center">
-            <h2 className="font-bold text-center tracking-tighter text-6xl leading-tight">
+            <h2 className="font-bold text-center tracking-tighter text-3xl sm:text-6xl leading-tight">
               {title}
             </h2>
           </div>
@@ -106,7 +106,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
         </div>
       </div>
 
-      <article className="container mx-auto pt-0 p-4 max-w-screen-lg" id="singlePost">
+      <article className="container mx-auto p-4 max-w-screen-lg" id="singlePost">
         <div className="flex flex-col">
           <article id="blog_post_content" className="text-justify">
             {children}
