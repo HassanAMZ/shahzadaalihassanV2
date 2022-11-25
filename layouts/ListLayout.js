@@ -11,7 +11,7 @@ export default function ListLayout({ posts, title, tags, initialDisplayPosts = [
   const pageTitle = title.toUpperCase().split('-').join(' ')
   return (
     <div className="container mx-auto p-4 max-w-screen-xl rounded-lg">
-      <div className="grid gap-5 gird-cols-1 lg:grid-cols-[minmax(220px,_2fr)_1fr]">
+      <div className="grid gap-5 gird-cols-1 md:grid-cols-4 lg:grid-cols-3">
         <AllBlogPosts
           posts={posts}
           initialDisplayPosts={initialDisplayPosts}
