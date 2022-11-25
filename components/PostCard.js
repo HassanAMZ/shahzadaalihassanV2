@@ -10,13 +10,13 @@ const PostCard = ({ post }) => {
           <Image src={coverImage} layout="responsive" width={1920} height={1080} alt={title} />
         </div>
       </CustomLink>
-      <div className="sm:p-5 p-2">
+      <div className="p-2 md:p-3">
         <CustomLink href={`/blog/${slug}`}>
-          <h5 className="mb-2 sm:text-2xl font-bold tracking-tight text-gray-900 dark:text-white line-clamp-2 sm:line-clmap-3">
+          <h5 className="mb-1 sm:mb-2 sm:text-2xl font-bold tracking-tight text-gray-900 dark:text-white line-clamp-2 sm:line-clmap-3">
             {title}
           </h5>
         </CustomLink>
-        <p className="mb-3 text-sm font-normal text-gray-700 dark:text-gray-400 line-clamp-3 ">
+        <p className="mb-2 sm:mb-3 text-sm font-normal text-gray-700 dark:text-gray-400 line-clamp-3 ">
           {summary}
         </p>
         <CustomLink
