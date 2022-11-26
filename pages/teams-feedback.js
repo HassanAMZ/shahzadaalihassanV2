@@ -23,7 +23,7 @@ export default function TeamsFeedback() {
             <li>Zain Ahmed</li>
           </ol>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <CustomLink customClasses="w-full" href="https://forms.gle/BMThGz2d3WoyibzU7">
+            <CustomLink customClasses="w-full" href="https://forms.gle/1aesB1v8xrnuMoQA6">
               <CustomButton scheme={'solid'}>Fill Out the Weekly Feedback Form</CustomButton>
             </CustomLink>
           </div>
