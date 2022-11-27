@@ -12,7 +12,7 @@ const PostCard = ({ post }) => {
       </CustomLink>
       <div className="p-2 md:p-3">
         <CustomLink href={`/blog/${slug}`}>
-          <h5 className="mb-1 sm:mb-2 sm:text-2xl font-bold tracking-tight text-gray-900 dark:text-white line-clamp-2 sm:line-clmap-3">
+          <h5 className="mb-1 leading-tight sm:mb-2 sm:text-xl font-bold tracking-tighter text-gray-900 dark:text-white line-clamp-3">
             {title}
           </h5>
         </CustomLink>

@@ -14,7 +14,13 @@ export default function LetsTalk() {
 
       <div className="container mx-auto p-4 max-w-screen-xl">
         <CustomHeading heading={'h3'}>Schedule A Meeting</CustomHeading>
-        <InlineWidget url="https://calendly.com/shahzadaalihassan" />
+        <InlineWidget
+          url="https://calendly.com/shahzadaalihassan"
+          styles={{
+            height: '652px',
+            'min-width': '320px',
+          }}
+        />
 
         <SocialProfile title="Get In Touch" />
       </div>
