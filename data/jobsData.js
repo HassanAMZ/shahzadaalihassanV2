@@ -18,7 +18,7 @@ const jobsData = {
       'Experience with word-processing software and spreadsheets (e.g. MS Office)',
       'Internet, Smart phone and Laptop/Computer',
     ],
-    salary_and_deadline: '0PKR & hiring by 1st November 2022',
+    salary_and_deadline: '30 days initial unpaid, trial period with & hiring by 1st November 2022',
     form_link: '"https://forms.gle/BMThGz2d3WoyibzU7"',
   },
   'web-analyst': {
@@ -38,7 +38,7 @@ const jobsData = {
       'Google Tag Manager tracking',
       'Shopify, WordPress and custom dataLayer understanding',
     ],
-    salary_and_deadline: '0 PKR & hiring by 1st Decemeber 2022<',
+    salary_and_deadline: '30 days initial unpaid, trial period with & hiring by 1st Decemeber 2022',
     form_link: 'https://forms.gle/BGRQYWQMkQAP5ZvX8',
   },
   'web-developer': {
@@ -60,7 +60,7 @@ const jobsData = {
       'Rest API',
       'Basic Computer Science Concepts, i.e. OOP, Functional Programming',
     ],
-    salary_and_deadline: '0 PKR & hiring by 1st Decemeber 2022',
+    salary_and_deadline: '30 days initial unpaid, trial period with & hiring by 1st Decemeber 2022',
     form_link: 'https://forms.gle/e6AyQy3MTmANxysh8',
   },
 }
