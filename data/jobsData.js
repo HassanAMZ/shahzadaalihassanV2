@@ -1,6 +1,7 @@
 const jobsData = {
   'virtual-assistant': {
     id: '001',
+    status: 'closed',
     category: 'virtual-assistant',
     title: 'Apply for Entry Level Virtual Assistant Intern.',
     brief: `  We are looking for a Virtual Assistant to provide administrative support to our team
@@ -23,6 +24,7 @@ const jobsData = {
   },
   'web-analyst': {
     id: '002',
+    status: 'open',
     category: 'web-analyst',
     title: 'Apply for Web Analyst Interen.',
     brief: `  We are looking for a Google Tag Manager Interen to provide support to our team while
@@ -43,6 +45,7 @@ const jobsData = {
   },
   'web-developer': {
     id: '003',
+    status: 'open',
     category: 'web-developer',
     title: 'Apply for Web Developer Interen.',
     brief: `  We are looking for a Web Developer Interen to provide support to our team while
