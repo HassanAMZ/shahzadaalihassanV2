@@ -13,6 +13,10 @@ export const MDXComponents = {
   a: CustomLink,
   pre: Pre,
   BlogNewsletterForm: BlogNewsletterForm,
+  p: ({ ...rest }) => {
+    return <p className="py-2" {...rest} />
+  },
+
   ol: ({ ...rest }) => {
     return <ol type="1" className="list-decimal list-outside my-1 pl-[40px] mx-0" {...rest} />
   },

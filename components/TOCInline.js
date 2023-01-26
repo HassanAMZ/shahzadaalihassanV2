@@ -42,11 +42,8 @@ const TOCInline = ({
   const tocList = (
     <>
       {filteredToc.map((heading) => (
-        <li key={heading.value} className={`${heading.depth >= indentDepth && 'ml-6'} flex`}>
-          <CustomLink
-            href={heading.url}
-            customClasses="dark:text-teal capitalize flex-1 px-4 py-1 hover:text-white hover:bg-teal-700 hover:rounded-lg"
-          >
+        <li key={heading.value} className={`${heading.depth >= indentDepth && 'ml-3'} flex`}>
+          <CustomLink href={heading.url} customClasses="capitalize flex-1 py-1 hover:rounded-md">
             {heading.value}
           </CustomLink>
         </li>
@@ -58,11 +55,11 @@ const TOCInline = ({
     <>
       {asDisclosure ? (
         <>
-          <details className="dark:bg-gray-800 bg-gray-100 p-2 mb-4 rounded-lg border-gray-200 shadow-md">
-            <summary className="dark:text-teal capitalize flex-1 px-4 py-1 hover:text-white hover:bg-teal-700 hover:rounded-lg">
+          <details className="dark:bg-gray-800 bg-gray-100 py-1 px-2 my-2 rounded-lg border-gray-200 shadow-md">
+            <summary className="dark:text-teal dark:bg-gray-700 bg-gray-200 capitalize rounded-md my-2 flex-1 p-2 hover:text-white hover:bg-teal-700 hover:rounded-lg">
               Table Of Content
             </summary>
-            <ul className="flex flex-col m-0">{tocList}</ul>
+            <ul className="flex flex-col dark:bg-gray-700 bg-gray-200 rounded-md p-2">{tocList}</ul>
           </details>
         </>
       ) : (

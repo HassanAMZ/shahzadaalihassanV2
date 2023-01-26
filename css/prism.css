@@ -15,12 +15,13 @@
 }
 
 /* Code block styles */
+
 .code-highlight {
-  @apply float-left min-w-full;
+  @apply whitespace-pre-wrap break-words;
 }
 
 .code-line {
-  @apply block pl-4 pr-4  border-l-4 border-gray-800;
+  @apply block border-l-4 border-gray-800 p-4 hover:bg-teal-100 hover:border-teal-500 hover:text-gray-900;
 }
 
 .highlight-line {
