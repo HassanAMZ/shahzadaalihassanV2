@@ -28,6 +28,14 @@ There is no solution to fix the facebook ads reporting / conversion tracking on 
 1. [how to build custom report for UA](/blog/google-analytics/custom-report-for-facebook-ads-in-ua)
 2. [how to build custom report for GA4](/blog/google-analytics/custom-report-for-facebook-ads-in-ga4)
 
+## UTM Paramters
+
+UTM parameters, also known as UTM codes, refer to specific snippets of text that are added to the end of a URL. These snippets of text contain additional information about the source of the traffic and are used to track the performance of a given campaign. In other words, UTM parameters are used to measure the effectiveness of a particular marketing initiative in order to optimize and improve future campaigns.
+
+UTM parameters are composed of five different components: source, medium, campaign, term, and content. The source refers to the origin of the traffic, such as a search engine, social media platform, or website. The medium refers to the type of link used to access the page, such as organic search, paid search, email, or social media. The campaign is the name of the specific campaign or promotion. The term is used to identify keywords associated with the campaign, and the content is used to differentiate between different versions of the same campaign.
+
+When a visitor clicks on a link with UTM parameters attached, the parameters are sent along with the referral data to the destination page. This data is then collected and analyzed in order to gain insights into the performance of the campaign. By tracking UTM parameters, marketers can more effectively segment their audience and measure
+
 ## UTM Code
 
 We need to update the URL code for all the facebook ads, we are running on facebook ads manager. Copy the code below and paste it under facebook Campaign> Ad set> ad> Tracking code> URL parameters. Click on "Build a URL parameter" to make sure everything is fine.
@@ -36,6 +44,16 @@ We need to update the URL code for all the facebook ads, we are running on faceb
 utm_id={{ad.id}}&utm_source=facebook&utm_medium=paidsocial&utm_campaign={{campaign.name}}&utm_content={{adset.name}}&utm_term={{ad.name}}
 
 ```
+
+## How to Add UTM Parameters in Facebook Ads Manager
+
+UTM parameters can be added to a Facebook Ad using the Ads Manager. To do this, start by selecting the “Create Ads” option from the Ads Manager menu. Next, choose the type of ad you’d like to create, such as a website clicks ad, and enter the URL of the page you’d like to advertise.
+
+Once the ad is created, select the “Advanced Options” tab. Scroll down to the “Tracking” section and use the drop-down menus to select the source, medium, campaign, term, and content parameters you’d like to add. Once you’ve added all the desired parameters, click “Save” to finish creating the ad.
+
+When a visitor clicks on your ad, the UTM parameters you added will be sent along with the referral data to the destination page. This data can then be collected and analyzed in order to gain insights into the performance of the campaign. By tracking UTM parameters, marketers can more effectively segment their audience and measure the success of their campaigns.
+
+## Screenshot for reference
 
 ![UTM Parameter Image](/static/blog/00004_1.png)
 
