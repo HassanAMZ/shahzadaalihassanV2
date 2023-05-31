@@ -8,7 +8,8 @@
       "@/lib/*": ["lib/*"],
       "@/firebase/*": ["firebase/*"],
       "@/contexts/*": ["contexts/*"],
-      "@/css/*": ["css/*"]
+      "@/css/*": ["css/*"],
+      "@/styles/*": ["styles/*"]
     }
   }
 }
