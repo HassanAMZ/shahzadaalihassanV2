@@ -12,10 +12,10 @@ const Job = () => {
   return (
     <>
       <PageSEO title={`Jobs - ${job}`} description={`Jobs - ${job}`} />
-      {console.log(job in jobsData)}
-      <div className="container mx-auto p-4 space-y-4 max-w-screen-xl bg-white dark:bg-gray-900 rounded-lg h-[100vh] border-teal-700 flex flex-col items-center justify-center">
+      {/* {console.log(job in jobsData)} */}
+      <div className="bg-gray-50 dark:bg-gray-900 rounded-lg h-[100vh] border-teal-700 flex flex-col items-center justify-center">
         {job in jobsData ? (
-          <section className="container mx-auto p-4  max-w-screen-xl ">
+          <section className=" ">
             <h1 className="bg-gradient-to-r from-green-300 via-teal-500 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl">
               {jobsData[job].title}
             </h1>
@@ -55,7 +55,7 @@ const Job = () => {
             </div>
           </section>
         ) : (
-          <section className="container mx-auto p-4  max-w-screen-xl ">
+          <section className=" ">
             <h1 className="bg-gradient-to-r from-green-300 via-teal-500 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl">
               Good doesn't exists
             </h1>

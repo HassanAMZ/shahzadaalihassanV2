@@ -1,4 +1,5 @@
 import { PageSEO } from '@/components/SEO'
+
 import AllTags from '@/components/AllTags'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
@@ -38,21 +39,18 @@ export default function Home({ posts, initialDisplayPosts, pagination, tags }) {
   return (
     <WebsiteLayout>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
-      <div className="container mx-auto sm:p-4 max-w-screen-xl">
-        <Hero />
-      </div>
-      <div className="container mx-auto sm:p-4 max-w-screen-xl">
-        <PreviousClients />
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-5 container mx-auto p-4 max-w-screen-xl">
+
+      <Hero />
+      <PreviousClients />
+      <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-5">
         <PopularPost posts={posts} title="Popular Posts" />
         <Courses posts={posts} />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-[2fr_3fr] gap-5 container mx-auto p-4 max-w-screen-xl">
+      <div className="grid grid-cols-1 md:grid-cols-[2fr_3fr] gap-5">
         <RecentPosts posts={posts} initialDisplayPosts={initialDisplayPosts} title="Recent Posts" />
         <div className="flex flex-col gap-5 justify-between items-stretch">
           <SocialProfile title="Social Profiles" />
-          <div className="rounded-lg flex-1 bg-white dark:border-gray-100 border-2 dark:bg-gray-900 py-8 px-3 flex flex-col items-center justify-between gap-2">
+          <div className="rounded-lg flex-1 bg-gray-50 dark:border-gray-100 border-2 dark:bg-gray-900 py-8 px-3 flex flex-col items-center justify-between gap-2">
             <AllTags tags={tags} />
             <CustomLink href="/tags" customClasses="w-full sm:w-fit self-end">
               <CustomButton scheme={'solid'}>

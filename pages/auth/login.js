@@ -9,8 +9,8 @@ const LoginPage = () => {
   return (
     <>
       <PageSEO title={`Sign Up - ${siteMetadata.author}`} description={siteMetadata.description} />
-      <div className="container mx-auto p-4 max-w-screen-xl flex items-center flex-col">
-        <h2 className=" mb-4 text-5xl font-bold capitalize tracking-tight leading-none dark:text-gray-900 sm:text-6xl lg:text-7xl text-white">
+      <div className="flex items-center flex-col">
+        <h2 className=" mb-4 text-5xl font-bold capitalize tracking-tight leading-none dark:text-gray-900 sm:text-6xl lg:text-7xl text-gray-50">
           Sign In
         </h2>
         <SignInForm />

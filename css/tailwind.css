@@ -5,3 +5,53 @@
 .task-list-item:before {
   @apply hidden;
 }
+
+/* Your own custom utilities */
+
+:root {
+  font-size: calc(9px + 1.6vw);
+}
+
+@media (min-width: 640px) {
+  :root {
+    font-size: calc(9px + 0.85vw);
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    font-size: calc(9px + 0.7vw);
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    font-size: calc(9px + 0.55vw);
+  }
+}
+
+.has-text-align-left {
+  @apply text-left;
+}
+
+.has-text-align-center {
+  @apply text-center;
+}
+
+.has-text-align-right {
+  @apply text-right;
+}
+
+.has-large-font-size {
+  @apply text-4xl;
+}
+
+.alignfull {
+  @apply w-screen relative;
+
+  left: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  max-width: 100vw;
+  right: 50%;
+}

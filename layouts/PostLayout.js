@@ -18,9 +18,9 @@ export function PaginationComponent({ pagination, pagination_button }) {
       </CustomLink>
       <CustomLink
         href={`/blog/${pagination.slug}`}
-        customClasses="w-full block p-6 rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 bg-white dark:border-gray-700 dark:hover:bg-gray-700 dark:bg-gray-900"
+        customClasses="w-full block p-6 rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-700 dark:bg-gray-900"
       >
-        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-50">
           {pagination.title}
         </h5>
       </CustomLink>
@@ -66,65 +66,61 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
       />
       <ScrollTopAndComment />
 
-      <div className="container mx-auto sm:p-4 sm:pb-0 max-w-screen-lg">
-        <div className="border-gray-900 dark:border-gray-100 border-b-2 sm:border-2 w-full bg-gray-100 dark:bg-gray-900 flex flex-col justify-between">
-          <div className="font-bold px-4 py-2 border-b-2 border-gray-900 dark:border-gray-100 flex justify-between">
-            <div>
-              <time className="text-center" dateTime={date}>
-                {new Date(date).toLocaleDateString(siteMetadata.locale, postDateTemplate)}
-              </time>
-            </div>
-            <div>{'o o o'}</div>
+      <div className="sm:p-4 sm:pb-0 border-gray-900 dark:border-gray-100 border-b-2 sm:border-2 w-full bg-gray-100 dark:bg-gray-900 flex flex-col justify-between">
+        <div className="font-bold px-4 py-2 border-b-2 border-gray-900 dark:border-gray-100 flex justify-between">
+          <div>
+            <time className="text-center" dateTime={date}>
+              {new Date(date).toLocaleDateString(siteMetadata.locale, postDateTemplate)}
+            </time>
           </div>
-          <div className="p-2 flex flex-col jusitfy-center">
-            <h2 className="font-bold text-center tracking-tighter text-3xl sm:text-6xl leading-tight">
-              {title}
-            </h2>
-          </div>
+          <div>{'o o o'}</div>
+        </div>
+        <div className="p-2 flex flex-col jusitfy-center">
+          <h2 className="font-bold text-center tracking-tighter text-3xl sm:text-6xl leading-tight">
+            {title}
+          </h2>
+        </div>
 
-          <div className="font-semibold flex justify-around content border-t-2 border-gray-900 ">
-            {tags && (
-              <>
-                {tags.slice(0, 3).map((tag, index) => (
-                  <CustomLink
-                    key={index}
-                    href={`/tags/${kebabCase(tag)}`}
-                    customClasses="text-sm line-clamp-1"
-                  >
-                    {tag}
-                  </CustomLink>
-                ))}
-              </>
-            )}
-          </div>
-          <div className="font-semibold flex justify-between content p-2 border-t-2 border-gray-900 hover:bg-gray-100 hover:text-gray-900 bg-teal-100 text-gray-900 dark:border-gray-100 hover:dark:bg-gray-900 hover:dark:text-gray-100 dark:bg-teal-900 dark:text-gray-100">
-            <CustomLink href="/about-us" customClasses="text-center ">
-              Author: {name}
-            </CustomLink>
-            <GAPageView slug={slug} />
-          </div>
+        <div className="font-semibold flex justify-around content border-t-2 border-gray-900 ">
+          {tags && (
+            <>
+              {tags.slice(0, 3).map((tag, index) => (
+                <CustomLink
+                  key={index}
+                  href={`/tags/${kebabCase(tag)}`}
+                  customClasses="text-sm line-clamp-1"
+                >
+                  {tag}
+                </CustomLink>
+              ))}
+            </>
+          )}
+        </div>
+        <div className="font-semibold flex justify-between content p-2 border-t-2 border-gray-900 hover:bg-gray-100 hover:text-gray-900 bg-teal-100 text-gray-900 dark:border-gray-100 hover:dark:bg-gray-900 hover:dark:text-gray-100 dark:bg-teal-900 dark:text-gray-100">
+          <CustomLink href="/about-us" customClasses="text-center ">
+            Author: {name}
+          </CustomLink>
+          <GAPageView slug={slug} />
         </div>
       </div>
 
-      <article className="container mx-auto p-4 max-w-screen-lg" id="singlePost">
-        <div className="flex flex-col">
-          <article id="blog_post_content" className="text-justify">
-            {children}
-          </article>
-          <Comments frontMatter={frontMatter} />
+      <div id="singlePost" className="flex flex-col">
+        <article id="blog_post_content" className="text-justify">
+          {children}
+        </article>
+        <Comments frontMatter={frontMatter} />
 
-          {(next || prev) && (
-            <div className="flex justify-between md:gap-2 flex-col md:flex-row py-2">
-              {prev && <PaginationComponent pagination={prev} pagination_button="Previous" />}
-              {next && <PaginationComponent pagination={next} pagination_button="Next" />}
-            </div>
-          )}
+        {(next || prev) && (
+          <div className="flex justify-between md:gap-2 flex-col md:flex-row py-2">
+            {prev && <PaginationComponent pagination={prev} pagination_button="Previous" />}
+            {next && <PaginationComponent pagination={next} pagination_button="Next" />}
+          </div>
+        )}
 
-          <CustomLink href="/blog">
-            <CustomButton scheme="solid">&larr; Back to the blogs</CustomButton>
-          </CustomLink>
-        </div>
-      </article>
+        <CustomLink href="/blog">
+          <CustomButton scheme="solid">&larr; Back to the blogs</CustomButton>
+        </CustomLink>
+      </div>
     </>
   )
 }

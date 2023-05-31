@@ -26,7 +26,7 @@ const SocialIcon = ({ kind, href }) => {
 
   return (
     <CustomLink customClasses="text-sm text-gray-500 transition hover:text-gray-600" href={href}>
-      {/* <span className="text-white">{kind}</span> */}
+      {/* <span className="text-gray-50">{kind}</span> */}
       <SocialSvg width="30px" />
     </CustomLink>
   )

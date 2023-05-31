@@ -12,7 +12,7 @@ export default function LetsTalk() {
         description={`Get In Touch with Shahzadaalihassan`}
       />
 
-      <div className="container mx-auto p-4 max-w-screen-xl">
+      <div className="">
         <CustomHeading heading={'h3'}>Schedule A Meeting</CustomHeading>
         <InlineWidget
           url="https://calendly.com/shahzadaalihassan"

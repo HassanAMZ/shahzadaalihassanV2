@@ -54,7 +54,7 @@ export default function Blog({ post, authorDetails, prev, next }) {
         />
       ) : (
         <div className="mt-24 text-center">
-          <h2 className=" mb-4 text-5xl font-bold capitalize tracking-tight leading-none dark:text-gray-900 sm:text-6xl lg:text-7xl text-white">
+          <h2 className=" mb-4 text-5xl font-bold capitalize tracking-tight leading-none dark:text-gray-900 sm:text-6xl lg:text-7xl text-gray-50">
             Under Construction
             <span role="img" aria-label="roadwork sign">
               🚧

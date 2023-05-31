@@ -56,7 +56,7 @@ const TOCInline = ({
       {asDisclosure ? (
         <>
           <details className="dark:bg-gray-800 bg-gray-100 py-1 px-2 my-2 rounded-lg border-gray-200 shadow-md">
-            <summary className="dark:text-teal dark:bg-gray-700 bg-gray-200 capitalize rounded-md my-2 flex-1 p-2 hover:text-white hover:bg-teal-700 hover:rounded-lg">
+            <summary className="dark:text-teal dark:bg-gray-700 bg-gray-200 capitalize rounded-md my-2 flex-1 p-2 hover:text-gray-50 hover:bg-teal-700 hover:rounded-lg">
               Table Of Content
             </summary>
             <ul className="flex flex-col dark:bg-gray-700 bg-gray-200 rounded-md p-2">{tocList}</ul>

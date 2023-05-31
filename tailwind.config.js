@@ -16,14 +16,31 @@ module.exports = {
   theme: {
     extend: {
       fontSize: {
-        sm: '0.8rem',
+        sm: '0.85rem',
         base: '1rem',
-        xl: '1.25rem',
-        '2xl': '1.563rem',
-        '3xl': '1.953rem',
-        '4xl': '2.441rem',
-        '5xl': '3.052rem',
-        '6xl': '3.5rem',
+        xl: '1.125rem',
+        '2xl': '1.35rem',
+        '3xl': '1.75rem',
+        '4xl': '2.2rem',
+        '5xl': '2.7rem',
+        '6xl': '3.3rem',
+        '7xl': '3.8rem',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 100 },
+        },
+        text: {
+          '0%, 100%': {
+            'background-size': '200% 200%',
+            'background-position': 'left center',
+          },
+          '50%': {
+            'background-size': '200% 200%',
+            'background-position': 'right center',
+          },
+        },
       },
       spacing: {
         '9/16': '56.25%',

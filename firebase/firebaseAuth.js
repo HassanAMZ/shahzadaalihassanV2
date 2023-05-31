@@ -25,4 +25,4 @@ export const signInWithGoogle = () => {
       console.log(error)
     })
 }
-console.log(app.name ? 'Firebase Mode Activated!' : 'Firebase not working :(')
+// console.log(app.name ? 'Firebase Mode Activated!' : 'Firebase not working :(')

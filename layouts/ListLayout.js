@@ -10,22 +10,20 @@ export default function ListLayout({ posts, title, tags, initialDisplayPosts = [
   // Capitalize first letter and convert space to dash
   const pageTitle = title.toUpperCase().split('-').join(' ')
   return (
-    <div className="container mx-auto p-4 max-w-screen-xl rounded-lg">
-      <div className="grid gap-5 gird-cols-1 lg:grid-cols-[minmax(220px,_2fr)_1fr]">
-        <AllBlogPosts
-          posts={posts}
-          initialDisplayPosts={initialDisplayPosts}
-          pagination={pagination}
-          title={pageTitle}
-          randomGenerator={randomGenerator}
-        />
-        <div className="flex flex-col gap-5">
-          <PopularPost posts={posts} title={pageTitle} initialDisplayPosts={'4'} tags={tags} />
-          <div className="rounded-lg bg-white dark:border-gray-100 border-2 dark:bg-gray-900 px-3 py-8">
-            <AllTags tags={tags} />
-          </div>
-          <SocialProfile title="Social Profiles" />
+    <div className="rounded-lg grid gap-5 gird-cols-1 lg:grid-cols-[minmax(220px,_2fr)_1fr]">
+      <AllBlogPosts
+        posts={posts}
+        initialDisplayPosts={initialDisplayPosts}
+        pagination={pagination}
+        title={pageTitle}
+        randomGenerator={randomGenerator}
+      />
+      <div className="flex flex-col gap-5">
+        <PopularPost posts={posts} title={pageTitle} initialDisplayPosts={'4'} tags={tags} />
+        <div className="rounded-lg bg-gray-50 dark:border-gray-100 border-2 dark:bg-gray-900 px-3 py-8">
+          <AllTags tags={tags} />
         </div>
+        <SocialProfile title="Social Profiles" />
       </div>
     </div>
   )

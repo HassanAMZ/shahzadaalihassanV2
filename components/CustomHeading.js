@@ -2,11 +2,11 @@
 
 const CustomHeading = ({ heading, children, customClasses, ...rest }) => {
   let Heading =
-    'mb-4 text-3xl font-bold capitalize tracking-tight leading-none text-gray-900 sm:text-4xl lg:text-5xl dark:text-white'
+    'mb-4 text-3xl font-bold capitalize tracking-tight leading-none text-gray-900 sm:text-4xl lg:text-5xl dark:text-gray-50'
 
   if (heading === 'title') {
     Heading =
-      ' mb-4 text-5xl font-bold capitalize tracking-tight leading-none text-gray-900 sm:text-6xl lg:text-7xl dark:text-white'
+      ' mb-4 text-5xl font-bold capitalize tracking-tight leading-none text-gray-900 sm:text-6xl lg:text-7xl dark:text-gray-50'
     let classes = `${Heading}   ${customClasses}`
     return (
       <h1 {...rest} className={classes}>
@@ -15,7 +15,7 @@ const CustomHeading = ({ heading, children, customClasses, ...rest }) => {
     )
   } else if (heading === 'h1') {
     Heading =
-      ' mb-4 text-5xl font-bold capitalize tracking-tight leading-none text-white sm:text-6xl lg:text-7xl dark:text-gray-900'
+      ' mb-4 text-5xl font-bold capitalize tracking-tight leading-none text-gray-50 sm:text-6xl lg:text-7xl dark:text-gray-900'
     let classes = `${Heading}   ${customClasses}`
     return (
       <h1 {...rest} className={classes}>
@@ -24,7 +24,7 @@ const CustomHeading = ({ heading, children, customClasses, ...rest }) => {
     )
   } else if (heading === 'h2') {
     Heading =
-      ' mb-4 text-5xl font-bold capitalize tracking-tight leading-none text-gray-900 sm:text-6xl lg:text-7xl dark:text-white'
+      ' mb-4 text-5xl font-bold capitalize tracking-tight leading-none text-gray-900 sm:text-6xl lg:text-7xl dark:text-gray-50'
     let classes = `${Heading}   ${customClasses}`
     return (
       <h2 {...rest} className={classes}>
@@ -33,7 +33,7 @@ const CustomHeading = ({ heading, children, customClasses, ...rest }) => {
     )
   } else if (heading === 'h3') {
     Heading =
-      'mb-4 text-3xl font-bold capitalize tracking-tight leading-none text-gray-900 sm:text-4xl lg:text-5xl dark:text-white'
+      'mb-4 text-3xl font-bold capitalize tracking-tight leading-none text-gray-900 sm:text-4xl lg:text-5xl dark:text-gray-50'
     let classes = `${Heading}   ${customClasses}`
     return (
       <h3 {...rest} className={classes}>
@@ -42,7 +42,7 @@ const CustomHeading = ({ heading, children, customClasses, ...rest }) => {
     )
   } else if (heading === 'h4') {
     Heading =
-      'mb-4 text-2xl font-bold capitalize tracking-tight leading-none dark:text-gray-900 text-white'
+      'mb-4 text-2xl font-bold capitalize tracking-tight leading-none dark:text-gray-900 text-gray-50'
     let classes = `${Heading}   ${customClasses}`
     return (
       <h4 {...rest} className={classes}>

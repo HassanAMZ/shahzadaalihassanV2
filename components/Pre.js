@@ -68,7 +68,7 @@ const Pre = (props) => {
         </button>
       )}
 
-      <pre>{props.children}</pre>
+      <pre className="p-2">{props.children}</pre>
     </div>
   )
 }

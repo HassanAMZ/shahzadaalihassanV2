@@ -32,7 +32,7 @@ const FeaturedPosts = ({ posts }) => {
                 </CustomLink>
               </h2>
 
-              <div className="flex flex-wrap gap-2 sm:block hidden ">
+              <div className="sm:flex sm:flex-wrap gap-2 hidden">
                 {tags.map((tag) => (
                   <Tag key={tag} text={tag} />
                 ))}

@@ -7,7 +7,7 @@ export default function TeamsFeedback() {
   return (
     <>
       <PageSEO title="Weekly Feedback for Teams" description="Weekly Feedback for Teams" />
-      <div className="container mx-auto p-4 max-w-screen-xl bg-white dark:bg-gray-900 rounded-lg h-[100vh] border-teal-700 flex flex-col items-center justify-center">
+      <div className="bg-gray-50 dark:bg-gray-900 rounded-lg h-[100vh] border-teal-700 flex flex-col items-center justify-center">
         <div className="mx-auto max-w-3xl text-left">
           <h1 className="bg-gradient-to-r from-green-300 via-teal-500 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent sm:text-6xl">
             Weekly Feedback Form - Shahzadaalihassan teams

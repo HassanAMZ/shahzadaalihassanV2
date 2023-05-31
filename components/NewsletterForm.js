@@ -43,7 +43,7 @@ const NewsletterForm = ({ title = 'Subscribe to the newsletter' }) => {
           </label>
           <input
             autoComplete="email"
-            className="w-full rounded-md px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 bg-white dark:bg-black"
+            className="w-full rounded-md px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 bg-gray-50 dark:bg-gray-900"
             id="email-input"
             name="email"
             placeholder={subscribed ? "You're subscribed !  🎉" : 'Enter your email'}
@@ -55,9 +55,9 @@ const NewsletterForm = ({ title = 'Subscribe to the newsletter' }) => {
         </div>
 
         <button
-          className={`w-fit rounded-md bg-primary-500 py-2 px-4 font-medium text-white whitespace-nowrap  ${
+          className={`w-fit rounded-md bg-primary-500 py-2 px-4 font-medium text-gray-50 gray-50space-nowrap  ${
             subscribed ? 'cursor-default' : 'hover:bg-primary-700 dark:hover:bg-primary-400'
-          } focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 ring-offset-black`}
+          } focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 ring-offset-gray-900`}
           type="submit"
           disabled={subscribed}
         >
@@ -74,7 +74,7 @@ const NewsletterForm = ({ title = 'Subscribe to the newsletter' }) => {
 export default NewsletterForm
 
 export const BlogNewsletterForm = ({ title }) => (
-  <div className="flex items-center justify-center container mx-auto p-4 max-w-screen-xl">
+  <div className="flex items-center justify-center">
     <div className="bg-gray-100 p-6 dark:bg-gray-800 sm:px-14 sm:py-8">
       <NewsletterForm title={title} />
     </div>

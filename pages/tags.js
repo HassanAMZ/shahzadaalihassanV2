@@ -15,16 +15,14 @@ export default function Tags({ tags }) {
   return (
     <WebsiteLayout>
       <PageSEO title={`Tags - ${siteMetadata.author}`} description="Things I blog about" />
-      <div className=" container mx-auto p-4 max-w-screen-xl">
-        <div className="flex flex-col ">
-          <CustomHeading heading="h3">Top Tags</CustomHeading>
+      <div className="flex flex-col ">
+        <CustomHeading heading="h3">Top Tags</CustomHeading>
 
-          <div className="flex flex-wrap gap-2">
-            {Object.keys(tags).length === 0 && 'No tags found.'}
-            {sortedTags.map((tag, index) => {
-              return <Tag text={tag} key={index} icon={` (${tags[tag]})`} />
-            })}
-          </div>
+        <div className="flex flex-wrap gap-2">
+          {Object.keys(tags).length === 0 && 'No tags found.'}
+          {sortedTags.map((tag, index) => {
+            return <Tag text={tag} key={index} icon={` (${tags[tag]})`} />
+          })}
         </div>
       </div>
     </WebsiteLayout>

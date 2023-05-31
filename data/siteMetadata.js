@@ -21,7 +21,7 @@ const siteMetadata = {
   upwork: 'https://www.upwork.com/freelancers/~015b35831b56606433',
   instagram: 'https://instagram.com/ShahzadaAliHassan_',
   locale: 'en-US',
-  theme: 'light',
+  theme: 'dark',
   analytics: {
     // supports plausible, simpleAnalytics or GoogleTagManager
     plausibleDataDomain: 'ShahzadaAliHassan.com', // e.g. tailwind-nextjs-starter-blog.vercel.app

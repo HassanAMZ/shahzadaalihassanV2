@@ -23,7 +23,7 @@ export const MDXComponents = {
   h1: (props) => {
     return (
       <h1
-        className=" py-2 text-5xl font-bold capitalize tracking-tight leading-none text-gray-900 sm:text-6xl lg:text-7xl dark:text-white"
+        className=" py-2 text-5xl font-bold capitalize tracking-tight leading-none text-gray-900 sm:text-6xl lg:text-7xl dark:text-gray-50"
         {...props}
       >
         {props.children}
@@ -33,7 +33,7 @@ export const MDXComponents = {
   h2: (props) => {
     return (
       <h2
-        className="py-2 text-4xl font-bold capitalize tracking-tight leading-none text-gray-900 sm:text-5xl dark:text-white"
+        className="py-2 text-4xl font-bold capitalize tracking-tight leading-none text-gray-900 sm:text-5xl dark:text-gray-50"
         {...props}
       >
         {props.children}
@@ -43,7 +43,7 @@ export const MDXComponents = {
   h3: (props) => {
     return (
       <h3
-        className="py-2 text-3xl font-bold capitalize tracking-tight leading-none text-gray-900 sm:text-4xl dark:text-white"
+        className="py-2 text-3xl font-bold capitalize tracking-tight leading-none text-gray-900 sm:text-4xl dark:text-gray-50"
         {...props}
       >
         {props.children}
@@ -53,7 +53,7 @@ export const MDXComponents = {
   h4: (props) => {
     return (
       <h4
-        className="py-2 text-2xl font-bold capitalize tracking-tight leading-none text-gray-900 sm:text-3xl dark:text-white"
+        className="py-2 text-2xl font-bold capitalize tracking-tight leading-none text-gray-900 sm:text-3xl dark:text-gray-50"
         {...props}
       >
         {props.children}

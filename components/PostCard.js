@@ -4,7 +4,7 @@ import { FaArrowRight } from 'react-icons/fa'
 const PostCard = ({ post }) => {
   const { slug, date, title, summary, tags, coverImage } = post
   return (
-    <div className="bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+    <div className="bg-gray-50 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
       <CustomLink href={`/blog/${slug}`}>
         <div className="rounded-t-lg overflow-hidden">
           <Image src={coverImage} layout="responsive" width={1920} height={1080} alt={title} />
@@ -12,7 +12,7 @@ const PostCard = ({ post }) => {
       </CustomLink>
       <div className="p-2 md:p-3">
         <CustomLink href={`/blog/${slug}`}>
-          <h5 className="mb-1 leading-tight sm:mb-2 sm:text-xl font-bold tracking-tighter text-gray-900 dark:text-white line-clamp-3">
+          <h5 className="mb-1 leading-tight sm:mb-2 sm:text-xl font-bold tracking-tighter text-gray-900 dark:text-gray-50 line-clamp-3">
             {title}
           </h5>
         </CustomLink>

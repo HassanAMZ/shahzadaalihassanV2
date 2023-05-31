@@ -4,7 +4,7 @@ import { FaArrowRight } from 'react-icons/fa'
 import CustomHeading from '@/components/CustomHeading'
 export default function RecentPosts({ title, initialDisplayPosts = [] }) {
   return (
-    <section className="rounded-lg bg-white dark:border-gray-100 border-2 dark:bg-gray-900 flex-col flex gap-2 py-8 px-3 items-stretch justify-between">
+    <section className="rounded-lg bg-gray-50 dark:border-gray-100 border-2 dark:bg-gray-900 flex-col flex gap-2 py-8 px-3 items-stretch justify-between">
       <CustomHeading heading="h3">{title}</CustomHeading>
       <>
         {!initialDisplayPosts.length && 'No posts found.'}

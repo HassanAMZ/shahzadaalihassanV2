@@ -17,7 +17,7 @@ const Courses = ({ posts }) => {
         blogIDs[indexA] = (
           <div key={indexA} className="flex flex-col flex-1 gap-4 justify-between sm:justify-end">
             <CustomLink href={`/blog/${slug}`}>
-              <h2 className="text-2xl font-bold capitalize tracking-tight leading-none text-gray-900 sm:text-3xl lg:text-4xl dark:text-white">
+              <h2 className="text-2xl font-bold capitalize tracking-tight leading-none text-gray-900 sm:text-3xl lg:text-4xl dark:text-gray-50">
                 {title}
               </h2>
             </CustomLink>
@@ -28,7 +28,7 @@ const Courses = ({ posts }) => {
               </div>
               <div className="flex flex-wrap gap-3">
                 {tags.map((tag, index) => (
-                  <Tag key={index} text={tag} customClasses="text-white" />
+                  <Tag key={index} text={tag} customClasses="text-gray-50" />
                 ))}
               </div>
               <p className="line-clamp-3 sm:line-clamp-none">{summary}</p>
@@ -45,7 +45,7 @@ const Courses = ({ posts }) => {
     })
   })
   return (
-    <section className="py-8 flex-col justify-between flex gap-2 container mx-auto p-4 max-w-screen-xl rounded-lg bg-white dark:border-gray-100 border-2 dark:bg-gray-900">
+    <section className="py-8 flex-col justify-between flex gap-2 rounded-lg bg-gray-50 dark:border-gray-100 border-2 dark:bg-gray-900">
       <CustomHeading heading="h3">Get the Course</CustomHeading>
       {blogIDs}
     </section>

@@ -6,8 +6,7 @@ const CustomLink = ({ href, customClasses, ...rest }) => {
   const isAnchorLink = href && href.startsWith('#')
   const isExternal = `${href}?utm_source=ShahzadaAliHassan&utm_medium=affiliate&utm_campaign=HassanUpwork&utm_term=website&utm_content=${href}`
 
-  let LinkClasses =
-    'underline decoration-dashed text-teal-500 hover:bg-teal-100  hover:text-gray-900'
+  let LinkClasses = 'text-teal-500 hover:bg-teal-100  hover:text-gray-900'
   let classes = `${LinkClasses}   ${customClasses}`
   if (isInternalLink) {
     return (

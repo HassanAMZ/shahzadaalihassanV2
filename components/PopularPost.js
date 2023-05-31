@@ -6,7 +6,7 @@ import CustomButton from '@/components/CustomButton'
 import { FaArrowRight } from 'react-icons/fa'
 export default function PopularPost({ posts, title }) {
   return (
-    <div className="flex flex-col gap-5 rounded-lg bg-white dark:border-gray-100 border-2 dark:bg-gray-900 px-3 py-8">
+    <div className="flex flex-col gap-5 rounded-lg bg-gray-50 dark:border-gray-100 border-2 dark:bg-gray-900 px-3 py-8">
       <CustomHeading heading="h3">Popular Post</CustomHeading>
       {posts.slice(0, 5).map((frontMatter, index) => {
         const { slug, date, title, coverImage } = frontMatter
@@ -24,7 +24,7 @@ export default function PopularPost({ posts, title }) {
                   />
                 </div>
                 <div className="flex flex-col justify-center">
-                  <h2 className="line-clamp-2 text-md font-semibold capitalize tracking-tight leading-1 text-gray-900 dark:text-white">
+                  <h2 className="line-clamp-2 text-md font-semibold capitalize tracking-tight leading-1 text-gray-900 dark:text-gray-50">
                     {title}
                   </h2>
                   <span className="text-sm sm:text-lg dark:text-gray-200 text-gray-800">
