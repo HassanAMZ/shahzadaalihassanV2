@@ -1,4 +1,3 @@
-import AllProjects from '@/components/AllProjects'
 import Timeline from '@/components/Timeline'
 import CustomHeading from '@/components/CustomHeading'
 import { PageSEO } from '@/components/SEO'
@@ -18,8 +17,6 @@ export default function AuthorLayout({ children, frontMatter }) {
         <SocialProfile title="Get In Touch" />
         <Timeline />
       </div>
-
-      {/* <AllProjects /> */}
     </>
   )
 }
